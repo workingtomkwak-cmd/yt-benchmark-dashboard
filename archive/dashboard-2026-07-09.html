@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube 벤치마크 대시보드 — 2026-07-09</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{--bg:#0e1117;--card:#171c26;--card2:#1d2433;--txt:#e8ecf3;--sub:#8b95a7;--acc:#4f8ff7;--green:#3ddc84;--red:#ff5d5d;--amber:#ffb84d;--border:#262e3f}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Pretendard','Apple SD Gothic Neo','Segoe UI',sans-serif}
+  body{background:var(--bg);color:var(--txt);padding:28px;max-width:1280px;margin:0 auto}
+  h1{font-size:22px;font-weight:700}
+  .sub{color:var(--sub);font-size:13px;margin-top:4px}
+  .badge{display:inline-block;background:#2a3550;color:#9db8ff;font-size:11px;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:middle}
+  .grid{display:grid;gap:14px;margin-top:20px}
+  .kpis{grid-template-columns:repeat(4,1fr)}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+  .kpi .label{color:var(--sub);font-size:12px;margin-bottom:6px}
+  .kpi .val{font-size:26px;font-weight:800}
+  .kpi .note{font-size:12px;color:var(--sub);margin-top:6px}
+  .row2{grid-template-columns:1.1fr 0.9fr}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+  .card h2{font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--acc);display:inline-block}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{color:var(--sub);text-align:left;font-weight:600;padding:7px 8px;border-bottom:1px solid var(--border);font-size:11.5px}
+  td{padding:8px;border-bottom:1px solid #1f2635}
+  tr:last-child td{border-bottom:none}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .ch{font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--card2);white-space:nowrap}
+  .up{color:var(--green);font-weight:700}
+  .hot{color:var(--amber);font-weight:700}
+  .tagwrap{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{background:var(--card2);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:13px}
+  .tag b{color:var(--acc)}
+  .idea{background:var(--card2);border-left:3px solid var(--green);border-radius:10px;padding:14px;margin-bottom:10px}
+  .idea .t{font-weight:700;font-size:14px;margin-bottom:4px}
+  .idea .why{font-size:12.5px;color:var(--sub)}
+  .warn{background:#2a2118;border:1px solid #4a3a22;border-radius:10px;padding:12px 16px;font-size:12.5px;color:#d8b98a;margin-top:16px}
+  .chartbox{position:relative;height:260px}
+  @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.row2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<h1>🔬 과학 유튜브 벤치마크 대시보드 <span class="badge">테스트 실행 · 2026-07-09 21:2x KST</span></h1>
+<div class="sub">11개 채널 추적 · 베이스라인 대비 약 2시간 윈도우 (내일부터 24시간 단위) · 만약에LAB 벤치마킹용</div>
+
+<div class="grid kpis">
+  <div class="kpi"><div class="label">최근 48시간 신규 업로드</div><div class="val">10<span style="font-size:14px;color:var(--sub)">개</span></div><div class="note">7개 채널에서 업로드</div></div>
+  <div class="kpi"><div class="label">지금 가장 뜨거운 영상</div><div class="val" style="font-size:18px">Shorts 싫어요 버튼</div><div class="note">JUST1MIN · 3일 만에 81.1만 뷰</div></div>
+  <div class="kpi"><div class="label">제목 A/B 테스트 감지</div><div class="val" style="color:var(--amber)">2건</div><div class="note">Zenn0009 — 2시간 내 제목 변경</div></div>
+  <div class="kpi"><div class="label">추적 중인 영상</div><div class="val">154</div><div class="note">비용 ~$0.20 / 실행</div></div>
+</div>
+
+<div class="grid row2">
+  <div class="card">
+    <h2><span class="dot"></span>구독자 규모 (로그 스케일)</h2>
+    <div class="chartbox"><canvas id="subsChart"></canvas></div>
+  </div>
+  <div class="card">
+    <h2><span class="dot" style="background:var(--green)"></span>신생 채널 성장 속도 (구독자/주)</h2>
+    <div class="chartbox"><canvas id="growthChart"></canvas></div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h2><span class="dot" style="background:var(--amber)"></span>최근 48시간 신규 업로드</h2>
+    <table>
+      <tr><th>채널</th><th>제목</th><th class="num">경과</th><th class="num">현재 조회수</th><th>비고</th></tr>
+      <tr><td><span class="ch">myrk8n</span></td><td>Why Animals Stopped Fearing Humans?</td><td class="num">12h</td><td class="num">24</td><td>⚠️ 클로닝: quark 히트작 역변형</td></tr>
+      <tr><td><span class="ch">quark5050</span></td><td>Do Animals Understand Death?</td><td class="num">20h</td><td class="num">602</td><td></td></tr>
+      <tr><td><span class="ch">Itzquanta</span></td><td>Why Do Animal Mothers Bring Their Babies to Humans?</td><td class="num">20h</td><td class="num">2,300</td><td></td></tr>
+      <tr><td><span class="ch">GutMonkey</span></td><td>The Footprints That Rewrote the Story of the First Americans</td><td class="num">21h</td><td class="num">55</td><td></td></tr>
+      <tr><td><span class="ch">Zenn0009</span></td><td>The Tiger That Killed 436 People</td><td class="num">1d</td><td class="num">4,700</td><td class="hot">제목 변경됨 (A/B)</td></tr>
+      <tr><td><span class="ch">quark5050</span></td><td>Why Can't Humans Stop Aging?</td><td class="num">1d</td><td class="num">931</td><td></td></tr>
+      <tr><td><span class="ch">Itzquanta</span></td><td>Why Do We Never Drink Other Animal's Milk?</td><td class="num">1d</td><td class="num">7,500</td><td>먹거리 금기 시리즈 확장</td></tr>
+      <tr><td><span class="ch">JUST1MIN</span></td><td>The Era of the Cafe-Studiers Has Arrived</td><td class="num">1d</td><td class="num">22,000</td><td></td></tr>
+      <tr><td><span class="ch">JUST1MIN</span></td><td>Grass-in-the-Butt Challenge (Shorts)</td><td class="num">&lt;1d</td><td class="num">15,000</td><td class="up">+1,000 (2h)</td></tr>
+      <tr><td><span class="ch">JUST1MIN</span></td><td>The Ice Cream So Tough You Have to Slice It (Shorts)</td><td class="num">&lt;1d</td><td class="num">33,000</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="grid row2">
+  <div class="card">
+    <h2><span class="dot" style="background:var(--red)"></span>지금 터지고 있는 영상 (최근 2주 업로드 중)</h2>
+    <table>
+      <tr><th>채널</th><th>제목</th><th class="num">조회수</th><th class="num">경과</th></tr>
+      <tr><td><span class="ch">JUST1MIN</span></td><td>Why the 'Dislike' button is gone from Shorts</td><td class="num hot">811,000</td><td class="num">3d</td></tr>
+      <tr><td><span class="ch">JUST1MIN</span></td><td>There's a system behind baseball batting orders?</td><td class="num">485,000</td><td class="num">9d</td></tr>
+      <tr><td><span class="ch">JUST1MIN</span></td><td>Buldak Mascot Change</td><td class="num">373,000</td><td class="num">7d</td></tr>
+      <tr><td><span class="ch">Itzquanta</span></td><td>Why Wild Animals Ask Humans To Help Them?</td><td class="num hot">333,000</td><td class="num">10d</td></tr>
+      <tr><td><span class="ch">quark5050</span></td><td>Why Do Animals Fear Humans?</td><td class="num">288,000</td><td class="num">2w</td></tr>
+      <tr><td><span class="ch">JUST1MIN</span></td><td>Are Bananas Going Extinct?</td><td class="num">221,000</td><td class="num">2d</td></tr>
+      <tr><td><span class="ch">JUST1MIN</span></td><td>Picking Your Baby's Gender?</td><td class="num">213,000</td><td class="num">2d</td></tr>
+      <tr><td><span class="ch">Itzquanta</span></td><td>Why Do We Never Eat Predator Meat?</td><td class="num">181,000</td><td class="num">6d</td></tr>
+      <tr><td><span class="ch">ScienceDream</span></td><td>새 '언어·문법' 증명한 과학자 (20년 관찰)</td><td class="num">297,000</td><td class="num">6d</td></tr>
+      <tr><td><span class="ch">Itzquanta</span></td><td>Why Do We Never Eat Other Animal Eggs?</td><td class="num">50,000</td><td class="num">2d</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h2><span class="dot"></span>주제 트렌드 (이번 주 메타)</h2>
+    <div class="tagwrap">
+      <div class="tag">🔥 <b>먹거리 금기</b> — "왜 우리는 X를 안 먹을까" (Itzquanta 3연속: 포식자 고기 181K → 알 50K → 우유 7.5K)</div>
+      <div class="tag">🔥 <b>동물↔인간 관계</b> — 도움 요청 333K, 공포 288K, 고양이 사랑 152K</div>
+      <div class="tag">📈 <b>죽음/의식 철학</b> — quark 신작 + Zenn "Are You Real?"</div>
+      <div class="tag">📈 <b>고대 인류 생활사</b> — GutMonkey·myrk8n·Mack 주력</div>
+      <div class="tag">🇰🇷 <b>시사+과학 믹스</b> — JUST1MIN: 유튜브 정책, 바나나 멸종, 성별 선택</div>
+    </div>
+    <h2 style="margin-top:22px"><span class="dot" style="background:var(--green)"></span>만약에LAB 오늘의 제안</h2>
+    <div class="idea"><div class="t">"만약에 인간이 포식자 고기를 먹기 시작한다면?"</div><div class="why">근거: Itzquanta "Never Eat Predator Meat" 6일 181K — 먹거리 금기 메타 상승 중, 한국어 버전 부재</div></div>
+    <div class="idea"><div class="t">"만약에 전 세계 동물이 인간을 무서워하지 않게 된다면?"</div><div class="why">근거: 이 주제 클러스터에서 4개 채널 히트 (288K·303K·919K) — 검증 완료, 만약에 포맷으로 비틀기 최적</div></div>
+    <div class="idea"><div class="t">"만약에 바나나가 진짜 멸종한다면?"</div><div class="why">근거: JUST1MIN Shorts 2일 221K — 한국 시청자 반응 검증, 롱폼 심화 버전 공백</div></div>
+  </div>
+</div>
+
+<div class="warn">⚠️ 데이터 주의: ① MackExplains7 개별 영상 조회수(2M 표기)는 스크래퍼 파싱 오류 — 채널 총계(5.7M)로만 해석 ② 이번 델타는 2시간 윈도우 테스트라 대부분 ±1K 미만, 내일 오전 8시부터 24시간 델타 정상 작동 ③ Zenn0009 제목 변경 2건 감지: "How Did One Tiger Kill 436 People?"→"The Tiger That Killed 436 People", "Could Humans Survive 4.5B Years Ago?"→"What If You Stepped Onto Earth 4.5 Billion Years Ago?" — 업로드 후 제목을 계속 실험한다는 뜻. 만약에LAB도 초기 24~48시간 성과 보고 제목 교체 전략 참고.</div>
+
+<script>
+const gridColor='#262e3f',tickColor='#8b95a7';
+new Chart(document.getElementById('subsChart'),{type:'bar',data:{
+labels:['ScienceDream','JUST1MIN','kurzgesagt_kr','cosmoswag_kr','Zenn0009','MackExplains7','Itzquanta','quark5050','myrk8n','GutMonkey','theneo_earth'],
+datasets:[{data:[1140000,1140000,737000,272000,164000,48900,21200,14100,3250,115,19],
+backgroundColor:['#4f8ff7','#4f8ff7','#4f8ff7','#4f8ff7','#3ddc84','#3ddc84','#3ddc84','#3ddc84','#3ddc84','#3ddc84','#3ddc84'],borderRadius:6}]},
+options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toLocaleString()+' 구독자'}}},
+scales:{y:{type:'logarithmic',grid:{color:gridColor},ticks:{color:tickColor,callback:v=>[10,1000,100000,1000000].includes(v)?v.toLocaleString():''}},
+x:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}}},maintainAspectRatio:false}});
+new Chart(document.getElementById('growthChart'),{type:'bar',data:{
+labels:['Zenn0009 (9주)','MackExplains7 (7주)','quark5050 (8주)','myrk8n (8.5주)','theneo_earth (5주)'],
+datasets:[{data:[18200,7000,1785,380,4],backgroundColor:['#ffb84d','#3ddc84','#3ddc84','#3ddc84','#ff5d5d'],borderRadius:6}]},
+options:{indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'주당 +'+c.raw.toLocaleString()+' 구독자'}}},
+scales:{x:{grid:{color:gridColor},ticks:{color:tickColor}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}},maintainAspectRatio:false}});
+</script>
+</body>
+</html>
