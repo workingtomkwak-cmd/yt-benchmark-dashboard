@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YouTube 벤치마크 대시보드 — 2026-07-09</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   :root{--bg:#0e1117;--card:#171c26;--card2:#1d2433;--txt:#e8ecf3;--sub:#8b95a7;--acc:#4f8ff7;--green:#3ddc84;--red:#ff5d5d;--amber:#ffb84d;--border:#262e3f}
   *{margin:0;padding:0;box-sizing:border-box;font-family:'Pretendard','Apple SD Gothic Neo','Segoe UI',sans-serif}
@@ -37,7 +36,12 @@
   .idea .t{font-weight:700;font-size:14px;margin-bottom:4px}
   .idea .why{font-size:12.5px;color:var(--sub)}
   .warn{background:#2a2118;border:1px solid #4a3a22;border-radius:10px;padding:12px 16px;font-size:12.5px;color:#d8b98a;margin-top:16px}
-  .chartbox{position:relative;height:260px}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+  .bar-label{width:120px;font-size:11.5px;color:var(--sub);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-track{flex:1;background:#10141d;border-radius:6px;height:20px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:6px;background:var(--acc)}
+  .bar-fill.g{background:var(--green)}.bar-fill.a{background:var(--amber)}.bar-fill.r{background:var(--red)}
+  .bar-val{width:78px;font-size:11.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
   @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.row2{grid-template-columns:1fr}}
 </style>
 </head>
@@ -56,11 +60,25 @@
 <div class="grid row2">
   <div class="card">
     <h2><span class="dot"></span>구독자 규모 (로그 스케일)</h2>
-    <div class="chartbox"><canvas id="subsChart"></canvas></div>
+    <div class="bar-row"><div class="bar-label">ScienceDream</div><div class="bar-track"><div class="bar-fill" style="width:99.6%"></div></div><div class="bar-val">1.14M</div></div>
+    <div class="bar-row"><div class="bar-label">JUST1MIN</div><div class="bar-track"><div class="bar-fill" style="width:99.6%"></div></div><div class="bar-val">1.14M</div></div>
+    <div class="bar-row"><div class="bar-label">kurzgesagt_kr</div><div class="bar-track"><div class="bar-fill" style="width:96.5%"></div></div><div class="bar-val">737K</div></div>
+    <div class="bar-row"><div class="bar-label">cosmoswag_kr</div><div class="bar-track"><div class="bar-fill" style="width:89.4%"></div></div><div class="bar-val">272K</div></div>
+    <div class="bar-row"><div class="bar-label">Zenn0009</div><div class="bar-track"><div class="bar-fill g" style="width:85.8%"></div></div><div class="bar-val">164K</div></div>
+    <div class="bar-row"><div class="bar-label">MackExplains7</div><div class="bar-track"><div class="bar-fill g" style="width:77.1%"></div></div><div class="bar-val">48.9K</div></div>
+    <div class="bar-row"><div class="bar-label">Itzquanta</div><div class="bar-track"><div class="bar-fill g" style="width:71.2%"></div></div><div class="bar-val">21.2K</div></div>
+    <div class="bar-row"><div class="bar-label">quark5050</div><div class="bar-track"><div class="bar-fill g" style="width:68.3%"></div></div><div class="bar-val">14.1K</div></div>
+    <div class="bar-row"><div class="bar-label">myrk8n</div><div class="bar-track"><div class="bar-fill g" style="width:57.8%"></div></div><div class="bar-val">3.25K</div></div>
+    <div class="bar-row"><div class="bar-label">GutMonkey</div><div class="bar-track"><div class="bar-fill g" style="width:33.9%"></div></div><div class="bar-val">115</div></div>
+    <div class="bar-row"><div class="bar-label">theneo_earth</div><div class="bar-track"><div class="bar-fill g" style="width:21%"></div></div><div class="bar-val">19</div></div>
   </div>
   <div class="card">
     <h2><span class="dot" style="background:var(--green)"></span>신생 채널 성장 속도 (구독자/주)</h2>
-    <div class="chartbox"><canvas id="growthChart"></canvas></div>
+    <div class="bar-row"><div class="bar-label">Zenn0009 (9주)</div><div class="bar-track"><div class="bar-fill a" style="width:100%"></div></div><div class="bar-val">+18.2K/주</div></div>
+    <div class="bar-row"><div class="bar-label">MackExplains7 (7주)</div><div class="bar-track"><div class="bar-fill g" style="width:38.5%"></div></div><div class="bar-val">+7.0K/주</div></div>
+    <div class="bar-row"><div class="bar-label">quark5050 (8주)</div><div class="bar-track"><div class="bar-fill g" style="width:9.8%"></div></div><div class="bar-val">+1.8K/주</div></div>
+    <div class="bar-row"><div class="bar-label">myrk8n (8.5주)</div><div class="bar-track"><div class="bar-fill g" style="width:2.1%"></div></div><div class="bar-val">+380/주</div></div>
+    <div class="bar-row"><div class="bar-label">theneo_earth (5주)</div><div class="bar-track"><div class="bar-fill r" style="width:0.5%"></div></div><div class="bar-val">+4/주</div></div>
   </div>
 </div>
 
@@ -118,20 +136,5 @@
 
 <div class="warn">⚠️ 데이터 주의: ① MackExplains7 개별 영상 조회수(2M 표기)는 스크래퍼 파싱 오류 — 채널 총계(5.7M)로만 해석 ② 이번 델타는 2시간 윈도우 테스트라 대부분 ±1K 미만, 내일 오전 8시부터 24시간 델타 정상 작동 ③ Zenn0009 제목 변경 2건 감지: "How Did One Tiger Kill 436 People?"→"The Tiger That Killed 436 People", "Could Humans Survive 4.5B Years Ago?"→"What If You Stepped Onto Earth 4.5 Billion Years Ago?" — 업로드 후 제목을 계속 실험한다는 뜻. 만약에LAB도 초기 24~48시간 성과 보고 제목 교체 전략 참고.</div>
 
-<script>
-const gridColor='#262e3f',tickColor='#8b95a7';
-new Chart(document.getElementById('subsChart'),{type:'bar',data:{
-labels:['ScienceDream','JUST1MIN','kurzgesagt_kr','cosmoswag_kr','Zenn0009','MackExplains7','Itzquanta','quark5050','myrk8n','GutMonkey','theneo_earth'],
-datasets:[{data:[1140000,1140000,737000,272000,164000,48900,21200,14100,3250,115,19],
-backgroundColor:['#4f8ff7','#4f8ff7','#4f8ff7','#4f8ff7','#3ddc84','#3ddc84','#3ddc84','#3ddc84','#3ddc84','#3ddc84','#3ddc84'],borderRadius:6}]},
-options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toLocaleString()+' 구독자'}}},
-scales:{y:{type:'logarithmic',grid:{color:gridColor},ticks:{color:tickColor,callback:v=>[10,1000,100000,1000000].includes(v)?v.toLocaleString():''}},
-x:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}}},maintainAspectRatio:false}});
-new Chart(document.getElementById('growthChart'),{type:'bar',data:{
-labels:['Zenn0009 (9주)','MackExplains7 (7주)','quark5050 (8주)','myrk8n (8.5주)','theneo_earth (5주)'],
-datasets:[{data:[18200,7000,1785,380,4],backgroundColor:['#ffb84d','#3ddc84','#3ddc84','#3ddc84','#ff5d5d'],borderRadius:6}]},
-options:{indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'주당 +'+c.raw.toLocaleString()+' 구독자'}}},
-scales:{x:{grid:{color:gridColor},ticks:{color:tickColor}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}},maintainAspectRatio:false}});
-</script>
 </body>
 </html>
