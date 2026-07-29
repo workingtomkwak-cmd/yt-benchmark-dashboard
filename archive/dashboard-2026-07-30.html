@@ -76,10 +76,26 @@
  <div class="s"><span class="k">상태</span><span class="v up">● 정상 (ok)</span></div>
  <div class="s"><span class="k">경고</span><span class="v hot">7건 → 하단 데이터 품질</span></div>
 </div>
+<div style="background:#2c1618;border:1px solid #6b2b2f;border-radius:14px;padding:20px;margin-top:20px">
+  <h2 style="font-size:17px;margin-bottom:12px;color:#ff8f8f;display:flex;align-items:center;gap:8px">🚨 오늘의 단 하나 — 신규 쇼츠가 <b>18시간 동안 5뷰</b></h2>
+  <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-end">
+    <div><div style="font-size:34px;font-weight:800;color:var(--red);line-height:1.1">5</div><div style="font-size:12px;color:#c99;margin-top:4px">조회 · 좋아요 1 · 댓글 2</div></div>
+    <div><div style="font-size:24px;font-weight:800;color:#ff8f8f;line-height:1.1">18시간 17분</div><div style="font-size:12px;color:#c99;margin-top:4px">발행 후 경과 (07-29 12:49 KST)</div></div>
+    <div><div style="font-size:24px;font-weight:800;color:#ff8f8f;line-height:1.1">-99.5%</div><div style="font-size:12px;color:#c99;margin-top:4px">직전 8편 초동(840~1,600) 대비</div></div>
+    <div><div style="font-size:24px;font-weight:800;color:#ff8f8f;line-height:1.1">+101</div><div style="font-size:12px;color:#c99;margin-top:4px">채널 1일 조회 (전일 +1,958 · -95%)</div></div>
+  </div>
+  <p style="font-size:13px;color:#e3b6b6;margin-top:12px;line-height:1.65"><b><a href="https://youtu.be/WdIi_Cj-oIE" style="color:#ffb0b0">「비행기에서 휴대폰을 안 끄면 정말 추락할까?」</a></b> (48초) · 상태 <code>public / processed / madeForKids:false</code> — <b>기술적 문제가 아니다.</b> 훅이 약하면 200~400뷰가 나온다. <b>18시간 5뷰는 유튜브가 이 영상을 쇼츠 피드에 아예 올리지 않았다는 뜻이다.</b> 이 채널은 조회의 사실상 100%가 신규 초동에서 나오는 구조였고, 그 초동이 한 번 막히자 채널이 그대로 멈췄다(+101). 어제 브리핑은 "발행을 하루라도 멈추면 떨어지는 구조"라고 적었는데, <b>하루도 멈추지 않았는데도 떨어졌다 — 변수는 발행량이 아니라 초동 노출이다.</b></p>
+  <ol style="font-size:13px;color:#e3b6b6;margin:10px 0 0 20px;line-height:1.7">
+    <li><b>발행 방식·시각이 바뀌었다</b> — 직전까지 전부 <code>09:00:0X Z</code>(18:00 KST) 정시 = 예약 발행. 이번 건만 <code>03:49:57Z</code> 불규칙 초 = <b>수동 즉시 발행</b>이고, 12:49 KST는 이 채널이 써본 적 없는 시간대.</li>
+    <li><b>소재의 민감 주제 분류 가능성</b> — 「항공 안전」·「추락」, 태그에 <code>항공 안전 / flight safety / aviation</code>.</li>
+    <li><b>댓글 2 / 조회 5의 불일치</b> — 자연 유입에서 거의 불가능한 비율.</li>
+  </ol>
+  <p style="background:#1a1012;border:1px solid #6b2b2f;border-radius:8px;padding:12px;margin-top:14px;font-size:13px;color:#e3b6b6;line-height:1.65">📌 <b>오늘 직접 확인할 것 (5분)</b> — Studio → 이 영상 → ① 「제한사항」 칼럼 경고 여부 ② 도달률에서 <b>노출수(impressions)가 0에 가까운지</b> ③ 쇼츠 피드 노출 비율. <b>노출수가 0에 가까우면 원인은 배포 제한, 노출은 정상인데 조회가 없으면 썸네일·첫 프레임이다 — 처방이 정반대다.</b> 원인 확인까지 발행 시각을 검증된 <b>18:00 KST 예약</b>으로 되돌릴 것. 원인이 배포 제한이면 제안을 몇 편 만들어도 같은 결과가 나온다 — <b>제작보다 진단이 먼저다.</b></p>
+</div>
 <div class="grid kpis" id="today">
 <div class="kpi" style="border:1px solid var(--amber)"><div class="label">⚖️ 품질 지표 보합</div><div class="val hot">36.3%</div><div class="note">28일 유효조회율 +0.01pp · avgVP 67.3→<b>66.6</b> 하락</div></div>
 <div class="kpi" style="border:1px solid var(--red)"><div class="label">⚠️ 롱테일 사실상 정지</div><div class="val bad" style="font-size:20px">기존 14편 +19뷰</div><div class="note">어제 13편 +26 → 편당 <b>+1.4</b> · 추적 이래 최저</div></div>
-<div class="kpi" style="border:1px solid var(--red)"><div class="label">📉 신규 1건 · 초동 미형성</div><div class="val bad" style="font-size:20px">5뷰</div><div class="note">비행기 휴대폰 (07-29 UTC 업로드 직후)</div></div>
+<div class="kpi" style="border:2px solid var(--red)"><div class="label">🚨 신규 1건 · 초동 <b>부재</b></div><div class="val bad" style="font-size:20px">18시간 5뷰</div><div class="note">비행기 휴대폰 · 07-29 12:49 KST 발행 → <b>-99.5%</b> (직전 8편 840~1,600) · public/processed 정상 = <b>노출 자체가 없음</b></div></div>
 <div class="kpi" style="border:1px solid var(--acc)"><div class="label">🔥 이번 창 최대 이벤트</div><div class="val hot" style="font-size:18px">Itzquanta Raw Fish +310%</div><div class="note">5.3K → <b>21.7K</b> · 어제 제안①의 근거가 4배 강화</div></div>
 </div>
 <div class="grid"><div class="card" id="own" style="border-color:#3ddc8455">
@@ -105,7 +121,7 @@
 <tr><td><a href="https://youtu.be/QgMkTjLkf6c">지구 자전이 “딱” 멈추는 순간, 우리는 동쪽으로 날아간다</a></td><td class="num">880</td><td class="num"><span class="flat">±0</span></td><td><span class="hot">43.7% / 128.4%</span></td></tr>
 <tr><td><a href="https://youtu.be/dGGAeDPxD94">만약 태양계 행성끼리 전쟁하면 누가 이길까?</a></td><td class="num">872</td><td class="num"><span class="up">+20</span></td><td>Analytics 미집계 (0 반환 — 지연 추정)</td></tr>
 <tr><td><a href="https://youtu.be/9gOpL0kBn38">만약 비가 1년 동안 한 번도 멈추지 않는다면?</a></td><td class="num">840</td><td class="num"><span class="flat">±0</span></td><td><span class="hot">42.2% / 86.6%</span></td></tr>
-<tr><td><a href="https://youtu.be/WdIi_Cj-oIE">비행기에서 휴대폰을 안 끄면 정말 추락할까?</a></td><td class="num">5</td><td class="num"><span class="badge" style="background:#1f4a2e;color:#7de8a8">🆕신규</span></td><td>업로드 직후 — 미집계</td></tr>
+<tr style="background:#2c1618"><td><a href="https://youtu.be/WdIi_Cj-oIE">비행기에서 휴대폰을 안 끄면 정말 추락할까?</a> <span class="badge" style="background:#6b2b2f;color:#ffb0b0">🚨신규</span></td><td class="num bad">5</td><td class="num bad">18h17m</td><td class="bad">노출 자체가 없음 — Studio 노출수 확인 필요</td></tr>
 </table>
 <div style="margin-top:16px"><h2 style="margin-bottom:10px"><span class="dot" style="background:var(--amber)"></span>쇼츠 확산 현황 (2K 돌파선 = 흰 선, 스케일 3K) — <b>9일 연속 돌파 없음</b></h2>
 <div class="bar-row"><div class="bar-label">전부 민물</div><div class="bar-track"><span class="goal"></span><div class="bar-fill a" style="width:53.3%"></div></div><div class="bar-val">1,600 <span class="flat">±0</span></div></div>
@@ -177,7 +193,7 @@
 <tr><td><span class="ch">인류의서재</span></td><td>죽은 사람이 꿈에 나와도 하나도 안 이상했던 이유</td><td class="num">07-29</td><td class="num up">3,831</td><td>📜 조선 생활사 6일 연속 업로드</td></tr>
 <tr><td><span class="ch">Itzquanta</span></td><td>Why Do Humans Love Eating Spicy Foods?</td><td class="num">07-29</td><td class="num up">1,835</td><td>🌶️ 식(食) 클러스터 5편째 — 자사 「매운 거」와 동일 소재</td></tr>
 <tr><td><span class="ch">MackExplains7</span></td><td>How Did the Other 6 Civilizations Disappear?</td><td class="num">07-29</td><td class="num up">1,120</td><td>🏛️ 문명 소멸 — 내면 클러스터에서 이탈</td></tr>
-<tr><td><span class="ch" style="color:var(--green)">만약에LAB</span></td><td><a href="https://youtu.be/WdIi_Cj-oIE">비행기에서 휴대폰을 안 끄면 정말 추락할까?</a></td><td class="num">07-29</td><td class="num bad">5</td><td>✈️ <b>실용 상식형 첫 진입</b> — JUST1MIN 축과 일치 · 업로드 직후</td></tr>
+<tr style="background:#2c1618"><td><span class="ch" style="color:#ff8f8f">만약에LAB</span></td><td><a href="https://youtu.be/WdIi_Cj-oIE">비행기에서 휴대폰을 안 끄면 정말 추락할까?</a></td><td class="num">07-29 12:49</td><td class="num bad">5 🚨</td><td class="bad">✈️ 실용 상식형 첫 진입 — <b>18h17m 경과 5뷰(-99.5%)</b> · 노출 자체가 없음</td></tr>
 <tr><td><span class="ch">myrk8n</span></td><td>Why Humans Can’t Eat Raw Meat?</td><td class="num">07-29</td><td class="num bad">157</td><td>⚠️ Itzquanta Raw Fish 클로닝 · 07-28편은 삭제됨</td></tr>
 <tr><td><span class="ch">quark5050</span></td><td>Why Do Humans Get Brain Freeze?</td><td class="num">07-29</td><td class="num bad">120</td><td>노출 거의 없음</td></tr>
 </table>
