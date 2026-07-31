@@ -1,21 +1,40 @@
 {
-  "dashboard_date_kst": "2026-07-31",
-  "generated_at_kst": "2026-07-31T07:30:00+09:00",
-  "analytics_max_date": "2026-07-28",
-  "analytics_lag_days": 3,
+  "dashboard_date_kst": "2026-08-01",
+  "generated_at_kst": "2026-08-01T07:15:00+09:00",
+  "status": "collection_failed",
+  "displayed_data_date_kst": "2026-07-31",
   "channels_tracked": 13,
-  "channels_collected": 13,
-  "status": "ok",
+  "channels_collected": 0,
+  "analytics_collected": false,
+  "snapshot_written": false,
+  "studio_metrics_row_written": false,
+  "failure": {
+    "summary": "2026-08-01 데이터 수집 0건. 4개 수집 경로 전부 차단. 대시보드는 2026-07-31 데이터를 표시하며 상단에 실패 배너 명시.",
+    "paths": [
+      {"path": "1_web_fetch", "result": "blocked", "cause": "프로버넌스 제약 — googleapis.com URL이 허용 목록에 없음 ('URL not in provenance set'). 재시도 무의미"},
+      {"path": "2_chrome_javascript_tool", "result": "unavailable", "cause": "Chrome이 실행 중이 아님 ('Google Chrome is not running'). 확장 등록 2건은 잔여 세션"},
+      {"path": "3_apify_scraper", "result": "unavailable", "cause": "Apify MCP가 이 세션에 없음"},
+      {"path": "4_bash_curl", "result": "blocked", "cause": "샌드박스가 googleapis.com 차단 (exit 56)"}
+    ],
+    "root_cause": "07-14 이후 파이프라인이 Chrome 단일 장애점(SPOF)에 의존. 경로 1이 상시 차단이므로 실질적으로 Chrome 단독 경로였고, Chrome이 꺼진 첫날 전체 중단.",
+    "recovery": "Chrome을 실행한 상태로 브리핑 수동 재실행 (API 과거 조회 가능 — 지표 소실 없음).",
+    "structural_fix_options": [
+      "Apify MCP를 세션에 상시 연결 (스킬 원본 경로, Chrome 불필요)",
+      "스케줄 프롬프트에 완성형 googleapis.com URL(채널ID·키 포함)을 삽입해 web_fetch 프로버넌스 확보",
+      "수집 실패 시 알림 전송으로 수동 개입 유도"
+    ]
+  },
   "warnings": [
-    "web_fetch 프로버넌스 제약 + bash 샌드박스 googleapis.com 차단 → Data/Analytics API 모두 Chrome fetch로 수집",
-    "🔴 만약에LAB 채널 statistics 캐시 지연 확인 — 07-30 +101 / 07-31 +1,845. 2일 합계 +1,946(일평균 973)이 실제 페이스. 일일 채널 델타는 2일 이동평균으로 읽을 것",
-    "Analytics 일별 최신 2026-07-28 (3일 지연, 정상). 신규 2편(번개·엘리베이터)은 영상별 미집계",
-    "「만약 태양계 행성끼리 전쟁하면」 첫 정상집계(Analytics 891) — 공개 874보다 큼, 공개 statistics 캐시",
-    "「비행기 모드」 Analytics 5뷰 vs 공개 14뷰 — 유효조회율 80%는 표본 5로 통계적 무의미, 판단 제외",
-    "theneo_earth 「Why Humans Eat 3 Meals a Day?」 -432는 허위 — 동일 제목 중복 영상 2건(07-10 455 / 07-11 23)의 제목 매칭 오류. 실제 두 편 모두 ±0",
-    "대형 채널 구독자는 1,000 단위 반올림 표기 — ±0이 실제 무변동을 뜻하지 않음",
-    "최근 영상 창(만약에LAB 15편·경쟁 8편) 이동으로 오래된 편이 '이탈'로 보임 — 삭제 아님 (만약에LAB 「자신만만」1,284·「산소 원자 5초」1,347 포함)",
-    "쇼츠 판별 duration ≤ 180초"
+    "⛔ 이 대시보드의 모든 수치는 2026-07-31 실측값이며 08-01 값이 아니다. 오늘 값으로 인용 금지",
+    "📌 snapshot-2026-08-01.csv를 의도적으로 생성하지 않음 — 07-31 값 복사 시 내일 1일 델타가 2일치로 과대 계상됨. 내일 브리핑은 07-31 대비 '2일 델타'로 라벨링할 것",
+    "📌 studio-metrics.csv에 08-01 행을 추가하지 않음 — 빈 값/복사 값은 유효조회율 추이를 오염시킴",
+    "latest.json은 2026-07-31 데이터이며 날짜 라벨도 07-31로 유지됨 (재라벨링하지 않음)",
+    "🍣 식(食) 클러스터 한국어권 공백이 07-31 판정상 '오늘내일이 마지막'이었으나 관측이 하루 끊김 — 재실행 시 최우선 확인"
+  ],
+  "pending_actions": [
+    "🔧 0순위: 「지구 기온이 딱 1도만 떨어지면」 제목·썸네일 교체 — 5일째 미실행 (유효 45.9%·avgVP 95.4% 채널 1위인데 조회 899 ±0)",
+    "🔍 1순위: 「비행기 모드, 왜 꼭 켜야 할까?」 Studio 노출수 진단 (제목 가설 기각, 배포 제한 가설 잔존)",
+    "⏰ 2순위: 발행 시각 18:00 KST 예약 고정 (3일 연속 이동으로 원인 분리 불가)"
   ],
   "dashboard_url": "https://workingtomkwak-cmd.github.io/yt-benchmark-dashboard/"
 }
