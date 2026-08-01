@@ -1,768 +1,1326 @@
 {
-  "dashboard_date_kst": "2026-08-01",
-  "generated_at_kst": "2026-08-01T07:25:00+09:00",
-  "compare_baseline": "2026-07-31",
-  "public_data_source": "YouTube Data API v3 (claude-in-chrome javascript_tool fetch)",
-  "analytics_source": "YouTube Analytics API v2 (OAuth refresh, claude-in-chrome javascript_tool fetch)",
-  "analytics_max_date": "2026-07-29",
-  "analytics_lag_days": 3,
-  "channels_tracked": 13,
-  "data_quality": {
-    "status": "ok",
-    "note": "07:04 실행 실패분을 재실행으로 복구 — 13/13 채널 실측",
-    "warnings": [
-      "⛔ 오늘 07:04 첫 실행은 수집 전면 실패로 종료 → 재실행에서 claude-in-chrome 확장 MCP 경로로 13/13 채널 + Analytics 전량 복구. Control_Chrome(AppleScript)만 실패했고 확장 경로는 정상 — Chrome MCP 2종이 독립 실패하므로 폴백 순서에 claude-in-chrome 우선 명시 필요",
-      "🔴 만약에LAB 채널 statistics viewCount 56,389로 전일과 완전 동일 = 캐시 지연. 신규 2편만 실제 1,432뷰 발생 → 오늘 채널 총계 델타는 무효, 내일 2일 누적으로 정정 확인",
-      "Analytics 일별 최신 2026-07-29 (3일 지연, 정상). 신규 2편(비행기 추락 자세·높은 베개)과 「번개」편은 영상별 미집계",
-      "「비행기 모드」 Analytics 10뷰 기준 engaged 6 → 유효율 60%는 표본 부족으로 통계적 무의미, 판단 제외",
-      "7일창 밖 영상 3편(아프리카사자·원시시대·지구자전)은 직전 실측 유효율(34.2%·35.8%·43.9%) 표기",
-      "MackExplains7 채널 총조회 +83,468 vs 표시 8편 델타 합 ~8.5K — 최근 8편 창 밖 구버전 카탈로그 기여, 오류 아님",
-      "theneo_earth 총조회 -1 — 반올림 또는 스팸 조회 보정 추정, 유의미하게 해석하지 않음",
-      "28일 창 이동 Jul 04–Jul 31 → Jul 05–Aug 01. 창 이동만으로 ±0.2pp 변동 가능 → +0.20pp를 유의미하다고 단정하지 않음",
-      "대형 채널 구독자는 1,000 단위 반올림 표기 — cosmoswag·Zenn0009 ±0이 실제 무변동을 뜻하지 않음",
-      "최근 영상 창(만약에LAB 15편·경쟁 8편) 이동으로 오래된 편이 '이탈'로 보임 — 삭제 아님",
-      "javascript_tool 반환값이 약 1,000자에서 절단 — 111개 영상 데이터를 window 변수 적재 후 슬라이스로 회수 (COUNT=111 / DETKEYS=111 검증, 누락 없음)",
-      "쇼츠 판별 duration ≤ 180초"
-    ]
+ "date": "2026-08-02",
+ "source": "YouTube Data API + Analytics API (claude-in-chrome javascript_tool)",
+ "channels": {
+  "ScienceDream": {
+   "s": 1140000,
+   "v": 300740245,
+   "n": 275
   },
-  "our_channel": {
-    "handle": "whatifLAB_kr1",
-    "channel_id": "UC6qd9iB3sIR9rQeno5RWkCA",
-    "subscribers": 53,
-    "subscribers_delta_1d": 2,
-    "subscribers_note": "4일 정체 후 첫 순증",
-    "total_views": 56389,
-    "total_views_delta_1d": 0,
-    "total_views_delta_note": "공개 statistics 캐시 지연으로 전일과 완전 동일. 신규 2편 실측 합계 +1,432 + 롱테일 +13 = 실제 하한 +1,445",
-    "new_uploads_views_1d": 1432,
-    "video_count": 48,
-    "analytics_28d": {
-      "window": "2026-07-05~2026-08-01",
-      "views": 52561,
-      "engaged_views": 19248,
-      "engaged_rate_pct": 36.62,
-      "engaged_rate_prev_pct": 36.42,
-      "engaged_rate_delta_pp": 0.2,
-      "engaged_rate_goal_pct": 60,
-      "avg_viewed_pct": 66.53,
-      "avg_viewed_pct_prev": 66.78,
-      "avg_view_duration_sec": 39,
-      "estimated_minutes_watched": 13277,
-      "subscribers_gained": 52,
-      "subscribers_lost": 12,
-      "subscribers_net": 40
-    },
-    "analytics_daily": [
-      {
-        "date": "2026-07-25",
-        "views": 1924,
-        "engaged_views": 782,
-        "engaged_rate_pct": 40.64
-      },
-      {
-        "date": "2026-07-26",
-        "views": 1829,
-        "engaged_views": 769,
-        "engaged_rate_pct": 42.04
-      },
-      {
-        "date": "2026-07-27",
-        "views": 2043,
-        "engaged_views": 751,
-        "engaged_rate_pct": 36.76
-      },
-      {
-        "date": "2026-07-28",
-        "views": 1014,
-        "engaged_views": 412,
-        "engaged_rate_pct": 40.63
-      },
-      {
-        "date": "2026-07-29",
-        "views": 692,
-        "engaged_views": 364,
-        "engaged_rate_pct": 52.6,
-        "note": "창내 유효율 최고이면서 조회 최저 — 「비행기 모드」 발행일로 초동 0"
-      }
-    ],
-    "longtail_24h_total": 13,
-    "longtail_video_count": 13,
-    "longtail_per_video": 1.0,
-    "longtail_zero_delta_count": 8,
-    "longtail_trend": [
-      65,
-      26,
-      19,
-      8,
-      13
-    ],
-    "breakout_2k_streak_days_without": 11,
-    "top_engaged_video": {
-      "video_id": "1esJhTGTuX4",
-      "title": "추락하는 엘리베이터에서 점프하면 살 수 있을까?",
-      "engaged_rate_pct": 51.15,
-      "note": "채널 최초 50% 돌파 · 채널 평균의 1.40배"
-    },
-    "videos": [
-      {
-        "video_id": "uLyO1BiQWME",
-        "title": "비행기가 추락할 때 어떤 자세가 생존을 도울까?",
-        "url": "https://youtu.be/uLyO1BiQWME",
-        "type": "shorts",
-        "duration_sec": 45,
-        "published_at_kst": "2026-07-31T18:03:35+09:00",
-        "views": 708,
-        "likes": 7,
-        "views_delta_1d": null,
-        "engaged_rate_pct": null,
-        "avg_viewed_pct": null,
-        "note": "🆕 정상 초동 54뷰/h · 항공 안전 소재 제한 가설 기각의 직접 근거"
-      },
-      {
-        "video_id": "xf4VDl6wDsE",
-        "title": "높은 베개를 베면 정말 뇌졸중 위험이 커질까?",
-        "url": "https://youtu.be/xf4VDl6wDsE",
-        "type": "shorts",
-        "duration_sec": 45,
-        "published_at_kst": "2026-07-31T13:09:54+09:00",
-        "views": 724,
-        "likes": 5,
-        "views_delta_1d": null,
-        "engaged_rate_pct": null,
-        "avg_viewed_pct": null,
-        "note": "🆕 정상 초동 · 수면·건강 신규 소재축 첫 진입 · 12:49(WdIi 16뷰)과 20분 차이로 생존 = 발행시각 가설 기각"
-      },
-      {
-        "video_id": "tnd_SErp_zA",
-        "title": "번개 칠 때 자동차 안은 정말 안전할까?",
-        "url": "https://youtu.be/tnd_SErp_zA",
-        "type": "shorts",
-        "duration_sec": 45,
-        "published_at_kst": "2026-07-31T00:16:43+09:00",
-        "views": 16,
-        "likes": 0,
-        "views_delta_1d": 6,
-        "engaged_rate_pct": null,
-        "avg_viewed_pct": null,
-        "note": "❌ 사망 확정 D+1.3 · WdIi와 정확히 동일한 16뷰 정지 · 쇼츠 피드 노출 0 추정"
-      },
-      {
-        "video_id": "1esJhTGTuX4",
-        "title": "추락하는 엘리베이터에서 점프하면 살 수 있을까?",
-        "url": "https://youtu.be/1esJhTGTuX4",
-        "type": "shorts",
-        "duration_sec": 45,
-        "published_at_kst": "2026-07-30T12:00:29+09:00",
-        "views": 674,
-        "likes": 2,
-        "views_delta_1d": 5,
-        "engaged_rate_pct": 51.15,
-        "avg_viewed_pct": 63.94,
-        "note": "🏆 유효조회율 채널 최초 50% 돌파 · 생존·물리축 최강 확정"
-      },
-      {
-        "video_id": "WdIi_Cj-oIE",
-        "title": "비행기 모드, 왜 꼭 켜야 할까?",
-        "url": "https://youtu.be/WdIi_Cj-oIE",
-        "type": "shorts",
-        "duration_sec": 48,
-        "published_at_kst": "2026-07-29T12:49:57+09:00",
-        "views": 16,
-        "likes": 1,
-        "views_delta_1d": 2,
-        "engaged_rate_pct": null,
-        "avg_viewed_pct": 49.91,
-        "note": "❌ 제목 A/B 후 3일째 무반응 · Analytics 10뷰 n부족으로 유효율 산출 무의미 · Studio 아동용 설정 확인 필요"
-      },
-      {
-        "video_id": "dGGAeDPxD94",
-        "title": "만약 태양계 행성끼리 전쟁하면 누가 이길까?",
-        "url": "https://youtu.be/dGGAeDPxD94",
-        "type": "shorts",
-        "duration_sec": 53,
-        "published_at_kst": "2026-07-28T18:00:09+09:00",
-        "views": 874,
-        "likes": 2,
-        "views_delta_1d": 0,
-        "engaged_rate_pct": 39.09,
-        "avg_viewed_pct": 70.54
-      },
-      {
-        "video_id": "uRZeqc9saec",
-        "title": "만약 모든 나무가 10배 커지면 도시는 어떻게 될까?",
-        "url": "https://youtu.be/uRZeqc9saec",
-        "type": "shorts",
-        "duration_sec": 53,
-        "published_at_kst": "2026-07-28T12:00:01+09:00",
-        "views": 937,
-        "likes": 8,
-        "views_delta_1d": 0,
-        "engaged_rate_pct": 44.08,
-        "avg_viewed_pct": 47.28
-      },
-      {
-        "video_id": "HNjwPEzuDF0",
-        "title": "하품은 왜 보기만 해도 옮을까?",
-        "url": "https://youtu.be/HNjwPEzuDF0",
-        "type": "shorts",
-        "duration_sec": 59,
-        "published_at_kst": "2026-07-27T18:00:18+09:00",
-        "views": 1094,
-        "likes": 2,
-        "views_delta_1d": 0,
-        "engaged_rate_pct": 29.52,
-        "avg_viewed_pct": 49.73,
-        "note": "🔻 채널 최저 3일 연속 · 첫 1~3초 훅 재설계 필요"
-      },
-      {
-        "video_id": "9gOpL0kBn38",
-        "title": "만약 비가 1년 동안 한 번도 멈추지 않는다면?",
-        "url": "https://youtu.be/9gOpL0kBn38",
-        "type": "shorts",
-        "duration_sec": 55,
-        "published_at_kst": "2026-07-27T12:00:01+09:00",
-        "views": 841,
-        "likes": 5,
-        "views_delta_1d": 0,
-        "engaged_rate_pct": 42.45,
-        "avg_viewed_pct": 86.48
-      },
-      {
-        "video_id": "Y_JV7QSz80Y",
-        "title": "제주 망고 농가가 18년 만에 5배 넘게 늘어난 진짜 이유?",
-        "url": "https://youtu.be/Y_JV7QSz80Y",
-        "type": "shorts",
-        "duration_sec": 46,
-        "published_at_kst": "2026-07-26T18:00:01+09:00",
-        "views": 913,
-        "likes": 0,
-        "views_delta_1d": -1,
-        "engaged_rate_pct": 41.95,
-        "avg_viewed_pct": 58.08
-      },
-      {
-        "video_id": "N48FnOymMFI",
-        "title": "지구 기온이 딱 1도만 떨어지면 무슨 일이 벌어질까?",
-        "url": "https://youtu.be/N48FnOymMFI",
-        "type": "shorts",
-        "duration_sec": 48,
-        "published_at_kst": "2026-07-26T12:00:38+09:00",
-        "views": 899,
-        "likes": 3,
-        "views_delta_1d": 0,
-        "engaged_rate_pct": 45.94,
-        "avg_viewed_pct": 95.25,
-        "note": "🔧 제목·썸네일 A/B 5일째 미실행 · 조회 899 ±0 7일 연속"
-      },
-      {
-        "video_id": "6GfTkl09xlE",
-        "title": "매운 거 먹으면 스트레스 풀린다? 사실은…",
-        "url": "https://youtu.be/6GfTkl09xlE",
-        "type": "shorts",
-        "duration_sec": 51,
-        "published_at_kst": "2026-07-25T18:00:00+09:00",
-        "views": 1012,
-        "likes": 4,
-        "views_delta_1d": 0,
-        "engaged_rate_pct": 35.77,
-        "avg_viewed_pct": 49.39,
-        "note": "Itzquanta 동일 소재 영어편이 29,109 = 29배"
-      },
-      {
-        "video_id": "QgMkTjLkf6c",
-        "title": "지구 자전이 “딱” 멈추는 순간, 우리는 동쪽으로 날아간다",
-        "url": "https://youtu.be/QgMkTjLkf6c",
-        "type": "shorts",
-        "duration_sec": 56,
-        "published_at_kst": "2026-07-25T12:00:38+09:00",
-        "views": 880,
-        "likes": 8,
-        "views_delta_1d": 0,
-        "engaged_rate_pct": null,
-        "avg_viewed_pct": null,
-        "note": "7일창 밖 · 직전 실측 43.9%"
-      },
-      {
-        "video_id": "UZt3kuWzWX0",
-        "title": "현대인이 원시시대에 떨어지면 며칠이나 버틸까?",
-        "url": "https://youtu.be/UZt3kuWzWX0",
-        "type": "shorts",
-        "duration_sec": 38,
-        "published_at_kst": "2026-07-24T18:00:14+09:00",
-        "views": 977,
-        "likes": 9,
-        "views_delta_1d": 0,
-        "engaged_rate_pct": null,
-        "avg_viewed_pct": null,
-        "note": "7일창 밖 · 직전 실측 35.8%"
-      },
-      {
-        "video_id": "BjGHatXWzvo",
-        "title": "아프리카에서 사람을 가장 많이 죽이는 동물, 사자가 아닙니다",
-        "url": "https://youtu.be/BjGHatXWzvo",
-        "type": "shorts",
-        "duration_sec": 40,
-        "published_at_kst": "2026-07-24T12:00:02+09:00",
-        "views": 1445,
-        "likes": 4,
-        "views_delta_1d": 1,
-        "engaged_rate_pct": null,
-        "avg_viewed_pct": null,
-        "note": "7일창 밖 · 직전 실측 34.2% · 조회 채널 1위인데 잔존 최저권"
-      }
-    ]
+  "cosmoswag_kr": {
+   "s": 274000,
+   "v": 56711619,
+   "n": 101
   },
-  "competitors": [
-    {
-      "name": "ScienceDream",
-      "channel_id": "UCIk1-yPCTnFuzfgu4gyfWqw",
-      "subscribers": 1140000,
-      "subscribers_delta_1d": 0,
-      "total_views": 300740245,
-      "total_views_delta_1d": 65307,
-      "video_count": 275
-    },
-    {
-      "name": "JUST1MIN",
-      "channel_id": "UCM31rBPQdifQKUmBKtwVqBg",
-      "subscribers": 1140000,
-      "subscribers_delta_1d": 0,
-      "total_views": 1438185657,
-      "total_views_delta_1d": 914015,
-      "video_count": 4115
-    },
-    {
-      "name": "kurzgesagt_kr",
-      "channel_id": "UC8rKCy_tipwTEY3RdkNCKmw",
-      "subscribers": 736000,
-      "subscribers_delta_1d": 0,
-      "total_views": 39607930,
-      "total_views_delta_1d": 4609,
-      "video_count": 66
-    },
-    {
-      "name": "cosmoswag_kr",
-      "channel_id": "UClBX3bgRAdA9VafrpRUj1LA",
-      "subscribers": 274000,
-      "subscribers_delta_1d": 0,
-      "total_views": 56711619,
-      "total_views_delta_1d": 34374,
-      "video_count": 101
-    },
-    {
-      "name": "Zenn0009",
-      "channel_id": "UCK8TbMQGDbB94EOR3aGJo3Q",
-      "subscribers": 172000,
-      "subscribers_delta_1d": 0,
-      "total_views": 16964832,
-      "total_views_delta_1d": 22799,
-      "video_count": 29
-    },
-    {
-      "name": "MackExplains7",
-      "channel_id": "UCaS30yIIV6y2zqSnHGdIGMQ",
-      "subscribers": 67300,
-      "subscribers_delta_1d": 500,
-      "total_views": 7971851,
-      "total_views_delta_1d": 83468,
-      "video_count": 48
-    },
-    {
-      "name": "인류의서재",
-      "channel_id": "UCH_meKfR5VBaLT4Dwo-cfIg",
-      "subscribers": 51100,
-      "subscribers_delta_1d": 400,
-      "total_views": 7155551,
-      "total_views_delta_1d": 76605,
-      "video_count": 126
-    },
-    {
-      "name": "Itzquanta",
-      "channel_id": "UCiPsPTqgrRMC-eq7tXUPqtA",
-      "subscribers": 22100,
-      "subscribers_delta_1d": 100,
-      "total_views": 4331459,
-      "total_views_delta_1d": 21453,
-      "video_count": 84
-    },
-    {
-      "name": "quark5050",
-      "channel_id": "UCumWPrG46gBVzKn4HCc94fg",
-      "subscribers": 14600,
-      "subscribers_delta_1d": 0,
-      "total_views": 2199641,
-      "total_views_delta_1d": 1926,
-      "video_count": 23
-    },
-    {
-      "name": "myrk8n",
-      "channel_id": "UCmSVKBhh9g0Fkyz7i50JbTg",
-      "subscribers": 3590,
-      "subscribers_delta_1d": 30,
-      "total_views": 429856,
-      "total_views_delta_1d": 2275,
-      "video_count": 14
-    },
-    {
-      "name": "GutMonkey",
-      "channel_id": "UCUpLnIsdDX7qxgzNTsVBFaQ",
-      "subscribers": 130,
-      "subscribers_delta_1d": 0,
-      "total_views": 4917,
-      "total_views_delta_1d": 5,
-      "video_count": 10
-    },
-    {
-      "name": "theneo_earth",
-      "channel_id": "UCxt3ivQ1baKoixOqT3WZS7g",
-      "subscribers": 46,
-      "subscribers_delta_1d": 0,
-      "total_views": 4849,
-      "total_views_delta_1d": -1,
-      "video_count": 12
-    }
+  "JUST1MIN": {
+   "s": 1140000,
+   "v": 1438185657,
+   "n": 4117
+  },
+  "Zenn0009": {
+   "s": 172000,
+   "v": 16964832,
+   "n": 29
+  },
+  "Itzquanta": {
+   "s": 22200,
+   "v": 4331459,
+   "n": 85
+  },
+  "GutMonkey": {
+   "s": 130,
+   "v": 4917,
+   "n": 10
+  },
+  "theneo_earth": {
+   "s": 46,
+   "v": 4849,
+   "n": 12
+  },
+  "인류의서재": {
+   "s": 52000,
+   "v": 7155551,
+   "n": 127
+  },
+  "만약에LAB": {
+   "s": 55,
+   "v": 57098,
+   "n": 50
+  },
+  "quark5050": {
+   "s": 14600,
+   "v": 2199641,
+   "n": 23
+  },
+  "myrk8n": {
+   "s": 3610,
+   "v": 429856,
+   "n": 14
+  },
+  "kurzgesagt_kr": {
+   "s": 736000,
+   "v": 39607930,
+   "n": 66
+  },
+  "MackExplains7": {
+   "s": 67900,
+   "v": 7971851,
+   "n": 49
+  }
+ },
+ "videos": [
+  [
+   "만약에LAB",
+   "속이 핑크색인 돈가스, 먹어도 안전할까?",
+   "2026-08-01",
+   1333,
+   1,
+   45,
+   "shorts",
+   "TgzIMRGOgJ0"
   ],
-  "new_uploads": [
-    {
-      "channel": "JUST1MIN",
-      "title": "쩝쩝은 싫은데, 먹방은 왜 봐?",
-      "video_id": "iYdAMwc3q1w",
-      "url": "https://youtu.be/iYdAMwc3q1w",
-      "type": "shorts",
-      "published_at": "2026-07-31",
-      "views": 53054,
-      "note": "🏆 국내 초동 1위 (31초)"
-    },
-    {
-      "channel": "ScienceDream",
-      "title": "옥수수는 어떻게 옥수수가 됐을까? (ft.옥수수의 진화)",
-      "video_id": "YwtUidvUjkk",
-      "url": "https://youtu.be/YwtUidvUjkk",
-      "type": "video",
-      "published_at": "2026-07-31",
-      "views": 32661,
-      "note": "🌽 7일 공백 후 복귀 (11분24초)"
-    },
-    {
-      "channel": "JUST1MIN",
-      "title": "진짜 이제부터 시작입니다",
-      "video_id": "JYGgMXYwTqg",
-      "url": "https://youtu.be/JYGgMXYwTqg",
-      "type": "shorts",
-      "published_at": "2026-07-31",
-      "views": 19980,
-      "note": "(60초)"
-    },
-    {
-      "channel": "JUST1MIN",
-      "title": "이제 땀 냄새 완전 정복",
-      "video_id": "KBNDj9Vw3kM",
-      "url": "https://youtu.be/KBNDj9Vw3kM",
-      "type": "shorts",
-      "published_at": "2026-07-31",
-      "views": 6511,
-      "note": "🩺 여름 실용 3편 동시 발행 (37초)"
-    },
-    {
-      "channel": "인류의서재",
-      "title": "원자로가 터진 뒤에도 도시가 멈추지 않았던 이유",
-      "video_id": "LAo1ZwKl71U",
-      "url": "https://youtu.be/LAo1ZwKl71U",
-      "type": "video",
-      "published_at": "2026-07-31",
-      "views": 2039,
-      "note": "📜 8일 연속 · 조선사 → 근현대 이탈, 초동 낮음 (20분11초)"
-    },
-    {
-      "channel": "만약에LAB",
-      "title": "높은 베개를 베면 정말 뇌졸중 위험이 커질까?",
-      "video_id": "xf4VDl6wDsE",
-      "url": "https://youtu.be/xf4VDl6wDsE",
-      "type": "shorts",
-      "published_at": "2026-07-31",
-      "views": 724,
-      "note": "✅ 정상 초동 · 수면·건강 신규 소재축"
-    },
-    {
-      "channel": "만약에LAB",
-      "title": "비행기가 추락할 때 어떤 자세가 생존을 도울까?",
-      "video_id": "uLyO1BiQWME",
-      "url": "https://youtu.be/uLyO1BiQWME",
-      "type": "shorts",
-      "published_at": "2026-07-31",
-      "views": 708,
-      "note": "✅ 54뷰/h · 항공 소재 제한 가설 기각 근거"
-    },
-    {
-      "channel": "MackExplains7",
-      "title": "Did Ancient Humans Reproduce With Family Members?",
-      "video_id": "jNwH_nh5sxQ",
-      "url": "https://youtu.be/jNwH_nh5sxQ",
-      "type": "video",
-      "published_at": "2026-07-31",
-      "views": 859,
-      "note": "🏛️ 거의 일간 발행 (26분43초)"
-    },
-    {
-      "channel": "Itzquanta",
-      "title": "Why Are Humans Obsessed With Fishing?",
-      "video_id": "VALsVmgfQ_Q",
-      "url": "https://youtu.be/VALsVmgfQ_Q",
-      "type": "video",
-      "published_at": "2026-07-31",
-      "views": 462,
-      "note": "🍣 식(食) 7편째 — 초동 하락, 클러스터 피로 신호"
-    },
-    {
-      "channel": "quark5050",
-      "title": "Why Don't We Feel The Earth Spinning?",
-      "video_id": "3zFa_2I5-vE",
-      "url": "https://youtu.be/3zFa_2I5-vE",
-      "type": "video",
-      "published_at": "2026-07-31",
-      "views": 73,
-      "note": "🌍 자사 「지구 자전 멈춤」 소재 추종 — 초동 73뷰로 자사(880)보다 낮음"
-    }
+  [
+   "만약에LAB",
+   "조선시대에는 한여름 얼음을 어떻게 보관했을까?",
+   "2026-08-01",
+   903,
+   3,
+   49,
+   "shorts",
+   "6-7dUsCh6WI"
   ],
-  "top_gainers": [
-    {
-      "channel": "JUST1MIN",
-      "title": "고양이 꾹꾹이하는 이유",
-      "video_id": "2rYaais7Nkg",
-      "url": "https://youtu.be/2rYaais7Nkg",
-      "delta_1d": 119676,
-      "delta_pct": 226.1,
-      "views": 172600
-    },
-    {
-      "channel": "JUST1MIN",
-      "title": "내 몸무게를 안다고?",
-      "video_id": "z5rnDSz0hyQ",
-      "url": "https://youtu.be/z5rnDSz0hyQ",
-      "delta_1d": 48501,
-      "delta_pct": 72.3,
-      "views": 115560
-    },
-    {
-      "channel": "Itzquanta",
-      "title": "Why Do Humans Love Eating Spicy Foods?",
-      "video_id": "6VnYjy0Ryv4",
-      "url": "https://youtu.be/6VnYjy0Ryv4",
-      "delta_1d": 12025,
-      "delta_pct": 70.4,
-      "views": 29109
-    },
-    {
-      "channel": "JUST1MIN",
-      "title": "에어컨을 26도로 튼다고?",
-      "video_id": "HcmzJoWzKYE",
-      "url": "https://youtu.be/HcmzJoWzKYE",
-      "delta_1d": 9671,
-      "delta_pct": 5.9,
-      "views": 174953
-    },
-    {
-      "channel": "인류의서재",
-      "title": "400년 전 조선 사람들은 밥상에 뭘 올리고 살았을까?",
-      "video_id": "G7NU2cndsAU",
-      "url": "https://youtu.be/G7NU2cndsAU",
-      "delta_1d": 6141,
-      "delta_pct": 3.1,
-      "views": 201730
-    },
-    {
-      "channel": "JUST1MIN",
-      "title": "지금 당장 방 환기하세요!",
-      "video_id": "fh7034anD_E",
-      "url": "https://youtu.be/fh7034anD_E",
-      "delta_1d": 5753,
-      "delta_pct": 4.4,
-      "views": 136551
-    },
-    {
-      "channel": "ScienceDream",
-      "title": "AI가 마침내 나스카 지상화의 미스터리를 풀었다!?",
-      "video_id": "Q-U_4zV407U",
-      "url": "https://youtu.be/Q-U_4zV407U",
-      "delta_1d": 5310,
-      "delta_pct": 0.2,
-      "views": 2673907
-    },
-    {
-      "channel": "MackExplains7",
-      "title": "Why Did Ancient Humans Become Parents at 12?",
-      "video_id": "PPxxW2EqKNY",
-      "url": "https://youtu.be/PPxxW2EqKNY",
-      "delta_1d": 4193,
-      "delta_pct": 223.5,
-      "views": 6069
-    },
-    {
-      "channel": "Zenn0009",
-      "title": "Why Don't Animals Have Wheels?",
-      "video_id": "kGOJvM7HAp0",
-      "url": "https://youtu.be/kGOJvM7HAp0",
-      "delta_1d": 4146,
-      "delta_pct": 712.4,
-      "views": 4728
-    },
-    {
-      "channel": "cosmoswag_kr",
-      "title": "선 넘으면 죽는 우주의 법칙 #로슈한계",
-      "video_id": "3JKk5l7NojE",
-      "url": "https://youtu.be/3JKk5l7NojE",
-      "delta_1d": 2709,
-      "delta_pct": 0.7,
-      "views": 409767
-    }
+  [
+   "만약에LAB",
+   "비행기가 추락할 때 어떤 자세가 생존을 도울까?",
+   "2026-07-31",
+   722,
+   7,
+   45,
+   "shorts",
+   "uLyO1BiQWME"
   ],
-  "topic_clusters": [
-    {
-      "name": "반려동물",
-      "signal": "JUST1MIN 「고양이 꾹꾹이하는 이유」 +119,676(+226.1%) D+2 172.6K · 25초 초단편 · 추적 13채널 중 JUST1MIN 단독, 한국어권 후속 진입 없음",
-      "strength": "매우 강함 (오늘 최대 이벤트)"
-    },
-    {
-      "name": "여름 생활실용",
-      "signal": "에어컨26도 174.9K · 환기 136.6K · 먹방심리 53.1K(신규 초동 1위) · JUST1MIN 1일 총조회 +1,220K → +914K 축소",
-      "strength": "강함 (정점 유지)"
-    },
-    {
-      "name": "식(食) 클러스터",
-      "signal": "Spicy 29,109(구독 2.21만의 1.32배) 최고 성과 유지 · 그러나 7편째 Fishing 초동 462로 하락, 폭발 없이 스택만 증가",
-      "strength": "강함 (신선도 하락)"
-    },
-    {
-      "name": "조선 생활사 롱폼",
-      "signal": "인류의서재 8일 연속 · 밥상 201,730(20만 돌파) · 구독 +400(8일 누적 ~+4,000) · 오늘은 근현대 이탈로 초동 2,039 낮음",
-      "strength": "강함 (복리)"
-    },
-    {
-      "name": "제목 A/B (부정 의문형)",
-      "signal": "Zenn0009 실패작 부활 582 → 4,728(+712.4%) · 평서문→부정 의문형 · 영어권 4채널(quark5050·Itzquanta·myrk8n·Zenn0009) 공통 표준",
-      "strength": "방법론 — 3번째 실증"
-    },
-    {
-      "name": "고대인류",
-      "signal": "MackExplains7만 성장(구독 +500·총조회 +83.5K) · GutMonkey 5편 ±0 · theneo_earth 6편 ±0 + 총조회 -1",
-      "strength": "레드오션 (양극화 심화)"
-    }
+  [
+   "만약에LAB",
+   "높은 베개를 베면 정말 뇌졸중 위험이 커질까?",
+   "2026-07-31",
+   714,
+   5,
+   45,
+   "shorts",
+   "xf4VDl6wDsE"
   ],
-  "recommendations": [
-    {
-      "id": "R-2026-08-01-0",
-      "status": "new",
-      "priority": 0,
-      "type": "diagnosis_not_production",
-      "title": "Studio에서 사망 2편 설정 확인 (3분)",
-      "target_video_ids": [
-        "WdIi_Cj-oIE",
-        "tnd_SErp_zA"
-      ],
-      "checklist": [
-        "아동용 콘텐츠 설정 (「아동용으로 설정됨」이면 쇼츠 추천 완전 차단 — 증상과 정확히 일치)",
-        "제한사항 칼럼 (저작권·연령)",
-        "도달률 → 노출수"
-      ],
-      "evidence": "두 영상이 정확히 동일한 16뷰에서 정지(구독 53 + 직접 유입 수준 = 쇼츠 피드 노출 0). 오늘 발행시각 가설(12:49 사망 vs 13:09 생존, 20분 차)과 항공 소재 가설(「비행기 추락 자세」 708뷰) 모두 기각됨.",
-      "note": "계정 기본값 문제라면 신규 제작 3편도 같은 결과가 난다. 제작보다 먼저."
-    },
-    {
-      "id": "R-2026-07-31-1",
-      "status": "carried_over",
-      "priority": 1,
-      "type": "ab_test",
-      "title": "「지구 기온이 딱 1도만」 제목·썸네일 교체",
-      "target_video_ids": [
-        "N48FnOymMFI"
-      ],
-      "titles": [
-        "1도. 딱 1도가 빙하기를 만듭니다",
-        "지구가 1도만 식으면, 서울 여름은 어떻게 될까?"
-      ],
-      "hook": "온도계 숫자가 1 내려가는 클로즈업 → 화면 전체가 한 프레임에 얼어붙는 컷",
-      "evidence": "유효 45.9%·avgVP 95.3%(채널 1위)인데 조회 899 ±0 7일 연속. 오늘 Zenn0009가 D+1 582뷰 실패작을 제목 교체만으로 4,728(+712.4%)로 부활 — 조건 동일(노출 이력 정상).",
-      "carried_over_from": "2026-07-27",
-      "days_pending": 5
-    },
-    {
-      "id": "R-2026-08-01-1",
-      "status": "new",
-      "priority": 2,
-      "type": "production",
-      "title": "고양이가 꾹꾹이를 하는 이유, 애정 표현이 아닙니다",
-      "hook": "꾹꾹이하는 발 클로즈업 0.5초 → 자막 「이건 애정이 아닙니다」",
-      "structure": "흔한 오해 제시 → 젖떼기 반사 · 체취 마킹 · 스트레스 신호 3단 → 「그럼 고양이는 나를 뭐라고 생각하나」 착지",
-      "evidence": "JUST1MIN 「고양이 꾹꾹이하는 이유」 하루 +119,676(+226.1%), D+2 172,600뷰 = 오늘 절대 증가분 전체 1위이며 어제 최대 이벤트의 8배. 추적 13채널 중 반려동물은 JUST1MIN 단독, 한국어권 후속 진입 없음. 자사 검증 문법(「진짜 이유」·부정 반전) 일치."
-    },
-    {
-      "id": "R-2026-08-01-2",
-      "status": "new",
-      "priority": 3,
-      "type": "production",
-      "title": "물에 빠진 자동차, 문이 열리는 시간은 딱 8초입니다",
-      "hook": "운전석 창문에 물이 차오르는 화면 + 큰 숫자 「8초」 카운트다운",
-      "structure": "수압으로 문이 안 열리는 원리 → 창문 파괴 지점 → 8초 안에 해야 할 순서 3단",
-      "evidence": "「추락 엘리베이터」 유효조회율 51.2%로 채널 최초 50% 돌파(평균의 1.40배), 오늘 신규 「비행기 추락 자세」 13h 708뷰(54뷰/h). 생존·물리 계열이 잔존율·초동 모두 최강 축으로 확정. 자사 유효 상위 6편이 전부 보유한 구체 숫자를 제목 선두 배치."
-    },
-    {
-      "id": "R-2026-07-30-1",
-      "status": "demoted",
-      "priority": 4,
-      "type": "production",
-      "title": "생선회는 먹는데 소고기는 왜 못 먹을까?",
-      "hook": "「회 한 접시와 생고기 한 접시. 둘 중 하나만 먹으면 병원에 갑니다.」",
-      "evidence": "Itzquanta Spicy 29,109(구독 2.21만의 1.32배)·Raw Fish 24,588·Moldy +286.7%. 자사 「매운 거」(1,012뷰)와 동일 소재가 영어권에서 29배.",
-      "note": "오늘 클러스터 7편째 초동이 462로 하락 — 소재 신선도 하락으로 어제 ①에서 ③으로 강등"
-    }
+  [
+   "만약에LAB",
+   "번개 칠 때 자동차 안은 정말 안전할까?",
+   "2026-07-30",
+   18,
+   0,
+   45,
+   "shorts",
+   "tnd_SErp_zA"
   ],
-  "experiments": [
-    {
-      "id": "DIAG-WdIi-tnd",
-      "status": "open",
-      "type": "diagnosis",
-      "video_ids": [
-        "WdIi_Cj-oIE",
-        "tnd_SErp_zA"
-      ],
-      "views": [
-        16,
-        16
-      ],
-      "hypotheses_rejected": [
-        "제목 (07-30 교체 후 3일 무반응)",
-        "발행 시각 (12:49 사망 vs 13:09 생존, 20분 차)",
-        "소재 분류 (「비행기 추락 자세」 708뷰)"
-      ],
-      "hypothesis_remaining": "영상 단위 설정 — 아동용 콘텐츠 설정이 가장 유력 (쇼츠 추천 완전 차단, 증상 일치)",
-      "next_action": "Studio 3분 확인"
-    },
-    {
-      "id": "AB-N48FnOymMFI",
-      "status": "pending",
-      "days_pending": 5,
-      "video": "지구 기온이 딱 1도만 떨어지면 무슨 일이 벌어질까?",
-      "video_id": "N48FnOymMFI",
-      "url": "https://youtu.be/N48FnOymMFI",
-      "views": 899,
-      "views_delta_1d": 0,
-      "engaged_rate_pct": 45.94,
-      "avg_viewed_pct": 95.25,
-      "diagnosis": "유입 (유효조회율 채널 2위 · avgVP 채널 1위인데 조회 7일 연속 ±0)",
-      "reference": "Zenn0009 kGOJvM7HAp0 — 582 → 4,728 (+712.4%), videoId 유지 제목 교체"
-    },
-    {
-      "id": "AB-Zenn0009-kGOJvM7HAp0",
-      "status": "observed_success",
-      "video": "Why Don't Animals Have Wheels?",
-      "video_id": "kGOJvM7HAp0",
-      "channel": "Zenn0009",
-      "before_title": "Why No Animal Grew Wheels",
-      "before_views": 582,
-      "after_views": 4728,
-      "delta_pct": 712.4,
-      "note": "평서문 → 부정 의문형 전환, videoId 유지·이력 승계. 실패작 부활 사례 — 「기온 1도」 처방의 결정적 근거"
-    }
+  [
+   "만약에LAB",
+   "추락하는 엘리베이터에서 점프하면 살 수 있을까?",
+   "2026-07-30",
+   681,
+   2,
+   45,
+   "shorts",
+   "1esJhTGTuX4"
   ],
-  "dashboard_url": "https://workingtomkwak-cmd.github.io/yt-benchmark-dashboard/"
+  [
+   "만약에LAB",
+   "비행기 모드, 왜 꼭 켜야 할까?",
+   "2026-07-29",
+   16,
+   1,
+   48,
+   "shorts",
+   "WdIi_Cj-oIE"
+  ],
+  [
+   "만약에LAB",
+   "만약 태양계 행성끼리 전쟁하면 누가 이길까?",
+   "2026-07-28",
+   875,
+   2,
+   53,
+   "shorts",
+   "dGGAeDPxD94"
+  ],
+  [
+   "만약에LAB",
+   "만약 모든 나무가 10배 커지면 도시는 어떻게 될까?",
+   "2026-07-28",
+   937,
+   8,
+   53,
+   "shorts",
+   "uRZeqc9saec"
+  ],
+  [
+   "만약에LAB",
+   "하품은 왜 보기만 해도 옮을까?",
+   "2026-07-27",
+   1094,
+   2,
+   59,
+   "shorts",
+   "HNjwPEzuDF0"
+  ],
+  [
+   "만약에LAB",
+   "만약 비가 1년 동안 한 번도 멈추지 않는다면?",
+   "2026-07-27",
+   842,
+   5,
+   55,
+   "shorts",
+   "9gOpL0kBn38"
+  ],
+  [
+   "만약에LAB",
+   "제주 망고 농가가 18년 만에 5배 넘게 늘어난 진짜 이유?",
+   "2026-07-26",
+   913,
+   0,
+   46,
+   "shorts",
+   "Y_JV7QSz80Y"
+  ],
+  [
+   "만약에LAB",
+   "지구 기온이 딱 1도만 떨어지면 무슨 일이 벌어질까?",
+   "2026-07-26",
+   904,
+   3,
+   48,
+   "shorts",
+   "N48FnOymMFI"
+  ],
+  [
+   "만약에LAB",
+   "매운 거 먹으면 스트레스 풀린다? 사실은…",
+   "2026-07-25",
+   1012,
+   4,
+   51,
+   "shorts",
+   "6GfTkl09xlE"
+  ],
+  [
+   "만약에LAB",
+   "지구 자전이 “딱” 멈추는 순간, 우리는 동쪽으로 날아간다",
+   "2026-07-25",
+   880,
+   8,
+   56,
+   "shorts",
+   "QgMkTjLkf6c"
+  ],
+  [
+   "ScienceDream",
+   "옥수수는 어떻게 옥수수가 됐을까? (ft.옥수수의 진화)",
+   "2026-07-31",
+   77046,
+   1522,
+   684,
+   "video",
+   "YwtUidvUjkk"
+  ],
+  [
+   "ScienceDream",
+   "이게 고작 단위 하나 때문이라고? (ft. 우주 개발 최악의 사고들)",
+   "2026-07-24",
+   34688,
+   679,
+   703,
+   "video",
+   "yJrsZ5Y72RU"
+  ],
+  [
+   "ScienceDream",
+   "20년의 관찰 끝에 새의 '언어'와 '문법'을 증명한 과학자!",
+   "2026-07-03",
+   416422,
+   7665,
+   948,
+   "video",
+   "pJ_5cs0NSI4"
+  ],
+  [
+   "ScienceDream",
+   "둘 다 아니라면, 남미의 테이블산은 어떻게 만들어진 걸까?",
+   "2026-06-12",
+   611132,
+   5639,
+   546,
+   "video",
+   "XYSVIxGQwmE"
+  ],
+  [
+   "ScienceDream",
+   "AI가 마침내 나스카 지상화의 미스터리를 풀었다!?",
+   "2026-05-29",
+   2679983,
+   19233,
+   649,
+   "video",
+   "Q-U_4zV407U"
+  ],
+  [
+   "ScienceDream",
+   "무지개산이 남미에만 있는 매우 과학적인 이유! (왜 무지개색이 됐을까?)",
+   "2026-05-15",
+   258115,
+   3837,
+   652,
+   "video",
+   "h43Y_hlUOGk"
+  ],
+  [
+   "ScienceDream",
+   "미국이 매주 5천만 마리의 파리를 숲에 살포하는 이유!",
+   "2026-04-24",
+   1076278,
+   9984,
+   834,
+   "video",
+   "hRTTUnNt8gw"
+  ],
+  [
+   "ScienceDream",
+   "그것도 물고기가... 200마리도 안 남은 물고기의 사막 고립기!",
+   "2026-04-03",
+   764205,
+   8106,
+   555,
+   "video",
+   "yviSHdii6f0"
+  ],
+  [
+   "JUST1MIN",
+   "형량 계산 해봤습니다",
+   "2026-08-01",
+   33693,
+   589,
+   60,
+   "shorts",
+   "l6GcoyYXhcI"
+  ],
+  [
+   "JUST1MIN",
+   "유튜브 하이프???",
+   "2026-08-01",
+   54441,
+   1467,
+   23,
+   "shorts",
+   "0auA3y06W2M"
+  ],
+  [
+   "JUST1MIN",
+   "이제 땀 냄새 완전 정복",
+   "2026-07-31",
+   12646,
+   360,
+   37,
+   "shorts",
+   "KBNDj9Vw3kM"
+  ],
+  [
+   "JUST1MIN",
+   "진짜 이제부터 시작입니다",
+   "2026-07-31",
+   58072,
+   1394,
+   60,
+   "shorts",
+   "JYGgMXYwTqg"
+  ],
+  [
+   "JUST1MIN",
+   "쩝쩝은 싫은데, 먹방은 왜 봐?",
+   "2026-07-31",
+   79921,
+   1598,
+   31,
+   "shorts",
+   "iYdAMwc3q1w"
+  ],
+  [
+   "JUST1MIN",
+   "고양이 꾹꾹이하는 이유",
+   "2026-07-30",
+   190356,
+   4300,
+   25,
+   "shorts",
+   "2rYaais7Nkg"
+  ],
+  [
+   "JUST1MIN",
+   "내 몸무게를 안다고?",
+   "2026-07-30",
+   122042,
+   2060,
+   29,
+   "shorts",
+   "z5rnDSz0hyQ"
+  ],
+  [
+   "JUST1MIN",
+   "어차피 안 여는 지하철 창문은 왜 있을까?",
+   "2026-07-29",
+   66585,
+   981,
+   60,
+   "shorts",
+   "IHc9oxKhaWA"
+  ],
+  [
+   "kurzgesagt_kr",
+   "우주에서 가장 거대한 블랙홀은?- 블랙홀 크기 비교",
+   "2026-01-06",
+   359752,
+   5098,
+   743,
+   "video",
+   "0deXhKq8EiA"
+  ],
+  [
+   "kurzgesagt_kr",
+   "원자력 에너지가 사람들을 죽게한다? 원자력에 의한 사망",
+   "2025-11-04",
+   143095,
+   3276,
+   611,
+   "video",
+   "2WxN6ERXfWI"
+  ],
+  [
+   "kurzgesagt_kr",
+   "행성 파괴자 소행성을 막을 수 있을까?",
+   "2025-09-17",
+   287747,
+   4518,
+   758,
+   "video",
+   "kVl8WLEvjSI"
+  ],
+  [
+   "kurzgesagt_kr",
+   "한눈에 보는 세상 Kurzgesagt의 새로운 모험, PC 게임 드디어 출시!",
+   "2025-09-10",
+   79937,
+   2654,
+   70,
+   "shorts",
+   "4zXs1irPapI"
+  ],
+  [
+   "kurzgesagt_kr",
+   "개미의 세계 대전 - 군대 개미",
+   "2025-07-22",
+   239118,
+   4163,
+   489,
+   "video",
+   "7j66nQeE910"
+  ],
+  [
+   "kurzgesagt_kr",
+   "대한민국은 끝났다. (전세계 1200만뷰 기록한 바로 그 영상.)",
+   "2025-07-01",
+   817848,
+   19215,
+   835,
+   "video",
+   "dhI1t6R8njA"
+  ],
+  [
+   "kurzgesagt_kr",
+   "박테리아가 우리 몸을 다스리는 방법 – 마이크로바이옴",
+   "2025-05-20",
+   104725,
+   2325,
+   494,
+   "video",
+   "XXRcraVWnpg"
+  ],
+  [
+   "kurzgesagt_kr",
+   "달이 지구에 충돌하면 어떻게 될까요?",
+   "2025-04-08",
+   251934,
+   4030,
+   687,
+   "video",
+   "3OmDjT753VA"
+  ],
+  [
+   "cosmoswag_kr",
+   "천왕성 또 누움",
+   "2026-07-26",
+   50765,
+   949,
+   40,
+   "shorts",
+   "4eqWEEiixkA"
+  ],
+  [
+   "cosmoswag_kr",
+   "지구 인맥 축구설의 진실(?)",
+   "2026-07-24",
+   116739,
+   1588,
+   45,
+   "shorts",
+   "SbrxsKhYUcU"
+  ],
+  [
+   "cosmoswag_kr",
+   "태양계로 축구팀 짬",
+   "2026-07-23",
+   60013,
+   1199,
+   35,
+   "shorts",
+   "2875X3wCZvI"
+  ],
+  [
+   "cosmoswag_kr",
+   "태양계 축구팀을 만든다면? ⚽",
+   "2026-07-22",
+   43925,
+   1198,
+   144,
+   "shorts",
+   "ZAA_qS-1CQQ"
+  ],
+  [
+   "cosmoswag_kr",
+   "코스모스웩 아케이드 Vol. 1  | 케슬러 신드롬",
+   "2026-07-05",
+   20296,
+   285,
+   21,
+   "shorts",
+   "nROS4-2RAZw"
+  ],
+  [
+   "cosmoswag_kr",
+   "우주과학 상식 '코스모스웩' 10편 몰아보기 2 (30분 순삭)",
+   "2026-06-30",
+   129067,
+   1682,
+   1995,
+   "video",
+   "T0heuCxSzSs"
+  ],
+  [
+   "cosmoswag_kr",
+   "토성의 고리는 원래 위성이었다?",
+   "2026-06-20",
+   69842,
+   1597,
+   58,
+   "shorts",
+   "jcS9SHWRhao"
+  ],
+  [
+   "cosmoswag_kr",
+   "선 넘으면 죽는 우주의 법칙 #로슈한계",
+   "2026-06-19",
+   411598,
+   6304,
+   80,
+   "shorts",
+   "3JKk5l7NojE"
+  ],
+  [
+   "Zenn0009",
+   "Why Don't Animals Have Wheels?",
+   "2026-07-30",
+   6464,
+   302,
+   518,
+   "video",
+   "kGOJvM7HAp0"
+  ],
+  [
+   "Zenn0009",
+   "When Do You Peak in Life?",
+   "2026-07-25",
+   11335,
+   451,
+   511,
+   "video",
+   "SRWmJj0zBs0"
+  ],
+  [
+   "Zenn0009",
+   "Why Do Mosquitoes Always Bite YOU?",
+   "2026-07-22",
+   11225,
+   409,
+   540,
+   "video",
+   "U-QW-HkDOmA"
+  ],
+  [
+   "Zenn0009",
+   "Would You Know If You Were Stupid?",
+   "2026-07-19",
+   12879,
+   531,
+   481,
+   "video",
+   "TGWu6Hpc118"
+  ],
+  [
+   "Zenn0009",
+   "What Does Dying Feel Like?",
+   "2026-07-16",
+   10574,
+   387,
+   614,
+   "video",
+   "Tw-xhswJNWE"
+  ],
+  [
+   "Zenn0009",
+   "What Did Surgery Feel Like Before Anesthesia?",
+   "2026-07-13",
+   16072,
+   658,
+   547,
+   "video",
+   "Dw2Pifv1JrM"
+  ],
+  [
+   "Zenn0009",
+   "The Marshmallow Effect",
+   "2026-07-04",
+   14170,
+   583,
+   500,
+   "video",
+   "9k817syA7SY"
+  ],
+  [
+   "Zenn0009",
+   "Were Ancient Humans Loyal to One Partner?",
+   "2026-06-30",
+   22079,
+   606,
+   483,
+   "video",
+   "FKpfsLuTYOI"
+  ],
+  [
+   "MackExplains7",
+   "Why Do Humans Mostly Drink Cow’s Milk?",
+   "2026-08-01",
+   1125,
+   43,
+   1610,
+   "video",
+   "4Nqr1sBM4dE"
+  ],
+  [
+   "MackExplains7",
+   "Did Ancient Humans Reproduce With Family Members?",
+   "2026-07-31",
+   4788,
+   89,
+   1603,
+   "video",
+   "jNwH_nh5sxQ"
+  ],
+  [
+   "MackExplains7",
+   "Why Did Ancient Humans Become Parents at 12?",
+   "2026-07-30",
+   9197,
+   242,
+   1291,
+   "video",
+   "PPxxW2EqKNY"
+  ],
+  [
+   "MackExplains7",
+   "How Did the Other 6 Civilizations Disappear?",
+   "2026-07-29",
+   5270,
+   114,
+   1554,
+   "video",
+   "J5l_4vPxI6Q"
+  ],
+  [
+   "MackExplains7",
+   "What Happens When You Become Conscious Inside a Dream?",
+   "2026-07-27",
+   12214,
+   246,
+   1305,
+   "video",
+   "Y_-aMBlHWgE"
+  ],
+  [
+   "MackExplains7",
+   "Is Your Inner Voice Really You?",
+   "2026-07-26",
+   33319,
+   719,
+   1438,
+   "video",
+   "kLYsABip8tI"
+  ],
+  [
+   "MackExplains7",
+   "What Was History’s Most Terrifying Disease?",
+   "2026-07-25",
+   19255,
+   289,
+   1417,
+   "video",
+   "yJKQjUB8dxA"
+  ],
+  [
+   "MackExplains7",
+   "Why Didn’t Ancient Humans Need Exercise?",
+   "2026-07-23",
+   5661,
+   147,
+   1332,
+   "video",
+   "bPKj9uIGne4"
+  ],
+  [
+   "quark5050",
+   "Could We Ever Evolve To Eat Grass?",
+   "2026-08-01",
+   98,
+   12,
+   447,
+   "video",
+   "Y4d_m718x9M"
+  ],
+  [
+   "quark5050",
+   "Why Don't We Feel The Earth Spinning?",
+   "2026-07-31",
+   168,
+   11,
+   288,
+   "video",
+   "3zFa_2I5-vE"
+  ],
+  [
+   "quark5050",
+   "What Are The Rarest Human Traits?",
+   "2026-07-28",
+   308,
+   17,
+   368,
+   "video",
+   "ZdOIkPsdB9g"
+  ],
+  [
+   "quark5050",
+   "Why Don't Humans Eat Other Animal Eggs?",
+   "2026-07-25",
+   6622,
+   193,
+   364,
+   "video",
+   "pkUGeFiD_WA"
+  ],
+  [
+   "quark5050",
+   "Do Animals Like Babies?",
+   "2026-07-17",
+   1636,
+   163,
+   371,
+   "video",
+   "fC516F5dLl0"
+  ],
+  [
+   "quark5050",
+   "Animals That Went Extinct And Came Back",
+   "2026-07-13",
+   3162,
+   90,
+   385,
+   "video",
+   "eNDSj9bP8F8"
+  ],
+  [
+   "quark5050",
+   "Do Animals Understand Death?",
+   "2026-07-08",
+   4810,
+   179,
+   483,
+   "video",
+   "1LXF7BU0sdw"
+  ],
+  [
+   "quark5050",
+   "Why Didn't Evolution Prevent Aging?",
+   "2026-07-07",
+   2767,
+   87,
+   495,
+   "video",
+   "JOjNi-4_49M"
+  ],
+  [
+   "myrk8n",
+   "Why Humans Can’t Eat Raw Meat?",
+   "2026-07-29",
+   2862,
+   72,
+   545,
+   "video",
+   "w0gWjlux1Kw"
+  ],
+  [
+   "myrk8n",
+   "Which Fish Did Human Evolve from?",
+   "2026-07-28",
+   21,
+   0,
+   683,
+   "video",
+   "2MRyY8EuUg0"
+  ],
+  [
+   "myrk8n",
+   "How Humans Became The Ultimate Predators",
+   "2026-07-25",
+   202,
+   9,
+   739,
+   "video",
+   "DYPwbEOcBGU"
+  ],
+  [
+   "myrk8n",
+   "Why Humans Can't Eat Predator Meat?",
+   "2026-07-15",
+   1286,
+   35,
+   732,
+   "video",
+   "OhltBxV7pqs"
+  ],
+  [
+   "myrk8n",
+   "What Did Ancient Humans Do When It's Wouldn't Stop Raining?",
+   "2026-07-14",
+   735,
+   24,
+   806,
+   "video",
+   "E2zaVyzEPPQ"
+  ],
+  [
+   "myrk8n",
+   "Why Can't Wild Animals Attack Sleeping Humans?",
+   "2026-07-12",
+   2751,
+   50,
+   783,
+   "video",
+   "4HYQnEwff0I"
+  ],
+  [
+   "myrk8n",
+   "Why Did Humans Start Cooking Food?",
+   "2026-07-05",
+   3828,
+   76,
+   693,
+   "video",
+   "hjxckVj_0js"
+  ],
+  [
+   "myrk8n",
+   "Do Animals Remember Humans Who Saved Them?",
+   "2026-06-20",
+   1434,
+   44,
+   1115,
+   "video",
+   "b5mWnvc0QcQ"
+  ],
+  [
+   "Itzquanta",
+   "Why Are Eggs In Almost Everything We Eat?",
+   "2026-08-01",
+   299,
+   21,
+   527,
+   "video",
+   "77b4Hm8LhzA"
+  ],
+  [
+   "Itzquanta",
+   "Why Are Humans Obsessed With Fishing?",
+   "2026-07-31",
+   1303,
+   33,
+   543,
+   "video",
+   "VALsVmgfQ_Q"
+  ],
+  [
+   "Itzquanta",
+   "Why Are \"Moldy\" Foods More Expensive?",
+   "2026-07-30",
+   2598,
+   46,
+   540,
+   "video",
+   "ioTBXCCfx7s"
+  ],
+  [
+   "Itzquanta",
+   "Why Do Humans Love Eating Spicy Foods?",
+   "2026-07-29",
+   34969,
+   637,
+   523,
+   "video",
+   "6VnYjy0Ryv4"
+  ],
+  [
+   "Itzquanta",
+   "Why We Eat Raw Fish But Avoid Raw Meat?",
+   "2026-07-28",
+   24410,
+   427,
+   529,
+   "video",
+   "-vvravKo7uk"
+  ],
+  [
+   "Itzquanta",
+   "Every Mammal Gets 1 Billion Heartbeats... Except One",
+   "2026-07-27",
+   2761,
+   83,
+   570,
+   "video",
+   "JEJGR2SigC0"
+  ],
+  [
+   "Itzquanta",
+   "Why Don't Predators Eat Each Other?",
+   "2026-07-26",
+   8014,
+   137,
+   582,
+   "video",
+   "m8fRDETTM3c"
+  ],
+  [
+   "Itzquanta",
+   "Is Every Fish We Eat Already Full of Plastic?",
+   "2026-07-25",
+   3095,
+   58,
+   514,
+   "video",
+   "dUdI7yshLoM"
+  ],
+  [
+   "GutMonkey",
+   "Why Are Humans Monogamous",
+   "2026-07-20",
+   254,
+   16,
+   420,
+   "video",
+   "FI-_kAPentA"
+  ],
+  [
+   "GutMonkey",
+   "Neanderthals Aren't Actually Extinct",
+   "2026-07-11",
+   108,
+   14,
+   467,
+   "video",
+   "m8WtnjAvu2g"
+  ],
+  [
+   "GutMonkey",
+   "The Footprints That Rewrote the Story of the First Americans",
+   "2026-07-08",
+   139,
+   19,
+   348,
+   "video",
+   "eSOEf3lkMuY"
+  ],
+  [
+   "GutMonkey",
+   "What It Meant to Be Disabled in Ancient Times",
+   "2026-07-05",
+   1795,
+   41,
+   439,
+   "video",
+   "E-ojWEw7S-E"
+  ],
+  [
+   "GutMonkey",
+   "Why Evolution Made Heartbreak Hurt?",
+   "2026-07-02",
+   141,
+   24,
+   355,
+   "video",
+   "NpWqOfMT8G8"
+  ],
+  [
+   "GutMonkey",
+   "HOW DID NOISE BECOME LANGUAGE?",
+   "2026-06-29",
+   268,
+   31,
+   421,
+   "video",
+   "d12xR18V0CU"
+  ],
+  [
+   "GutMonkey",
+   "The Hygiene Myth Ancient Humans Never Believed",
+   "2026-06-26",
+   342,
+   24,
+   394,
+   "video",
+   "ExJ7SppzKmI"
+  ],
+  [
+   "GutMonkey",
+   "Why Cave Babies Almost Never Cried",
+   "2026-06-23",
+   639,
+   43,
+   362,
+   "video",
+   "hF-nMpymWn0"
+  ],
+  [
+   "theneo_earth",
+   "What Really Happened After Sunset? The Truth Will Surprise You...",
+   "2026-07-27",
+   9,
+   0,
+   18,
+   "shorts",
+   "oYD-98QNzfs"
+  ],
+  [
+   "theneo_earth",
+   "What Did Ancient Humans Really Do at Night?",
+   "2026-07-24",
+   7,
+   3,
+   183,
+   "video",
+   "fj0N8zErn5Y"
+  ],
+  [
+   "theneo_earth",
+   "How Did Ancient Humans Survive When It Rained All Week?",
+   "2026-07-15",
+   102,
+   7,
+   199,
+   "video",
+   "N5NwYfyn968"
+  ],
+  [
+   "theneo_earth",
+   "Why Humans Eat 3 Meals a Day?",
+   "2026-07-11",
+   23,
+   2,
+   23,
+   "shorts",
+   "WvzirHIK3_4"
+  ],
+  [
+   "theneo_earth",
+   "Why Humans Eat 3 Meals a Day?",
+   "2026-07-10",
+   456,
+   7,
+   139,
+   "shorts",
+   "xIs7MXja91Q"
+  ],
+  [
+   "theneo_earth",
+   "Why Are Humans The Only Animals That Cook Food?",
+   "2026-07-05",
+   3000,
+   99,
+   134,
+   "shorts",
+   "_VdU4dOdsto"
+  ],
+  [
+   "theneo_earth",
+   "Why Did Other Human Species Vanish?",
+   "2026-06-29",
+   1059,
+   12,
+   202,
+   "video",
+   "jdj0FKSj-vQ"
+  ],
+  [
+   "theneo_earth",
+   "Are We Living In A Simulation?",
+   "2026-06-21",
+   25,
+   2,
+   233,
+   "video",
+   "129mk3CSvhc"
+  ],
+  [
+   "인류의서재",
+   "버려진 땅인 줄 알았던 사막이 지구의 산소 공장인 이유",
+   "2026-08-01",
+   43131,
+   1009,
+   1208,
+   "video",
+   "-v8yEkTavT4"
+  ],
+  [
+   "인류의서재",
+   "원자로가 터진 뒤에도 도시가 멈추지 않았던 이유",
+   "2026-07-31",
+   2765,
+   80,
+   1211,
+   "video",
+   "LAo1ZwKl71U"
+  ],
+  [
+   "인류의서재",
+   "온 나라의 나무를 태워 데운 방에서, 왕은 왜 잠을 설쳤을까",
+   "2026-07-30",
+   6233,
+   104,
+   1273,
+   "video",
+   "nTBMXXoGTNE"
+  ],
+  [
+   "인류의서재",
+   "죽은 사람이 꿈에 나와도 하나도 안 이상했던 이유",
+   "2026-07-29",
+   5008,
+   102,
+   1362,
+   "video",
+   "KLEoXN96TDU"
+  ],
+  [
+   "인류의서재",
+   "가장 강했던 것들이 먼저 사라진 이유, 그리고 다음 차례",
+   "2026-07-28",
+   15477,
+   206,
+   1357,
+   "video",
+   "tUG1IWVL_EI"
+  ],
+  [
+   "인류의서재",
+   "조선시대 밤 10시, 남자들은 왜 집으로 숨어야 했을까",
+   "2026-07-27",
+   9575,
+   170,
+   1135,
+   "video",
+   "xbrIYa97-j8"
+  ],
+  [
+   "인류의서재",
+   "\"흰 소복 그 귀신, 조선 사람들은 본 적도 없습니다\" 세종과 광해군까지 벌벌 떨게 만든 진짜는 따로 있었습니다",
+   "2026-07-26",
+   16886,
+   312,
+   1074,
+   "video",
+   "_qLWzAGX5Rw"
+  ],
+  [
+   "인류의서재",
+   "\"붙기만 하면 끝인 줄 알았습니다\" 조선 공무원이 된 첫날 시작된 진짜 지옥",
+   "2026-07-25",
+   4937,
+   79,
+   1281,
+   "video",
+   "pGzju_qPcQo"
+  ]
+ ],
+ "analytics": {
+  "d28": {
+   "start": "2026-07-06",
+   "end": "2026-08-02",
+   "views": 52952,
+   "watchMin": 13433,
+   "avgDurSec": 39,
+   "avgViewPct": 66.77,
+   "subsGained": 53,
+   "subsLost": 12,
+   "engagedViews": 19402
+  },
+  "daily": [
+   [
+    "2026-07-24",
+    1880,
+    508,
+    39,
+    81.49,
+    10,
+    3,
+    742
+   ],
+   [
+    "2026-07-25",
+    1924,
+    507,
+    37,
+    69.6,
+    4,
+    3,
+    782
+   ],
+   [
+    "2026-07-26",
+    1828,
+    657,
+    49,
+    95.35,
+    2,
+    0,
+    770
+   ],
+   [
+    "2026-07-27",
+    2043,
+    366,
+    26,
+    47.87,
+    2,
+    1,
+    751
+   ],
+   [
+    "2026-07-28",
+    1014,
+    371,
+    52,
+    70.26,
+    1,
+    0,
+    412
+   ],
+   [
+    "2026-07-29",
+    692,
+    236,
+    37,
+    52.88,
+    0,
+    0,
+    364
+   ],
+   [
+    "2026-07-30",
+    398,
+    172,
+    63,
+    81.94,
+    1,
+    0,
+    159
+   ]
+  ],
+  "byvid": [
+   [
+    "dGGAeDPxD94",
+    899,
+    37,
+    70.43,
+    352
+   ],
+   [
+    "9gOpL0kBn38",
+    842,
+    47,
+    86.5,
+    358
+   ],
+   [
+    "xf4VDl6wDsE",
+    337,
+    48,
+    108.27,
+    126
+   ],
+   [
+    "HNjwPEzuDF0",
+    1094,
+    29,
+    49.73,
+    323
+   ],
+   [
+    "tnd_SErp_zA",
+    15,
+    49,
+    109.33,
+    3
+   ],
+   [
+    "WdIi_Cj-oIE",
+    14,
+    23,
+    49.91,
+    6
+   ],
+   [
+    "1esJhTGTuX4",
+    676,
+    28,
+    63.5,
+    348
+   ],
+   [
+    "uRZeqc9saec",
+    937,
+    25,
+    47.28,
+    413
+   ]
+  ]
+ }
 }
