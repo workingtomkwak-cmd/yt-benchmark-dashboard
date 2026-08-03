@@ -1,1 +1,1212 @@
-{"date": "2026-08-04", "source": "YouTube Data API + Analytics API (claude-in-chrome javascript_tool)", "channels": {"만약에LAB": {"s": 56, "v": 60834, "n": 53}, "ScienceDream": {"s": 1140000, "v": 301081763, "n": 275}, "JUST1MIN": {"s": 1140000, "v": 1440408628, "n": 4122}, "kurzgesagt_kr": {"s": 735000, "v": 39625148, "n": 66}, "cosmoswag_kr": {"s": 274000, "v": 56853527, "n": 103}, "Zenn0009": {"s": 173000, "v": 17016408, "n": 29}, "MackExplains7": {"s": 69000, "v": 8191047, "n": 50}, "Itzquanta": {"s": 22200, "v": 4356180, "n": 87}, "quark5050": {"s": 14600, "v": 2201752, "n": 23}, "myrk8n": {"s": 3640, "v": 436835, "n": 15}, "GutMonkey": {"s": 130, "v": 4924, "n": 10}, "theneo_earth": {"s": 45, "v": 4863, "n": 12}, "인류의서재": {"s": 53600, "v": 7504711, "n": 129}}, "videos": [["만약에LAB", "생닭, 물에 씻으면 왜 더 위험할까?", "2026-08-03", 1039, "shorts"], ["만약에LAB", "저녁 산책인데 강아지 발바닥이 데일 수 있을까?", "2026-08-03", 1073, "shorts"], ["만약에LAB", "여름 차 안 김밥, 두 시간 뒤에도 먹어도 될까?", "2026-08-02", 5, "shorts"], ["만약에LAB", "속이 핑크색인 돈가스, 먹어도 안전할까?", "2026-08-01", 1327, "shorts"], ["만약에LAB", "조선시대에는 한여름 얼음을 어떻게 보관했을까?", "2026-08-01", 910, "shorts"], ["만약에LAB", "비행기가 추락할 때 어떤 자세가 생존을 도울까?", "2026-07-31", 723, "shorts"], ["만약에LAB", "높은 베개를 베면 정말 뇌졸중 위험이 커질까?", "2026-07-31", 712, "shorts"], ["만약에LAB", "번개 칠 때 자동차 안은 정말 안전할까?", "2026-07-30", 19, "shorts"], ["만약에LAB", "추락하는 엘리베이터에서 점프하면 살 수 있을까?", "2026-07-30", 681, "shorts"], ["만약에LAB", "비행기 모드, 왜 꼭 켜야 할까?", "2026-07-29", 16, "shorts"], ["만약에LAB", "만약 태양계 행성끼리 전쟁하면 누가 이길까?", "2026-07-28", 878, "shorts"], ["만약에LAB", "만약 모든 나무가 10배 커지면 도시는 어떻게 될까?", "2026-07-28", 939, "shorts"], ["만약에LAB", "하품은 왜 보기만 해도 옮을까?", "2026-07-27", 1094, "shorts"], ["만약에LAB", "만약 비가 1년 동안 한 번도 멈추지 않는다면?", "2026-07-27", 843, "shorts"], ["만약에LAB", "제주 망고 농가가 18년 만에 5배 넘게 늘어난 진짜 이유?", "2026-07-26", 913, "shorts"], ["ScienceDream", "아니다, 옥수수가 인간을 길들인 건가? (ft.옥수수의 진화)", "2026-07-31", 128601, "video"], ["ScienceDream", "이게 고작 단위 하나 때문이라고? (ft. 우주 개발 최악의 사고들)", "2026-07-24", 36550, "video"], ["ScienceDream", "20년의 관찰 끝에 새의 '언어'와 '문법'을 증명한 과학자!", "2026-07-03", 425287, "video"], ["ScienceDream", "둘 다 아니라면, 남미의 테이블산은 어떻게 만들어진 걸까?", "2026-06-12", 617735, "video"], ["ScienceDream", "AI가 마침내 나스카 지상화의 미스터리를 풀었다!?", "2026-05-29", 2703783, "video"], ["ScienceDream", "무지개산이 남미에만 있는 매우 과학적인 이유! (왜 무지개색이 됐을까?)", "2026-05-15", 265863, "video"], ["ScienceDream", "미국이 매주 5천만 마리의 파리를 숲에 살포하는 이유!", "2026-04-24", 1079575, "video"], ["ScienceDream", "그것도 물고기가... 200마리도 안 남은 물고기의 사막 고립기!", "2026-04-03", 768092, "video"], ["JUST1MIN", "공감되는 1인분들?", "2026-08-03", 48609, "shorts"], ["JUST1MIN", "손톱 확인해봐!", "2026-08-03", 73888, "shorts"], ["JUST1MIN", "포장지에 사람 이름이 박혀있는 이유?", "2026-08-03", 72820, "shorts"], ["JUST1MIN", "오존층 문제 곧 해결", "2026-08-02", 124684, "shorts"], ["JUST1MIN", "팔이 잘려도 없는 팔이 아픔?", "2026-08-02", 179925, "shorts"], ["JUST1MIN", "형량 계산 해봤습니다", "2026-08-01", 49830, "shorts"], ["JUST1MIN", "유튜브 하이프???", "2026-08-01", 113742, "shorts"], ["JUST1MIN", "이제 땀 냄새 완전 정복", "2026-07-31", 16751, "shorts"], ["kurzgesagt_kr", "우주에서 가장 거대한 블랙홀은?- 블랙홀 크기 비교", "2026-01-06", 360432, "video"], ["kurzgesagt_kr", "원자력 에너지가 사람들을 죽게한다? 원자력에 의한 사망", "2025-11-04", 143242, "video"], ["kurzgesagt_kr", "행성 파괴자 소행성을 막을 수 있을까?", "2025-09-17", 288104, "video"], ["kurzgesagt_kr", "한눈에 보는 세상 Kurzgesagt의 새로운 모험, PC 게임 드디어 출시!", "2025-09-10", 79991, "shorts"], ["kurzgesagt_kr", "개미의 세계 대전 - 군대 개미", "2025-07-22", 239344, "video"], ["kurzgesagt_kr", "대한민국은 끝났다. (전세계 1200만뷰 기록한 바로 그 영상.)", "2025-07-01", 818212, "video"], ["kurzgesagt_kr", "박테리아가 우리 몸을 다스리는 방법 – 마이크로바이옴", "2025-05-20", 104797, "video"], ["kurzgesagt_kr", "달이 지구에 충돌하면 어떻게 될까요?", "2025-04-08", 252050, "video"], ["cosmoswag_kr", "50년 만에 달에 감", "2026-08-02", 33626, "shorts"], ["cosmoswag_kr", "천왕성 또 누움", "2026-07-26", 52861, "shorts"], ["cosmoswag_kr", "지구 인맥 축구설의 진실(?)", "2026-07-24", 118827, "shorts"], ["cosmoswag_kr", "태양계로 축구팀 짬", "2026-07-23", 61698, "shorts"], ["cosmoswag_kr", "태양계 축구팀을 만든다면? ⚽", "2026-07-22", 45459, "shorts"], ["cosmoswag_kr", "코스모스웩 아케이드 Vol. 1  | 케슬러 신드롬", "2026-07-05", 21330, "shorts"], ["cosmoswag_kr", "우주과학 상식 '코스모스웩' 10편 몰아보기 2 (30분 순삭)", "2026-06-30", 131199, "video"], ["cosmoswag_kr", "토성의 고리는 원래 위성이었다?", "2026-06-20", 70882, "shorts"], ["Zenn0009", "Why Don't Animals Have Wheels?", "2026-07-30", 8750, "video"], ["Zenn0009", "When Do You Peak in Life?", "2026-07-25", 12125, "video"], ["Zenn0009", "Why Do Mosquitoes Always Bite YOU?", "2026-07-22", 11824, "video"], ["Zenn0009", "Would You Know If You Were Stupid?", "2026-07-19", 13204, "video"], ["Zenn0009", "What Does Dying Feel Like?", "2026-07-16", 10785, "video"], ["Zenn0009", "What Did Surgery Feel Like Before Anesthesia?", "2026-07-13", 16371, "video"], ["Zenn0009", "The Marshmallow Effect", "2026-07-04", 14279, "video"], ["Zenn0009", "Were Ancient Humans Loyal to One Partner?", "2026-06-30", 22213, "video"], ["MackExplains7", "Why Do Some of Us Have Almond-Shaped Eyes?", "2026-08-02", 5215, "video"], ["MackExplains7", "Why Do Humans Mostly Drink Cow’s Milk?", "2026-08-01", 4088, "video"], ["MackExplains7", "Did Ancient Humans Reproduce With Family Members?", "2026-07-31", 5745, "video"], ["MackExplains7", "Why Did Ancient Humans Become Parents at 12?", "2026-07-30", 12618, "video"], ["MackExplains7", "How Did the Other 6 Civilizations Disappear?", "2026-07-29", 5671, "video"], ["MackExplains7", "What Happens When You Become Conscious Inside a Dream?", "2026-07-27", 16929, "video"], ["MackExplains7", "Is Your Inner Voice Really You?", "2026-07-26", 35799, "video"], ["MackExplains7", "What Was History’s Most Terrifying Disease?", "2026-07-25", 19653, "video"], ["quark5050", "Could We Ever Evolve To Eat Grass?", "2026-08-01", 369, "video"], ["quark5050", "Why Don't We Feel The Earth Spinning?", "2026-07-31", 207, "video"], ["quark5050", "What Are The Rarest Human Traits?", "2026-07-28", 419, "video"], ["quark5050", "Why Don't Humans Eat Other Animal Eggs?", "2026-07-25", 6664, "video"], ["quark5050", "Do Animals Like Babies?", "2026-07-17", 1736, "video"], ["quark5050", "Animals That Went Extinct And Came Back", "2026-07-13", 3175, "video"], ["quark5050", "Do Animals Understand Death?", "2026-07-08", 4825, "video"], ["quark5050", "Why Didn't Evolution Prevent Aging?", "2026-07-07", 2775, "video"], ["myrk8n", "Why predators never eat other predators ?", "2026-08-02", 36, "video"], ["myrk8n", "Why Humans Can’t Eat Raw Meat?", "2026-07-29", 3482, "video"], ["myrk8n", "Which Fish Did Human Evolve from?", "2026-07-28", 28, "video"], ["myrk8n", "How Humans Became The Ultimate Predators", "2026-07-25", 212, "video"], ["myrk8n", "Why Humans Can't Eat Predator Meat?", "2026-07-15", 1298, "video"], ["myrk8n", "What Did Ancient Humans Do When It's Wouldn't Stop Raining?", "2026-07-14", 743, "video"], ["myrk8n", "Why Can't Wild Animals Attack Sleeping Humans?", "2026-07-12", 2766, "video"], ["myrk8n", "Why Did Humans Start Cooking Food?", "2026-07-05", 3834, "video"], ["Itzquanta", "Why Do Humans Love Eating Stinky Foods?", "2026-08-03", 212, "video"], ["Itzquanta", "Should We Be Eating Rabbit Meat Instead of Chicken?", "2026-08-02", 2290, "video"], ["Itzquanta", "Why Are Eggs In Almost Everything We Eat?", "2026-08-01", 1007, "video"], ["Itzquanta", "Why Are Humans Obsessed With Fishing?", "2026-07-31", 2688, "video"], ["Itzquanta", "Why Are \"Moldy\" Foods More Expensive?", "2026-07-30", 2773, "video"], ["Itzquanta", "Why Do Humans Love Eating Spicy Foods?", "2026-07-29", 38971, "video"], ["Itzquanta", "Why We Eat Raw Fish But Avoid Raw Meat?", "2026-07-28", 24471, "video"], ["Itzquanta", "Every Mammal Gets 1 Billion Heartbeats... Except One", "2026-07-27", 2774, "video"], ["GutMonkey", "Why Are Humans Monogamous", "2026-07-20", 254, "video"], ["GutMonkey", "Neanderthals Aren't Actually Extinct", "2026-07-11", 108, "video"], ["GutMonkey", "The Footprints That Rewrote the Story of the First Americans", "2026-07-08", 139, "video"], ["GutMonkey", "What It Meant to Be Disabled in Ancient Times", "2026-07-05", 1794, "video"], ["GutMonkey", "Why Evolution Made Heartbreak Hurt?", "2026-07-02", 142, "video"], ["GutMonkey", "HOW DID NOISE BECOME LANGUAGE?", "2026-06-29", 268, "video"], ["GutMonkey", "The Hygiene Myth Ancient Humans Never Believed", "2026-06-26", 342, "video"], ["GutMonkey", "Why Cave Babies Almost Never Cried", "2026-06-23", 639, "video"], ["theneo_earth", "What Really Happened After Sunset? The Truth Will Surprise You...", "2026-07-27", 10, "shorts"], ["theneo_earth", "What Did Ancient Humans Really Do at Night?", "2026-07-24", 8, "video"], ["theneo_earth", "How Did Ancient Humans Survive When It Rained All Week?", "2026-07-15", 103, "video"], ["theneo_earth", "Why Humans Eat 3 Meals a Day?", "2026-07-11", 23, "shorts"], ["theneo_earth", "Why Humans Eat 3 Meals a Day?", "2026-07-10", 457, "shorts"], ["theneo_earth", "Why Are Humans The Only Animals That Cook Food?", "2026-07-05", 3001, "shorts"], ["theneo_earth", "Why Did Other Human Species Vanish?", "2026-06-29", 1059, "video"], ["theneo_earth", "Are We Living In A Simulation?", "2026-06-21", 25, "video"], ["인류의서재", "\"이게 생명체라고요?\" 나사가 60년 만에 찾아낸 화성 생명체의 정체", "2026-08-03", 4112, "video"], ["인류의서재", "아무 것도 없는 모래섬에 15년간 고립된 사람들의 충격적인 생존법", "2026-08-02", 54427, "video"], ["인류의서재", "버려진 땅인 줄 알았던 사막이 지구의 산소 공장인 이유", "2026-08-01", 112756, "video"], ["인류의서재", "원자로가 터진 뒤에도 도시가 멈추지 않았던 이유", "2026-07-31", 3595, "video"], ["인류의서재", "온 나라의 나무를 태워 데운 방에서, 왕은 왜 잠을 설쳤을까", "2026-07-30", 7376, "video"], ["인류의서재", "죽은 사람이 꿈에 나와도 하나도 안 이상했던 이유", "2026-07-29", 5546, "video"], ["인류의서재", "가장 강했던 것들이 먼저 사라진 이유, 그리고 다음 차례", "2026-07-28", 19069, "video"], ["인류의서재", "조선시대 밤 10시, 남자들은 왜 집으로 숨어야 했을까", "2026-07-27", 10375, "video"]], "own_analytics": {"window": "2026-07-08~2026-08-04", "views": 56341, "engagedViews": 20634, "engaged_rate_pct": 36.62, "avgViewDuration_sec": 39, "avgViewPercentage": 67.27, "subscribersGained": 57, "subscribersLost": 13, "estimatedMinutesWatched": 14185, "analytics_max_date": "2026-08-01", "lag_days": 3, "daily": [["2026-07-25", 1924, 782, 69.68], ["2026-07-26", 1828, 770, 95.31], ["2026-07-27", 2043, 751, 47.92], ["2026-07-28", 989, 412, 70.26], ["2026-07-29", 692, 364, 52.88], ["2026-07-30", 398, 159, 81.94], ["2026-07-31", 2068, 916, 70.22], ["2026-08-01", 1359, 329, 68.19]], "per_video": {"uLyO1BiQWME": [733, 386, 52.66], "1esJhTGTuX4": [686, 355, 51.75], "xf4VDl6wDsE": [728, 303, 41.62], "6-7dUsCh6WI": [927, 343, 37.0], "TgzIMRGOgJ0": [1334, 313, 23.46], "tnd_SErp_zA": [19, 4, 21.05], "WdIi_Cj-oIE": [16, 7, 43.75]}}, "dashboard_url": "https://workingtomkwak-cmd.github.io/yt-benchmark-dashboard/"}
+{
+ "date": "2026-08-04",
+ "source": "YouTube Data API v3 + Analytics API (claude-in-chrome javascript_tool)",
+ "collected_at_kst": "2026-08-04T07:08~07:15+09:00",
+ "note": "channel total_views_delta는 캐시 2일 정지 해제로 2일 누적. 1일 비교는 video delta 사용",
+ "channels": [
+  {
+   "channel": "whatifLAB_kr1",
+   "total_views": 60834,
+   "total_views_delta": 3736,
+   "subs": 56
+  },
+  {
+   "channel": "ScienceDream",
+   "total_views": 301081763,
+   "total_views_delta": 341518,
+   "subs": 1140000
+  },
+  {
+   "channel": "JUST1MIN",
+   "total_views": 1440408628,
+   "total_views_delta": 2222971,
+   "subs": 1140000
+  },
+  {
+   "channel": "kurzgesagt_kr",
+   "total_views": 39625148,
+   "total_views_delta": 17218,
+   "subs": 735000
+  },
+  {
+   "channel": "cosmoswag_kr",
+   "total_views": 56853527,
+   "total_views_delta": 141908,
+   "subs": 274000
+  },
+  {
+   "channel": "Zenn0009",
+   "total_views": 17016408,
+   "total_views_delta": 51576,
+   "subs": 173000
+  },
+  {
+   "channel": "MackExplains7",
+   "total_views": 8191047,
+   "total_views_delta": 219196,
+   "subs": 69000
+  },
+  {
+   "channel": "Itzquanta",
+   "total_views": 4356180,
+   "total_views_delta": 24721,
+   "subs": 22200
+  },
+  {
+   "channel": "quark5050",
+   "total_views": 2201752,
+   "total_views_delta": 2111,
+   "subs": 14600
+  },
+  {
+   "channel": "myrk8n",
+   "total_views": 436835,
+   "total_views_delta": 6979,
+   "subs": 3640
+  },
+  {
+   "channel": "GutMonkey",
+   "total_views": 4924,
+   "total_views_delta": 7,
+   "subs": 130
+  },
+  {
+   "channel": "theneo_earth",
+   "total_views": 4863,
+   "total_views_delta": 14,
+   "subs": 45
+  },
+  {
+   "channel": "인류의서재",
+   "total_views": 7504711,
+   "total_views_delta": 349160,
+   "subs": 53600
+  }
+ ],
+ "videos": [
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "생닭, 물에 씻으면 왜 더 위험할까?",
+   "views": 1039,
+   "delta": null,
+   "is_new": true,
+   "published": "2026-08-03"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "저녁 산책인데 강아지 발바닥이 데일 수 있을까?",
+   "views": 1073,
+   "delta": null,
+   "is_new": true,
+   "published": "2026-08-03"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "여름 차 안 김밥, 두 시간 뒤에도 먹어도 될까?",
+   "views": 5,
+   "delta": 3,
+   "is_new": false,
+   "published": "2026-08-02"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "속이 핑크색인 돈가스, 먹어도 안전할까?",
+   "views": 1327,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-08-01"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "조선시대에는 한여름 얼음을 어떻게 보관했을까?",
+   "views": 910,
+   "delta": 2,
+   "is_new": false,
+   "published": "2026-08-01"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "비행기가 추락할 때 어떤 자세가 생존을 도울까?",
+   "views": 723,
+   "delta": 2,
+   "is_new": false,
+   "published": "2026-07-31"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "높은 베개를 베면 정말 뇌졸중 위험이 커질까?",
+   "views": 712,
+   "delta": -2,
+   "is_new": false,
+   "published": "2026-07-31"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "번개 칠 때 자동차 안은 정말 안전할까?",
+   "views": 19,
+   "delta": 1,
+   "is_new": false,
+   "published": "2026-07-30"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "추락하는 엘리베이터에서 점프하면 살 수 있을까?",
+   "views": 681,
+   "delta": 1,
+   "is_new": false,
+   "published": "2026-07-30"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "비행기 모드, 왜 꼭 켜야 할까?",
+   "views": 16,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-07-29"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "만약 태양계 행성끼리 전쟁하면 누가 이길까?",
+   "views": 878,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-07-28"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "만약 모든 나무가 10배 커지면 도시는 어떻게 될까?",
+   "views": 939,
+   "delta": 2,
+   "is_new": false,
+   "published": "2026-07-28"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "하품은 왜 보기만 해도 옮을까?",
+   "views": 1094,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-07-27"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "만약 비가 1년 동안 한 번도 멈추지 않는다면?",
+   "views": 843,
+   "delta": 1,
+   "is_new": false,
+   "published": "2026-07-27"
+  },
+  {
+   "channel": "만약에LAB",
+   "type": "shorts",
+   "title": "제주 망고 농가가 18년 만에 5배 넘게 늘어난 진짜 이유?",
+   "views": 913,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-07-26"
+  },
+  {
+   "channel": "ScienceDream",
+   "type": "video",
+   "title": "아니다, 옥수수가 인간을 길들인 건가? (ft.옥수수의 진화)",
+   "views": 128647,
+   "delta": 26731,
+   "is_new": false,
+   "published": "2026-07-31",
+   "match_note": "title_change"
+  },
+  {
+   "channel": "ScienceDream",
+   "type": "video",
+   "title": "이게 고작 단위 하나 때문이라고? (ft. 우주 개발 최악의 사고들)",
+   "views": 36550,
+   "delta": 1038,
+   "is_new": false,
+   "published": "2026-07-24"
+  },
+  {
+   "channel": "ScienceDream",
+   "type": "video",
+   "title": "20년의 관찰 끝에 새의 '언어'와 '문법'을 증명한 과학자!",
+   "views": 425291,
+   "delta": 4532,
+   "is_new": false,
+   "published": "2026-07-03"
+  },
+  {
+   "channel": "ScienceDream",
+   "type": "video",
+   "title": "둘 다 아니라면, 남미의 테이블산은 어떻게 만들어진 걸까?",
+   "views": 617742,
+   "delta": 3053,
+   "is_new": false,
+   "published": "2026-06-12"
+  },
+  {
+   "channel": "ScienceDream",
+   "type": "video",
+   "title": "AI가 마침내 나스카 지상화의 미스터리를 풀었다!?",
+   "views": 2703808,
+   "delta": 12347,
+   "is_new": false,
+   "published": "2026-05-29"
+  },
+  {
+   "channel": "ScienceDream",
+   "type": "video",
+   "title": "무지개산이 남미에만 있는 매우 과학적인 이유! (왜 무지개색이 됐을까?)",
+   "views": 265869,
+   "delta": 3266,
+   "is_new": false,
+   "published": "2026-05-15"
+  },
+  {
+   "channel": "ScienceDream",
+   "type": "video",
+   "title": "미국이 매주 5천만 마리의 파리를 숲에 살포하는 이유!",
+   "views": 1079575,
+   "delta": 1252,
+   "is_new": false,
+   "published": "2026-04-24"
+  },
+  {
+   "channel": "ScienceDream",
+   "type": "video",
+   "title": "그것도 물고기가... 200마리도 안 남은 물고기의 사막 고립기!",
+   "views": 768092,
+   "delta": 1528,
+   "is_new": false,
+   "published": "2026-04-03"
+  },
+  {
+   "channel": "JUST1MIN",
+   "type": "shorts",
+   "title": "공감되는 1인분들?",
+   "views": 48772,
+   "delta": null,
+   "is_new": true,
+   "published": "2026-08-03"
+  },
+  {
+   "channel": "JUST1MIN",
+   "type": "shorts",
+   "title": "손톱 확인해봐!",
+   "views": 74129,
+   "delta": null,
+   "is_new": true,
+   "published": "2026-08-03"
+  },
+  {
+   "channel": "JUST1MIN",
+   "type": "shorts",
+   "title": "포장지에 사람 이름이 박혀있는 이유?",
+   "views": 72880,
+   "delta": null,
+   "is_new": true,
+   "published": "2026-08-03"
+  },
+  {
+   "channel": "JUST1MIN",
+   "type": "shorts",
+   "title": "오존층 문제 곧 해결",
+   "views": 124704,
+   "delta": 44699,
+   "is_new": false,
+   "published": "2026-08-02"
+  },
+  {
+   "channel": "JUST1MIN",
+   "type": "shorts",
+   "title": "팔이 잘려도 없는 팔이 아픔?",
+   "views": 179925,
+   "delta": 160478,
+   "is_new": false,
+   "published": "2026-08-02"
+  },
+  {
+   "channel": "JUST1MIN",
+   "type": "shorts",
+   "title": "형량 계산 해봤습니다",
+   "views": 49835,
+   "delta": 3800,
+   "is_new": false,
+   "published": "2026-08-01"
+  },
+  {
+   "channel": "JUST1MIN",
+   "type": "shorts",
+   "title": "유튜브 하이프???",
+   "views": 113789,
+   "delta": 13172,
+   "is_new": false,
+   "published": "2026-08-01"
+  },
+  {
+   "channel": "JUST1MIN",
+   "type": "shorts",
+   "title": "이제 땀 냄새 완전 정복",
+   "views": 16751,
+   "delta": 1310,
+   "is_new": false,
+   "published": "2026-07-31"
+  },
+  {
+   "channel": "kurzgesagt_kr",
+   "type": "video",
+   "title": "우주에서 가장 거대한 블랙홀은?- 블랙홀 크기 비교",
+   "views": 360432,
+   "delta": 307,
+   "is_new": false,
+   "published": "2026-01-06"
+  },
+  {
+   "channel": "kurzgesagt_kr",
+   "type": "video",
+   "title": "원자력 에너지가 사람들을 죽게한다? 원자력에 의한 사망",
+   "views": 143242,
+   "delta": 65,
+   "is_new": false,
+   "published": "2025-11-04"
+  },
+  {
+   "channel": "kurzgesagt_kr",
+   "type": "video",
+   "title": "행성 파괴자 소행성을 막을 수 있을까?",
+   "views": 288104,
+   "delta": 155,
+   "is_new": false,
+   "published": "2025-09-17"
+  },
+  {
+   "channel": "kurzgesagt_kr",
+   "type": "shorts",
+   "title": "한눈에 보는 세상 Kurzgesagt의 새로운 모험, PC 게임 드디어 출시!",
+   "views": 79991,
+   "delta": 30,
+   "is_new": false,
+   "published": "2025-09-10"
+  },
+  {
+   "channel": "kurzgesagt_kr",
+   "type": "video",
+   "title": "개미의 세계 대전 - 군대 개미",
+   "views": 239344,
+   "delta": 111,
+   "is_new": false,
+   "published": "2025-07-22"
+  },
+  {
+   "channel": "kurzgesagt_kr",
+   "type": "video",
+   "title": "대한민국은 끝났다. (전세계 1200만뷰 기록한 바로 그 영상.)",
+   "views": 818211,
+   "delta": 185,
+   "is_new": false,
+   "published": "2025-07-01"
+  },
+  {
+   "channel": "kurzgesagt_kr",
+   "type": "video",
+   "title": "박테리아가 우리 몸을 다스리는 방법 – 마이크로바이옴",
+   "views": 104797,
+   "delta": 42,
+   "is_new": false,
+   "published": "2025-05-20"
+  },
+  {
+   "channel": "kurzgesagt_kr",
+   "type": "video",
+   "title": "달이 지구에 충돌하면 어떻게 될까요?",
+   "views": 252050,
+   "delta": 54,
+   "is_new": false,
+   "published": "2025-04-08"
+  },
+  {
+   "channel": "cosmoswag_kr",
+   "type": "shorts",
+   "title": "50년 만에 달에 감",
+   "views": 33626,
+   "delta": 21465,
+   "is_new": false,
+   "published": "2026-08-02"
+  },
+  {
+   "channel": "cosmoswag_kr",
+   "type": "shorts",
+   "title": "천왕성 또 누움",
+   "views": 52861,
+   "delta": 1058,
+   "is_new": false,
+   "published": "2026-07-26"
+  },
+  {
+   "channel": "cosmoswag_kr",
+   "type": "shorts",
+   "title": "지구 인맥 축구설의 진실(?)",
+   "views": 118827,
+   "delta": 1115,
+   "is_new": false,
+   "published": "2026-07-24"
+  },
+  {
+   "channel": "cosmoswag_kr",
+   "type": "shorts",
+   "title": "태양계로 축구팀 짬",
+   "views": 61698,
+   "delta": 934,
+   "is_new": false,
+   "published": "2026-07-23"
+  },
+  {
+   "channel": "cosmoswag_kr",
+   "type": "shorts",
+   "title": "태양계 축구팀을 만든다면? ⚽",
+   "views": 45480,
+   "delta": 750,
+   "is_new": false,
+   "published": "2026-07-22"
+  },
+  {
+   "channel": "cosmoswag_kr",
+   "type": "shorts",
+   "title": "코스모스웩 아케이드 Vol. 1  케슬러 신드롬",
+   "views": 21330,
+   "delta": 581,
+   "is_new": false,
+   "published": "2026-07-05",
+   "match_note": "whitespace_normalized"
+  },
+  {
+   "channel": "cosmoswag_kr",
+   "type": "video",
+   "title": "우주과학 상식 '코스모스웩' 10편 몰아보기 2 (30분 순삭)",
+   "views": 131213,
+   "delta": 1024,
+   "is_new": false,
+   "published": "2026-06-30"
+  },
+  {
+   "channel": "cosmoswag_kr",
+   "type": "shorts",
+   "title": "토성의 고리는 원래 위성이었다?",
+   "views": 70882,
+   "delta": 610,
+   "is_new": false,
+   "published": "2026-06-20"
+  },
+  {
+   "channel": "Zenn0009",
+   "type": "video",
+   "title": "Why Don't Animals Have Wheels?",
+   "views": 8755,
+   "delta": 1115,
+   "is_new": false,
+   "published": "2026-07-30"
+  },
+  {
+   "channel": "Zenn0009",
+   "type": "video",
+   "title": "When Do You Peak in Life?",
+   "views": 12125,
+   "delta": 387,
+   "is_new": false,
+   "published": "2026-07-25"
+  },
+  {
+   "channel": "Zenn0009",
+   "type": "video",
+   "title": "Why Do Mosquitoes Always Bite YOU?",
+   "views": 11826,
+   "delta": 366,
+   "is_new": false,
+   "published": "2026-07-22"
+  },
+  {
+   "channel": "Zenn0009",
+   "type": "video",
+   "title": "Would You Know If You Were Stupid?",
+   "views": 13205,
+   "delta": 150,
+   "is_new": false,
+   "published": "2026-07-19"
+  },
+  {
+   "channel": "Zenn0009",
+   "type": "video",
+   "title": "What Does Dying Feel Like?",
+   "views": 10785,
+   "delta": 115,
+   "is_new": false,
+   "published": "2026-07-16"
+  },
+  {
+   "channel": "Zenn0009",
+   "type": "video",
+   "title": "What Did Surgery Feel Like Before Anesthesia?",
+   "views": 16371,
+   "delta": 164,
+   "is_new": false,
+   "published": "2026-07-13"
+  },
+  {
+   "channel": "Zenn0009",
+   "type": "video",
+   "title": "The Marshmallow Effect",
+   "views": 14279,
+   "delta": 63,
+   "is_new": false,
+   "published": "2026-07-04"
+  },
+  {
+   "channel": "Zenn0009",
+   "type": "video",
+   "title": "Were Ancient Humans Loyal to One Partner?",
+   "views": 22215,
+   "delta": 62,
+   "is_new": false,
+   "published": "2026-06-30"
+  },
+  {
+   "channel": "MackExplains7",
+   "type": "video",
+   "title": "Why Do Some of Us Have Almond-Shaped Eyes?",
+   "views": 5217,
+   "delta": 3200,
+   "is_new": false,
+   "published": "2026-08-02"
+  },
+  {
+   "channel": "MackExplains7",
+   "type": "video",
+   "title": "Why Do Humans Mostly Drink Cow’s Milk?",
+   "views": 4088,
+   "delta": 353,
+   "is_new": false,
+   "published": "2026-08-01"
+  },
+  {
+   "channel": "MackExplains7",
+   "type": "video",
+   "title": "Did Ancient Humans Reproduce With Family Members?",
+   "views": 5745,
+   "delta": 290,
+   "is_new": false,
+   "published": "2026-07-31"
+  },
+  {
+   "channel": "MackExplains7",
+   "type": "video",
+   "title": "Why Did Ancient Humans Become Parents at 12?",
+   "views": 12620,
+   "delta": 1252,
+   "is_new": false,
+   "published": "2026-07-30"
+  },
+  {
+   "channel": "MackExplains7",
+   "type": "video",
+   "title": "How Did the Other 6 Civilizations Disappear?",
+   "views": 5671,
+   "delta": 270,
+   "is_new": false,
+   "published": "2026-07-29"
+  },
+  {
+   "channel": "MackExplains7",
+   "type": "video",
+   "title": "What Happens When You Become Conscious Inside a Dream?",
+   "views": 16930,
+   "delta": 2255,
+   "is_new": false,
+   "published": "2026-07-27"
+  },
+  {
+   "channel": "MackExplains7",
+   "type": "video",
+   "title": "Is Your Inner Voice Really You?",
+   "views": 35804,
+   "delta": 1043,
+   "is_new": false,
+   "published": "2026-07-26"
+  },
+  {
+   "channel": "MackExplains7",
+   "type": "video",
+   "title": "What Was History’s Most Terrifying Disease?",
+   "views": 19653,
+   "delta": 183,
+   "is_new": false,
+   "published": "2026-07-25"
+  },
+  {
+   "channel": "quark5050",
+   "type": "video",
+   "title": "Could We Ever Evolve To Eat Grass?",
+   "views": 377,
+   "delta": 160,
+   "is_new": false,
+   "published": "2026-08-01"
+  },
+  {
+   "channel": "quark5050",
+   "type": "video",
+   "title": "Why Don't We Feel The Earth Spinning?",
+   "views": 204,
+   "delta": 13,
+   "is_new": false,
+   "published": "2026-07-31"
+  },
+  {
+   "channel": "quark5050",
+   "type": "video",
+   "title": "What Are The Rarest Human Traits?",
+   "views": 419,
+   "delta": 13,
+   "is_new": false,
+   "published": "2026-07-28"
+  },
+  {
+   "channel": "quark5050",
+   "type": "video",
+   "title": "Why Don't Humans Eat Other Animal Eggs?",
+   "views": 6664,
+   "delta": 14,
+   "is_new": false,
+   "published": "2026-07-25"
+  },
+  {
+   "channel": "quark5050",
+   "type": "video",
+   "title": "Do Animals Like Babies?",
+   "views": 1738,
+   "delta": 56,
+   "is_new": false,
+   "published": "2026-07-17"
+  },
+  {
+   "channel": "quark5050",
+   "type": "video",
+   "title": "Animals That Went Extinct And Came Back",
+   "views": 3175,
+   "delta": 7,
+   "is_new": false,
+   "published": "2026-07-13"
+  },
+  {
+   "channel": "quark5050",
+   "type": "video",
+   "title": "Do Animals Understand Death?",
+   "views": 4825,
+   "delta": 8,
+   "is_new": false,
+   "published": "2026-07-08"
+  },
+  {
+   "channel": "quark5050",
+   "type": "video",
+   "title": "Why Didn't Evolution Prevent Aging?",
+   "views": 2773,
+   "delta": 2,
+   "is_new": false,
+   "published": "2026-07-07"
+  },
+  {
+   "channel": "myrk8n",
+   "type": "video",
+   "title": "Why predators never eat other predators ?",
+   "views": 35,
+   "delta": 28,
+   "is_new": false,
+   "published": "2026-08-02",
+   "match_note": "title_change"
+  },
+  {
+   "channel": "myrk8n",
+   "type": "video",
+   "title": "Why Humans Can’t Eat Raw Meat?",
+   "views": 3482,
+   "delta": 335,
+   "is_new": false,
+   "published": "2026-07-29"
+  },
+  {
+   "channel": "myrk8n",
+   "type": "video",
+   "title": "Which Fish Did Human Evolve from?",
+   "views": 28,
+   "delta": 5,
+   "is_new": false,
+   "published": "2026-07-28"
+  },
+  {
+   "channel": "myrk8n",
+   "type": "video",
+   "title": "How Humans Became The Ultimate Predators",
+   "views": 212,
+   "delta": 6,
+   "is_new": false,
+   "published": "2026-07-25"
+  },
+  {
+   "channel": "myrk8n",
+   "type": "video",
+   "title": "Why Humans Can't Eat Predator Meat?",
+   "views": 1298,
+   "delta": 7,
+   "is_new": false,
+   "published": "2026-07-15"
+  },
+  {
+   "channel": "myrk8n",
+   "type": "video",
+   "title": "What Did Ancient Humans Do When It's Wouldn't Stop Raining?",
+   "views": 743,
+   "delta": 1,
+   "is_new": false,
+   "published": "2026-07-14"
+  },
+  {
+   "channel": "myrk8n",
+   "type": "video",
+   "title": "Why Can't Wild Animals Attack Sleeping Humans?",
+   "views": 2766,
+   "delta": 4,
+   "is_new": false,
+   "published": "2026-07-12"
+  },
+  {
+   "channel": "myrk8n",
+   "type": "video",
+   "title": "Why Did Humans Start Cooking Food?",
+   "views": 3834,
+   "delta": 2,
+   "is_new": false,
+   "published": "2026-07-05"
+  },
+  {
+   "channel": "Itzquanta",
+   "type": "video",
+   "title": "Why Do Humans Love Eating Stinky Foods?",
+   "views": 212,
+   "delta": null,
+   "is_new": true,
+   "published": "2026-08-03"
+  },
+  {
+   "channel": "Itzquanta",
+   "type": "video",
+   "title": "Should We Be Eating Rabbit Meat Instead of Chicken?",
+   "views": 2290,
+   "delta": 1650,
+   "is_new": false,
+   "published": "2026-08-02"
+  },
+  {
+   "channel": "Itzquanta",
+   "type": "video",
+   "title": "Why Are Eggs In Almost Everything We Eat?",
+   "views": 1007,
+   "delta": 76,
+   "is_new": false,
+   "published": "2026-08-01"
+  },
+  {
+   "channel": "Itzquanta",
+   "type": "video",
+   "title": "Why Are Humans Obsessed With Fishing?",
+   "views": 2693,
+   "delta": 953,
+   "is_new": false,
+   "published": "2026-07-31"
+  },
+  {
+   "channel": "Itzquanta",
+   "type": "video",
+   "title": "Why Are \"Moldy\" Foods More Expensive?",
+   "views": 2768,
+   "delta": 33,
+   "is_new": false,
+   "published": "2026-07-30"
+  },
+  {
+   "channel": "Itzquanta",
+   "type": "video",
+   "title": "Why Do Humans Love Eating Spicy Foods?",
+   "views": 38972,
+   "delta": 1332,
+   "is_new": false,
+   "published": "2026-07-29"
+  },
+  {
+   "channel": "Itzquanta",
+   "type": "video",
+   "title": "Why We Eat Raw Fish But Avoid Raw Meat?",
+   "views": 24463,
+   "delta": 26,
+   "is_new": false,
+   "published": "2026-07-28"
+  },
+  {
+   "channel": "Itzquanta",
+   "type": "video",
+   "title": "Every Mammal Gets 1 Billion Heartbeats... Except One",
+   "views": 2767,
+   "delta": 1,
+   "is_new": false,
+   "published": "2026-07-27"
+  },
+  {
+   "channel": "GutMonkey",
+   "type": "video",
+   "title": "Why Are Humans Monogamous",
+   "views": 254,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-07-20"
+  },
+  {
+   "channel": "GutMonkey",
+   "type": "video",
+   "title": "Neanderthals Aren't Actually Extinct",
+   "views": 108,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-07-11"
+  },
+  {
+   "channel": "GutMonkey",
+   "type": "video",
+   "title": "The Footprints That Rewrote the Story of the First Americans",
+   "views": 139,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-07-08"
+  },
+  {
+   "channel": "GutMonkey",
+   "type": "video",
+   "title": "What It Meant to Be Disabled in Ancient Times",
+   "views": 1794,
+   "delta": -1,
+   "is_new": false,
+   "published": "2026-07-05"
+  },
+  {
+   "channel": "GutMonkey",
+   "type": "video",
+   "title": "Why Evolution Made Heartbreak Hurt?",
+   "views": 142,
+   "delta": 1,
+   "is_new": false,
+   "published": "2026-07-02"
+  },
+  {
+   "channel": "GutMonkey",
+   "type": "video",
+   "title": "HOW DID NOISE BECOME LANGUAGE?",
+   "views": 268,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-06-29"
+  },
+  {
+   "channel": "GutMonkey",
+   "type": "video",
+   "title": "The Hygiene Myth Ancient Humans Never Believed",
+   "views": 342,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-06-26"
+  },
+  {
+   "channel": "GutMonkey",
+   "type": "video",
+   "title": "Why Cave Babies Almost Never Cried",
+   "views": 639,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-06-23"
+  },
+  {
+   "channel": "theneo_earth",
+   "type": "shorts",
+   "title": "What Really Happened After Sunset? The Truth Will Surprise You...",
+   "views": 10,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-07-27"
+  },
+  {
+   "channel": "theneo_earth",
+   "type": "video",
+   "title": "What Did Ancient Humans Really Do at Night?",
+   "views": 8,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-07-24"
+  },
+  {
+   "channel": "theneo_earth",
+   "type": "video",
+   "title": "How Did Ancient Humans Survive When It Rained All Week?",
+   "views": 103,
+   "delta": 1,
+   "is_new": false,
+   "published": "2026-07-15"
+  },
+  {
+   "channel": "theneo_earth",
+   "type": "shorts",
+   "title": "Why Humans Eat 3 Meals a Day?",
+   "views": 23,
+   "delta": -433,
+   "is_new": false,
+   "published": "2026-07-11"
+  },
+  {
+   "channel": "theneo_earth",
+   "type": "shorts",
+   "title": "Why Humans Eat 3 Meals a Day?",
+   "views": 457,
+   "delta": 1,
+   "is_new": false,
+   "published": "2026-07-10"
+  },
+  {
+   "channel": "theneo_earth",
+   "type": "shorts",
+   "title": "Why Are Humans The Only Animals That Cook Food?",
+   "views": 3001,
+   "delta": 1,
+   "is_new": false,
+   "published": "2026-07-05"
+  },
+  {
+   "channel": "theneo_earth",
+   "type": "video",
+   "title": "Why Did Other Human Species Vanish?",
+   "views": 1059,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-06-29"
+  },
+  {
+   "channel": "theneo_earth",
+   "type": "video",
+   "title": "Are We Living In A Simulation?",
+   "views": 25,
+   "delta": 0,
+   "is_new": false,
+   "published": "2026-06-21"
+  },
+  {
+   "channel": "인류의서재",
+   "type": "video",
+   "title": "\"이게 생명체라고요?\" 나사가 60년 만에 찾아낸 화성 생명체의 정체",
+   "views": 4123,
+   "delta": null,
+   "is_new": true,
+   "published": "2026-08-03"
+  },
+  {
+   "channel": "인류의서재",
+   "type": "video",
+   "title": "아무 것도 없는 모래섬에 15년간 고립된 사람들의 충격적인 생존법",
+   "views": 54439,
+   "delta": 23368,
+   "is_new": false,
+   "published": "2026-08-02"
+  },
+  {
+   "channel": "인류의서재",
+   "type": "video",
+   "title": "버려진 땅인 줄 알았던 사막이 지구의 산소 공장인 이유",
+   "views": 112756,
+   "delta": 27917,
+   "is_new": false,
+   "published": "2026-08-01"
+  },
+  {
+   "channel": "인류의서재",
+   "type": "video",
+   "title": "원자로가 터진 뒤에도 도시가 멈추지 않았던 이유",
+   "views": 3595,
+   "delta": 419,
+   "is_new": false,
+   "published": "2026-07-31"
+  },
+  {
+   "channel": "인류의서재",
+   "type": "video",
+   "title": "온 나라의 나무를 태워 데운 방에서, 왕은 왜 잠을 설쳤을까",
+   "views": 7376,
+   "delta": 518,
+   "is_new": false,
+   "published": "2026-07-30"
+  },
+  {
+   "channel": "인류의서재",
+   "type": "video",
+   "title": "죽은 사람이 꿈에 나와도 하나도 안 이상했던 이유",
+   "views": 5546,
+   "delta": 238,
+   "is_new": false,
+   "published": "2026-07-29"
+  },
+  {
+   "channel": "인류의서재",
+   "type": "video",
+   "title": "가장 강했던 것들이 먼저 사라진 이유, 그리고 다음 차례",
+   "views": 19069,
+   "delta": 1238,
+   "is_new": false,
+   "published": "2026-07-28"
+  },
+  {
+   "channel": "인류의서재",
+   "type": "video",
+   "title": "조선시대 밤 10시, 남자들은 왜 집으로 숨어야 했을까",
+   "views": 10375,
+   "delta": 305,
+   "is_new": false,
+   "published": "2026-07-27"
+  }
+ ],
+ "analytics": {
+  "window": "2026-07-08~2026-08-04",
+  "views": 56341,
+  "engaged_views": 20634,
+  "engaged_rate_pct": 36.62,
+  "avg_view_pct": 67.27,
+  "avg_view_duration_sec": 39,
+  "subs_gained": 57,
+  "subs_lost": 13,
+  "subs_net": 44,
+  "watch_minutes": 14185
+ },
+ "analytics_daily": [
+  {
+   "date": "2026-07-28",
+   "views": 989,
+   "engaged": 412,
+   "rate": 41.66
+  },
+  {
+   "date": "2026-07-29",
+   "views": 692,
+   "engaged": 364,
+   "rate": 52.6
+  },
+  {
+   "date": "2026-07-30",
+   "views": 398,
+   "engaged": 159,
+   "rate": 39.95
+  },
+  {
+   "date": "2026-07-31",
+   "views": 2068,
+   "engaged": 916,
+   "rate": 44.29
+  },
+  {
+   "date": "2026-08-01",
+   "views": 1359,
+   "engaged": 329,
+   "rate": 24.21,
+   "provisional": true
+  }
+ ],
+ "analytics_by_video": [
+  {
+   "videoId": "uLyO1BiQWME",
+   "views": 733,
+   "engaged": 386,
+   "rate": 52.66,
+   "avgVP": 67.16
+  },
+  {
+   "videoId": "xf4VDl6wDsE",
+   "views": 728,
+   "engaged": 303,
+   "rate": 41.62,
+   "avgVP": 76.29
+  },
+  {
+   "videoId": "1esJhTGTuX4",
+   "views": 686,
+   "engaged": 355,
+   "rate": 51.75,
+   "avgVP": 62.86
+  },
+  {
+   "videoId": "6-7dUsCh6WI",
+   "views": 927,
+   "engaged": 343,
+   "rate": 37.0,
+   "avgVP": 83.81
+  },
+  {
+   "videoId": "TgzIMRGOgJ0",
+   "views": 1334,
+   "engaged": 313,
+   "rate": 23.46,
+   "avgVP": 72.08,
+   "provisional": true
+  },
+  {
+   "videoId": "tnd_SErp_zA",
+   "views": 19,
+   "engaged": 4,
+   "rate": 21.05,
+   "avgVP": 106.72,
+   "n_too_small": true
+  },
+  {
+   "videoId": "WdIi_Cj-oIE",
+   "views": 16,
+   "engaged": 7,
+   "rate": 43.75,
+   "avgVP": 57.39,
+   "n_too_small": true
+  }
+ ],
+ "title_changes": [
+  {
+   "channel": "ScienceDream",
+   "videoId": "YwtUidvUjkk",
+   "from": "옥수수는 어떻게 옥수수가 됐을까? (ft.옥수수의 진화)",
+   "to": "아니다, 옥수수가 인간을 길들인 건가? (ft.옥수수의 진화)",
+   "views_before": 101916,
+   "views_after": 128647,
+   "pct": 26.2
+  },
+  {
+   "channel": "myrk8n",
+   "videoId": "Uqum-HLZTX4",
+   "from": "Why Do Predators not Eat Each Other?",
+   "to": "Why predators never eat other predators ?",
+   "views_before": 7,
+   "views_after": 35,
+   "pct": 400.0
+  }
+ ],
+ "real_new_count": 7,
+ "false_new_note": "제목 변경 2건(YwtUidvUjkk·Uqum-HLZTX4)과 공백 정규화 1건(cosmoswag 아케이드)은 신규가 아니라 매칭 오탐 — is_new=False로 보정하고 delta 재계산",
+ "own_tracked_delta_24h": 2122
+}
