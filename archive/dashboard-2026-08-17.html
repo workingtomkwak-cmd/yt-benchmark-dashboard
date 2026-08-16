@@ -67,10 +67,10 @@
 <div style="font-size:16px;font-weight:800;color:#ff8b8b">🚨 2026-08-17 — 데이터 수집 전면 실패 · 오늘 실측 0건</div>
 <div style="font-size:13px;color:#e2c6c9;margin-top:8px;line-height:1.7">
 <b>이 페이지의 모든 수치는 2026-08-16 07:08 기준 실측값입니다. 오늘 값이 아닙니다.</b><br>
-원인 🆕 <b>Claude in Chrome 확장이 조직 정책으로 비활성화</b>(<code>turned off by your organization</code>) + Chrome 앱 미실행.
+원인 🆕 <b>Claude in Chrome 확장이 조직 정책으로 비활성화</b>(<code>turned off by your organization</code>) (Chrome 자체는 정상 실행 중).
 연결 자체는 1대 정상 반환되나 페이지 조작 도구만 차단된 상태로, 08-13~16을 지탱한 <code>javascript_tool</code> 단일 경로가 함께 죽었습니다.<br>
-5개 경로 전수 확인: ① javascript_tool <b>조직 정책 차단(신규)</b> · ② Control_Chrome <b>Chrome is not running</b>(4일 연속) · ③ web_fetch provenance <b>16일째</b> · ④ bash curl googleapis/youtube/oauth2 <b>전부 000</b> · ⑤ Apify <b>미연결</b>.<br>
-<b>🔴 Tom 조치 2가지</b> — (1) 관리자 설정에서 <b>Claude in Chrome 사용 허용 재활성화</b> (2) Chrome 실행 + 메뉴 <b>「보기 → 개발자 정보 → Apple 이벤트에서 JavaScript 허용」 체크</b>(4일째 미실행, 이게 항구적 폴백입니다).<br>
+5개 경로 전수 확인: ① javascript_tool <b>조직 정책 차단(신규)</b> · ② Control_Chrome — <b>list_tabs·open_url은 정상인데 execute_javascript만 "Chrome is not running"</b>(4일 연속, <b>Apple 이벤트 JS 허용 미체크의 정확한 증상</b>) · ③ web_fetch provenance <b>16일째</b> · ④ bash curl googleapis/youtube/oauth2 <b>전부 000</b> · ⑤ Apify <b>미연결</b>.<br>
+<b>🔴 Tom 조치 2가지</b> — (1) 관리자 설정에서 <b>Claude in Chrome 사용 허용 재활성화</b> (2) Chrome 메뉴 <b>「보기 → 개발자 정보 → Apple 이벤트에서 JavaScript 허용」 체크</b>(4일째 미실행, 이게 항구적 폴백입니다).<br>
 <b>snapshot-2026-08-17.csv는 의도적으로 생성하지 않았습니다</b> — 08-16 값 복제는 향후 델타를 전면 오염시킵니다.
 </div>
 </div>
