@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube 벤치마크 대시보드 — 2026-10-27</title>
+<style>
+  :root{--bg:#0e1117;--card:#171c26;--card2:#1d2433;--txt:#e8ecf3;--sub:#8b95a7;--acc:#4f8ff7;--green:#3ddc84;--red:#ff5d5d;--amber:#ffb84d;--border:#262e3f}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Pretendard','Apple SD Gothic Neo','Segoe UI',sans-serif}
+  body{background:var(--bg);color:var(--txt);padding:28px;max-width:1280px;margin:0 auto}
+  h1{font-size:22px;font-weight:700}
+  .sub{color:var(--sub);font-size:13px;margin-top:4px}
+  .badge{display:inline-block;background:#2a3550;color:#9db8ff;font-size:11px;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:middle}
+  .badge.good-b{background:#1f4a2e;color:#7de8a8}
+  .badge.warn-b{background:#4a3a22;color:#ffcf8a}
+  .badge.bad-b{background:#4a2224;color:#ff9d9d}
+  .grid{display:grid;gap:14px;margin-top:20px}
+  .kpis{grid-template-columns:repeat(4,1fr)}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+  .kpi .label{color:var(--sub);font-size:12px;margin-bottom:6px}
+  .kpi .val{font-size:26px;font-weight:800}
+  .kpi .note{font-size:12px;color:var(--sub);margin-top:6px}
+  .row2{grid-template-columns:1.1fr 0.9fr}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+  .card h2{font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--acc);display:inline-block}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{color:var(--sub);text-align:left;font-weight:600;padding:7px 8px;border-bottom:1px solid var(--border);font-size:11.5px}
+  td{padding:8px;border-bottom:1px solid #1f2635}
+  tr:last-child td{border-bottom:none}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .ch{font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--card2);white-space:nowrap}
+  .up{color:var(--green);font-weight:700}
+  .hot{color:var(--amber);font-weight:700}
+  .bad{color:var(--red);font-weight:700}
+  .flat{color:var(--sub)}
+  a{color:inherit;text-decoration:none;border-bottom:1px dotted #4f8ff766}
+  a:hover{color:var(--acc);border-bottom-color:var(--acc)}
+  .tagwrap{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{background:var(--card2);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:13px}
+  .tag b{color:var(--acc)}
+  .idea{background:var(--card2);border-left:3px solid var(--green);border-radius:10px;padding:14px;margin-bottom:10px}
+  .idea .t{font-weight:700;font-size:14px;margin-bottom:4px}
+  .idea .why{font-size:12.5px;color:var(--sub)}
+  .warn{background:#2a2118;border:1px solid #4a3a22;border-radius:10px;padding:12px 16px;font-size:12.5px;color:#d8b98a;margin-top:16px}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+  .bar-label{width:130px;font-size:11.5px;color:var(--sub);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-track{flex:1;background:#10141d;border-radius:6px;height:20px;overflow:hidden;position:relative}
+  .bar-fill{height:100%;border-radius:6px;background:var(--acc)}
+  .bar-fill.g{background:var(--green)}.bar-fill.a{background:var(--amber)}.bar-fill.r{background:var(--red)}
+  .bar-val{width:118px;font-size:11.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .goal60{position:absolute;top:0;bottom:0;width:2px;background:#fff8;left:60%}
+  .status{display:flex;flex-wrap:wrap;gap:10px;background:#12201a;border:1px solid #2b6b3f;border-radius:12px;padding:14px 16px;margin-top:16px;font-size:12.5px}
+  .status.alert{background:#241417;border-color:#7a2f38}
+  .status .s{display:flex;flex-direction:column;gap:2px;min-width:150px}
+  .status .s .k{color:#6f9a7d;font-size:11px}
+  .status.alert .s .k{color:#b07f88}
+  .status .s .v{font-weight:700}
+  .nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .nav a{background:var(--card2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:12px;color:var(--sub);border-bottom:1px solid var(--border)}
+  .nav a:hover{color:var(--acc);border-color:var(--acc)}
+  @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.row2{grid-template-columns:1fr}.bar-label{width:88px}}
+</style>
+</head>
+<body>
+
+<div style="background:#241417;border:1px solid #7a2f38;border-radius:14px;padding:16px 20px;margin-bottom:18px">
+<div style="font-size:16px;font-weight:800;color:#ff9d9d">🔥 2026-10-27 — 수집 12/12 성공 · 103편 · 오류 0 &nbsp;/&nbsp; <b>infinitedesk 3편 동시 지연폭발(채널 조회 +2.1M) · 만약에LAB 9일째 무발행</b></div>
+<div style="font-size:13px;color:#e8c9cc;margin-top:8px;line-height:1.7">
+🔥 <b>infinitedesk Spirit Level D+3 1,047,177→1,193,256(+13.9%)·Artillery Shell D+12 517,688→581,338(+12.3%)·Impact Fuze D+12 355,301→393,009(+10.6%)</b> — 한 채널에서 3편 동시 폭발, 채널 조회 총계 하루 만에 +2,105,454.<br>
+🔴 <b>만약에LAB 최근 업로드는 playlistItems 실측상 2026-10-18 확인(9일째 무발행)</b>.<br>
+⚠️ <b>판정 보류 대형 급등 3건(D+2, 08-13 규칙상 단정 금지)</b> — Itzquanta Tiger Nuts +378.6%·MackExplains7 Cockroaches +734.5%·Vortex 탱크 +316.2%.<br>
+⚠️ <b>전일 Top1 히트작(Vortex 만리장성, 2.8M뷰) 추적창 밖으로 이탈 — videoId 미기록, 재추적 불가.</b>
+</div>
+</div>
+
+<h1>🔬 과학 유튜브 벤치마크 대시보드 <span class="badge">2026-10-27</span><span class="badge good-b">✅ 12/12 수집 성공</span><span class="badge bad-b">🔴 자사 9일째 무발행</span><span class="badge warn-b">🔥 infinitedesk 3편 동시폭발</span></h1>
+<div class="sub">신규 발행 <b>7편</b>(자사 0편) · 28일 유효조회율 <b>44.46%</b>(+0.04pp) · 구독 <b>+0</b> (126명) · D+5 신규 확정 0건</div>
+<div class="nav"><a href="#one">오늘의 단 하나</a><a href="#own">만약에LAB</a><a href="#new">확산</a><a href="#corr">유효조회율</a><a href="#top">급상승</a><a href="#comp">채널</a><a href="#idea">제안</a><a href="#dq">데이터 주의</a></div>
+
+<div class="card" id="one" style="margin-top:18px">
+<h2 style="font-size:17px;margin-bottom:12px">🎯 오늘의 단 하나 — <b>infinitedesk "작동 원리 공개형" 3편 동시 지연폭발 (D+3~D+12 전구간)</b></h2>
+<div style="font-size:13.5px;line-height:1.75">
+infinitedesk가 하루 만에 3편 동시 폭발했다 — "Spirit Level Bubble"(D+3, 1,047,177→1,193,256, +13.9%), "152mm Artillery Shell"(D+12, 517,688→581,338, +12.3%), "Impact Fuze"(D+12, 355,301→393,009, +10.6%). 단일 영상이 아닌 채널 전체 포맷("작동 원리 공개형")이 알고리즘 재노출을 받는 패턴으로, 채널 조회 총계가 하루 만에 +2,105,454 증가했다.
+<br><br>
+만약에LAB은 playlistItems 실측상 최신 업로드가 2026-10-18 「휴대폰만 보면 울렁?」로 확인되어 오늘 기준 D+9, <b>9일째 신규 업로드가 없다</b>. 추적 15편 전부 D+9 이상으로 기확정 상태이며 오늘 D+5 신규 확정은 없음(PASS 2건/MISS 13건 유지).
+</div>
+</div>
+
+<div class="grid kpis" id="today">
+<div class="kpi"><div class="label">구독자 (공개)</div><div class="val flat">126 <span class="flat" style="font-size:15px">+0</span></div><div class="note">28일 순증(API) <b>+22/-2</b></div></div>
+<div class="kpi"><div class="label">채널 누적 조회수</div><div class="val up">149,845 <span class="up" style="font-size:15px">+51</span></div><div class="note">추적 15편 델타 합 +16, 괴리 +35(원인 미확정)</div></div>
+<div class="kpi"><div class="label">28일 유효조회율</div><div class="val hot">44.46%</div><div class="note">목표 60% 대비 <b>−15.54pp</b> · 전일 44.42%(+0.04pp, 정상 1일 이동)</div></div>
+<div class="kpi"><div class="label">avgViewPercentage (28일)</div><div class="val up">82.97%</div><div class="note">전일 83%(-0.03pp)</div></div>
+</div>
+
+<div class="grid"><div class="card" id="own">
+<h2><span class="dot" style="background:var(--red)"></span>🧪 <a href="https://www.youtube.com/@whatifLAB_kr1">만약에LAB (우리 채널)</a> — 1일 델타</h2>
+<div class="status alert">
+<div class="s"><div class="k">신규 업로드</div><div class="v" style="color:var(--red)">0편 (9일째 무발행, 실측)</div></div>
+<div class="s"><div class="k">창 이탈</div><div class="v" style="color:var(--sub)">0편(변동 없음)</div></div>
+<div class="s"><div class="k">영상 수 (API)</div><div class="v">139 (변동 없음)</div></div>
+<div class="s"><div class="k">D+5 확정판정</div><div class="v" style="color:var(--sub)">신규 없음 — PASS 2/MISS 13 (추적 15편 전건 기확정)</div></div>
+<div class="s"><div class="k">구독자</div><div class="v" style="color:var(--sub)">+0 (126)</div></div>
+<div class="s"><div class="k">추적 15편 델타 합</div><div class="v" style="color:var(--green)">+16</div></div>
+<div class="s"><div class="k">채널 총계 델타</div><div class="v" style="color:var(--amber)">+51 (추적분과 괴리 +35)</div></div>
+<div class="s"><div class="k">2K대 유지</div><div class="v" style="color:#7de8a8">상어부캉이 2,388(+3) · 병원좀비 2,783(+6, 고수준 유지)</div></div>
+<div class="s"><div class="k">Analytics 지연</div><div class="v">근사 3일 (최신 유효일 10-24)</div></div>
+</div>
+
+<div style="margin-top:16px" id="new"><h2 style="margin-bottom:10px"><span class="dot" style="background:var(--amber)"></span>쇼츠 확산 현황 (2K 돌파선 = 흰 선, 스케일 2.78K) — <b>15편, 712~2,783 밴드</b></h2>
+<div class="bar-row"><div class="bar-label">휴대폰멀미(10-18)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill a" style="width:25.6%"></div></div><div class="bar-val">712 · D+9 확정유지 49.57%</div></div>
+<div class="bar-row"><div class="bar-label">팝콘(10-17)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill a" style="width:40.4%"></div></div><div class="bar-val">1,123 · D+10 확정유지 45.77%</div></div>
+<div class="bar-row"><div class="bar-label">물방울이(10-14)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill a" style="width:35.2%"></div></div><div class="bar-val">980 · D+13 확정유지 47.76%</div></div>
+<div class="bar-row"><div class="bar-label">오줌이약(10-12)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill a" style="width:61.7%"></div></div><div class="bar-val">1,718 · D+15 확정유지 50.18%</div></div>
+<div class="bar-row"><div class="bar-label">여기가지구(10-11)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill r" style="width:57.5%"></div></div><div class="bar-val">1,601 · D+16 확정유지 33.17%(최하위)</div></div>
+<div class="bar-row"><div class="bar-label">물속인데(10-07)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill a" style="width:58.6%"></div></div><div class="bar-val">1,632 · D+20 확정 46.88%</div></div>
+<div class="bar-row"><div class="bar-label">수소폭탄(10-06)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill a" style="width:59.1%"></div></div><div class="bar-val">1,645 · D+21 확정 46.35%</div></div>
+<div class="bar-row"><div class="bar-label">트럭매연(10-05)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill a" style="width:57.0%"></div></div><div class="bar-val">1,586 · D+22 확정 46.98%</div></div>
+<div class="bar-row"><div class="bar-label">상어부캉이(10-02)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill r" style="width:85.8%"></div></div><div class="bar-val">2,388 · D+25 확정 43.08%(미달)</div></div>
+<div class="bar-row"><div class="bar-label">말(09-30)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill a" style="width:57.2%"></div></div><div class="bar-val">1,592 · D+27 확정 45.73%</div></div>
+<div class="bar-row"><div class="bar-label">혹등고래(09-29)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill r" style="width:63.2%"></div></div><div class="bar-val">1,759 · D+28 확정 38.66%</div></div>
+<div class="bar-row"><div class="bar-label">말벌 PASS(09-28)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill g" style="width:53.3%"></div></div><div class="bar-val">1,484 · D+29 확정 61.43%(PASS)</div></div>
+<div class="bar-row"><div class="bar-label">강아지기억(09-27)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill r" style="width:41.6%"></div></div><div class="bar-val">1,159 · D+30 확정 39.86%</div></div>
+<div class="bar-row"><div class="bar-label">비행기창문 PASS(09-26)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill g" style="width:40.0%"></div></div><div class="bar-val">1,114 · D+31 확정 61.13%(2위)</div></div>
+<div class="bar-row"><div class="bar-label">병원좀비(09-25)</div><div class="bar-track"><div class="goal60" style="left:72%"></div><div class="bar-fill a" style="width:100%"></div></div><div class="bar-val">2,783 · D+32 확정 46.97%(고수준유지)</div></div>
+<div class="warn" style="background:#241417;border-color:#7a2f38;color:#e8c9cc">🔴 무발행 9일째 — 신규편 없음, 창 이탈도 없음(전일과 동일 15편). D+5 신규 확정 0건. 누적 PASS 2건/MISS 13건.</div>
+</div>
+</div></div>
+
+<div class="grid row2">
+<div class="card" id="corr">
+<h2><span class="dot" style="background:var(--green)"></span>유효조회율 (목표 60% = 흰 선) — 현재 추적 15편 기준</h2>
+<div class="bar-row"><div class="bar-label">말벌 PASS</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill g" style="width:61.43%"></div></div><div class="bar-val">61.43% D+29 확정(1위)</div></div>
+<div class="bar-row"><div class="bar-label">비행기창문 PASS</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill g" style="width:61.13%"></div></div><div class="bar-val">61.13% D+31 확정(2위)</div></div>
+<div class="bar-row"><div class="bar-label">오줌이약</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:50.18%"></div></div><div class="bar-val">50.18% D+15 확정유지(3위)</div></div>
+<div class="bar-row"><div class="bar-label">휴대폰멀미</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:49.57%"></div></div><div class="bar-val">49.57% D+9 확정유지(4위)</div></div>
+<div class="bar-row"><div class="bar-label">물방울이</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:47.76%"></div></div><div class="bar-val">47.76% D+13 확정유지(5위)</div></div>
+<div class="bar-row"><div class="bar-label">트럭매연</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:46.98%"></div></div><div class="bar-val">46.98% D+22 확정(6위)</div></div>
+<div class="bar-row"><div class="bar-label">병원좀비</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:46.97%"></div></div><div class="bar-val">46.97% D+32 확정(7위)</div></div>
+<div class="bar-row"><div class="bar-label">물속인데</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:46.88%"></div></div><div class="bar-val">46.88% D+20 확정(8위)</div></div>
+<div class="bar-row"><div class="bar-label">수소폭탄</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:46.35%"></div></div><div class="bar-val">46.35% D+21 확정(9위)</div></div>
+<div class="bar-row"><div class="bar-label">팝콘</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:45.77%"></div></div><div class="bar-val">45.77% D+10 확정유지(10위)</div></div>
+<div class="bar-row"><div class="bar-label">말</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:45.73%"></div></div><div class="bar-val">45.73% D+27 확정(11위)</div></div>
+<div class="bar-row"><div class="bar-label">상어부캉이</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:43.08%"></div></div><div class="bar-val">43.08% D+25 확정(12위)</div></div>
+<div class="bar-row"><div class="bar-label">강아지기억</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:39.86%"></div></div><div class="bar-val">39.86% D+30 확정(13위)</div></div>
+<div class="bar-row"><div class="bar-label">혹등고래</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:38.66%"></div></div><div class="bar-val">38.66% D+28 확정(14위)</div></div>
+<div class="bar-row"><div class="bar-label">여기가지구</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:33.17%"></div></div><div class="bar-val">33.17% D+16 확정(최하위)</div></div>
+<div class="warn" style="background:#12201a;border-color:#2b6b3f;color:#c8e8d2">🎯 <b>PASS 2건 전부 "일상/즉각 반전 질문형" 제목</b>(말벌·비행기창문), 변동 없음. 오늘 신규 D+5 확정 0건. ※ 창을 벗어난 과거 PASS편은 현재 추적 범위 밖이라 이 표에 포함하지 않음.</div>
+</div>
+
+<div class="card">
+<h2><span class="dot" style="background:var(--red)"></span>본인 채널 요약</h2>
+<table>
+<tr><th>지표</th><th class="num">10-26</th><th class="num">10-27</th><th>비고</th></tr>
+<tr><td>신규 업로드</td><td class="num bad">0편</td><td class="num bad">0편</td><td class="bad">9일째 무발행(실측)</td></tr>
+<tr><td>창 이탈</td><td class="num flat">0편</td><td class="num flat">0편</td><td class="flat">변동 없음</td></tr>
+<tr><td>구독자(공개)</td><td class="num up">126</td><td class="num flat">126</td><td class="flat">+0</td></tr>
+<tr><td>추적 영상 델타 합(실측)</td><td class="num up">+48</td><td class="num up">+16</td><td class="flat">균질 소폭 증가</td></tr>
+<tr><td>채널 총계 델타</td><td class="num up">+104</td><td class="num up">+51</td><td class="flat">괴리 +35</td></tr>
+<tr><td>28일 유효조회율</td><td class="num hot">44.42%</td><td class="num hot">44.46%</td><td class="flat">+0.04pp</td></tr>
+</table>
+<div class="warn" style="background:#241417;border-color:#7a2f38;color:#e8c9cc">🔴 오늘 가장 중요한 변화 — 무발행 9일째(실측). D+5 신규 확정 없음.</div>
+</div>
+</div>
+
+<div class="card" id="top" style="margin-top:14px">
+<h2><span class="dot" style="background:var(--amber)"></span>급상승 Top 10 (1일 델타, 절대 증가분 기준)</h2>
+<table>
+<tr><th>#</th><th>채널</th><th>편</th><th class="num">델타</th><th class="num">증가율</th></tr>
+<tr style="background:#14231a"><td>1</td><td><span class="ch">infinitedesk</span></td><td>How Does a Spirit Level Bubble Find the Center?</td><td class="num up">+146,079</td><td class="num up"><b>+13.9%</b></td></tr>
+<tr><td>2</td><td><span class="ch">JUST1MIN</span></td><td>눈 쌓이고 추운데도?</td><td class="num up">+136,949</td><td class="num up"><b>+32.1%</b></td></tr>
+<tr style="background:#231414"><td>3</td><td><span class="ch">JUST1MIN</span></td><td>역시 국민 여동생이야!</td><td class="num up">+67,325</td><td class="num up"><b>+64.5%</b></td></tr>
+<tr><td>4</td><td><span class="ch">JUST1MIN</span></td><td>사장님은 메뉴를 다 외울까?</td><td class="num up">+66,091</td><td class="num up"><b>+24.0%</b></td></tr>
+<tr style="background:#14231a"><td>5</td><td><span class="ch">infinitedesk</span></td><td>How Does a 152 mm Artillery Shell Work?</td><td class="num up">+63,650</td><td class="num up"><b>+12.3%</b></td></tr>
+<tr><td>6</td><td><span class="ch">infinitedesk</span></td><td>The Oil Pumps That Power Heavy Equipment</td><td class="num up">+55,520</td><td class="num up"><b>+5.6%</b></td></tr>
+<tr style="background:#14231a"><td>7</td><td><span class="ch">Vortex_11_YT</span></td><td>Brushed vs Brushless Motors</td><td class="num up">+47,572</td><td class="num up"><b>+28.3%</b></td></tr>
+<tr><td>8</td><td><span class="ch">infinitedesk</span></td><td>How Does an Impact Fuze Work?</td><td class="num up">+37,708</td><td class="num up"><b>+10.6%</b></td></tr>
+<tr style="background:#14231a"><td>9</td><td><span class="ch">ScienceDream</span></td><td>50억 마리였던 비둘기는 어쩌다 0마리가 됐을까?</td><td class="num up">+22,866</td><td class="num up"><b>+2.5%</b></td></tr>
+<tr><td>10</td><td><span class="ch">인류의서재</span></td><td>생명이 살 수 있는 자리에 있던 화성은, 왜 지구가 되지 못했을까?</td><td class="num up">+20,305</td><td class="num up"><b>+31.3%</b></td></tr>
+</table>
+<div class="warn" style="background:#12201a;border-color:#2b6b3f;color:#c8e8d2">🔥 <b>infinitedesk가 Top10에 4개(1·5·6·8위) 동시 등재</b> — 단일 영상이 아닌 채널 포맷 전체의 지연폭발.<br>
+⚠️ <b>표 밖 판정 보류 급등(D+2, 성패 단정 금지)</b> — Itzquanta Tiger Nuts +378.6%·MackExplains7 Cockroaches +734.5%·Vortex 탱크 +316.2%.<br>
+✅ <b>JUST1MIN Top10 중 3개 차지</b> — 오늘도 3편 동시 발행 체제 지속.</div>
+</div>
+
+<div class="grid row2">
+<div class="card" id="comp">
+<h2><span class="dot"></span>채널 동향 (1일, 채널 공개 total 기준)</h2>
+<table>
+<tr><th>채널</th><th class="num">구독자</th><th class="num">Δ구독</th><th class="num">조회 델타</th><th>발행</th></tr>
+<tr style="background:#231414"><td><span class="ch">infinitedesk</span></td><td class="num">454,000</td><td class="num up"><b>+3,000</b></td><td class="num up"><b>+2,105,454</b></td><td class="flat">신규 0편, 지연폭발 3건(대형)</td></tr>
+<tr style="background:#14231a"><td><span class="ch">JUST1MIN</span></td><td class="num">1,150,000</td><td class="num flat">±0</td><td class="num up"><b>+1,497,429</b></td><td class="hot">신규 3편</td></tr>
+<tr><td><span class="ch">Vortex_11_YT</span></td><td class="num">95,000</td><td class="num up"><b>+700</b></td><td class="num up"><b>+1,398,438</b></td><td class="hot">신규 1편, 지연폭발(판정보류 D+2)</td></tr>
+<tr><td><span class="ch">인류의서재</span></td><td class="num">86,300</td><td class="num up"><b>+400</b></td><td class="num up">+215,099</td><td class="hot">신규 1편</td></tr>
+<tr><td><span class="ch">ScienceDream</span></td><td class="num">1,150,000</td><td class="num flat">±0</td><td class="num up">+155,286</td><td class="flat">무발행(구작 성장)</td></tr>
+<tr><td><span class="ch">cosmoswag_kr</span></td><td class="num">280,000</td><td class="num flat">±0</td><td class="num up">+81,468</td><td class="flat">무발행</td></tr>
+<tr><td><span class="ch">Itzquanta</span></td><td class="num">31,600</td><td class="num up"><b>+200</b></td><td class="num up">+77,648</td><td class="hot">신규 1편(10연작)</td></tr>
+<tr><td><span class="ch">MackExplains7</span></td><td class="num">92,200</td><td class="num up"><b>+300</b></td><td class="num up">+55,121</td><td class="hot">신규 1편(본포맷 복귀)</td></tr>
+<tr><td><span class="ch">Zenn0009</span></td><td class="num">198,000</td><td class="num up"><b>+1,000(반올림)</b></td><td class="num up">+25,503</td><td class="flat">무발행(10-04 이후 23일째)</td></tr>
+<tr><td><span class="ch">quark5050</span></td><td class="num">19,700</td><td class="num flat">±0</td><td class="num up">+11,146</td><td class="flat">무발행(09-18 이후 39일째)</td></tr>
+<tr><td><span class="ch">kurzgesagt_kr</span></td><td class="num">730,000</td><td class="num flat">±0</td><td class="num up">+6,980</td><td class="flat">무발행 지속</td></tr>
+<tr style="background:#231419"><td><span class="ch">만약에LAB</span></td><td class="num">126</td><td class="num flat">+0</td><td class="num up">+51</td><td class="bad">🔴 무발행(9일째)</td></tr>
+</table>
+<div class="warn" style="background:#241417;border-color:#7a2f38;color:#e8c9cc">🔴 만약에LAB 9일 연속 무발행(실측). 🔥 infinitedesk 3편 동시 지연폭발, 채널 조회 +2.1M.</div>
+</div>
+
+<div class="card">
+<h2><span class="dot" style="background:var(--amber)"></span>주제 트렌드 · 신규 업로드 7편(자사 0편)</h2>
+<div class="tagwrap" style="margin-bottom:14px">
+<div class="tag">🔥 <b>infinitedesk "작동 원리 공개형" 3편 동시 지연폭발</b></div>
+<div class="tag">🔴 <b>만약에LAB 9일째 무발행</b></div>
+<div class="tag">✅ <b>JUST1MIN 오늘도 3편 동시발행</b></div>
+<div class="tag">✅ <b>Itzquanta "Why Don't We Eat X" 10연작 지속</b></div>
+<div class="tag">↩️ <b>MackExplains7 소재 이탈 1일 만에 본포맷 복귀</b></div>
+</div>
+<table>
+<tr><th>채널</th><th>편</th><th class="num">조회(현재)</th><th>비고</th></tr>
+<tr><td><span class="ch">JUST1MIN</span></td><td>이자가 이자가 아닌 요즘 외 2편</td><td class="num">95,362 / 104,420 / 33,870</td><td class="hot">D+1, 3편 동시발행</td></tr>
+<tr><td><span class="ch">MackExplains7</span></td><td>What Is It About Ancient Humans That Stops Animals From Eating Them?</td><td class="num">911</td><td class="flat">D+1, 본포맷 복귀</td></tr>
+<tr><td><span class="ch">Itzquanta</span></td><td>If Garden Snails Are Escargot, Why Don't We Eat Them?</td><td class="num">5,714</td><td class="flat">D+1, 10번째 변주</td></tr>
+<tr><td><span class="ch">인류의서재</span></td><td>죽은 아버지 세금까지 내야 했던 조선 농민들이 결국 들고일어난 날</td><td class="num">5,995</td><td class="flat">D+1</td></tr>
+<tr><td><span class="ch">Vortex_11_YT</span></td><td>How Elevators Stop Themselves From Falling</td><td class="num">2,596</td><td class="flat">D+1</td></tr>
+<tr style="background:#231419"><td><span class="ch">만약에LAB</span></td><td>—</td><td class="num">—</td><td class="bad">무발행(9일째)</td></tr>
+</table>
+<div class="warn" style="background:#241417;border-color:#7a2f38;color:#e8c9cc">만약에LAB 무발행 확인(9일째, 실측) — 경쟁 7편 대비 자사 0편.</div>
+</div>
+</div>
+
+<div class="card" id="idea" style="margin-top:14px">
+<h2><span class="dot" style="background:var(--red)"></span>만약에LAB 제작 제안</h2>
+
+<div class="idea" style="border-left-color:var(--red)"><div class="t">🥇 1순위 — "작동 원리 공개형" 포맷 지속 강화</div>
+<div style="font-size:13px;line-height:1.7;margin:8px 0">
+제목 후보: 「폐 속 공기는 왜 안 썩을까?」 / 「뼈는 왜 부러져도 다시 붙을까?」 + 첫 1초 훅: 단면·클로즈업 비주얼 + 자막 "이게 왜 이럴까?".
+</div>
+<div class="why">📊 근거: §3 — infinitedesk가 하루에 3편 동시 폭발(Spirit Level +13.9%·Artillery Shell +12.3%·Impact Fuze +10.6%, D+3~D+12 전구간) — 단발성이 아닌 포맷 전체의 재노출 패턴.</div></div>
+
+<div class="idea"><div class="t">🥈 2순위 — 발행 빈도를 최우선 과제로</div>
+<div style="font-size:13px;line-height:1.7;margin:8px 0">
+만약에LAB 9일째 무발행 대비, 성장 채널(JUST1MIN 1일 3편·Itzquanta 1일 1편·MackExplains7 1일 1편)은 예외 없이 고빈도 발행.
+</div>
+<div class="why">📊 근거: 검증된 지식 #6 — 카탈로그 잔존 트래픽은 신생채널에서 사실상 0, 조회의 거의 전부가 당일 신규편. 무발행 기간이 길수록 신규 조회 기회 자체가 소멸.</div></div>
+
+<div class="idea"><div class="t">🥉 3순위 — 반전형 질문 제목 템플릿 연작화(자기복제 승인)</div>
+<div style="font-size:13px;line-height:1.7;margin:8px 0">
+기존 "~인데 왜?"류 템플릿을 소재만 바꿔 주 2회 이상 고정 연작으로 전환.
+</div>
+<div class="why">📊 근거: §4 — Itzquanta "Why Don't We Eat X" 10연작 전부 생존(Tiger Nuts D+2 +378.6%)·MackExplains7도 소재 이탈 후 즉시 복귀하며 D+2 +734.5% 기록. 재업로드=실패 전제는 2026-08-13 철회됨.</div></div>
+
+<div class="warn" style="background:#241417;border-color:#7a2f38;color:#e8c9cc">🔴 <b>진단 갱신</b> — 무발행 9일째(실측) · 구독 +0 · D+5 신규 확정 없음<br>
+「재업로드=실패」 전제 금지 유지 · D+5 판정 규칙 유지 · 브리핑 공백=무발행 추정 금지, playlistItems 실측 원칙 유지</div>
+</div>
+
+<div class="card" id="dq" style="margin-top:14px">
+<h2><span class="dot" style="background:var(--amber)"></span>데이터 주의사항</h2>
+<div style="font-size:12.8px;line-height:1.85;color:#c8d0de">
+🔴 <b>만약에LAB 무발행 9일째</b> — playlistItems 실측으로 직접 확인, 최근 업로드는 2026-10-18.<br>
+⚪ <b>D+5 신규 확정 없음</b> — 추적 15편 전부 이미 D+9 이상 기확정. 누적 PASS 2건/MISS 13건.<br>
+🔥 <b>infinitedesk 3편 동시 지연폭발(D+3·D+12·D+12)</b> — 모두 이미 D+5 이상이라 판정 보류 대상 아님.<br>
+⚠️ <b>판정 보류 대형 급등 3건(D+2)</b> — Itzquanta Tiger Nuts(+378.6%)·MackExplains7 Cockroaches(+734.5%)·Vortex 탱크(+316.2%), 08-13 규칙상 성패 단정 금지.<br>
+⚠️ <b>히트작 추적창 이탈</b> — 전일 Top1 Vortex "Great Wall of China"(2,816,018뷰, D+8)가 오늘 추적창(8편) 밖으로 밀려나 관측 불가, videoId 미기록으로 재추적 불가능.<br>
+🕒 <b>Analytics 지연 근사 3일</b> — 최신 유효 일별 데이터는 10-24까지. 28일 창 Sep29~Oct27, 전일(Sep28~Oct26) 대비 정상적인 1일 이동, +0.04pp.<br>
+🔢 <b>구독자 반올림</b> — 1만 이상 채널은 100/500/1,000 단위 반올림(소폭 변동은 신호 아닐 수 있음).<br>
+🔌 <b>수집 경로</b> — <code>web_fetch</code>/curl 시도하지 않음(차단 이력 유지). Claude 내장 브라우저(Browser pane) <code>javascript_tool</code> 단일 경로로 12/12 채널·103편·Analytics(OAuth 포함) 성공, 오류 0.
+</div>
+</div>
+
+<div class="sub" style="margin-top:20px;text-align:center">
+YouTube Data API v3 + Analytics API v2 · Claude 내장 브라우저(Browser pane) javascript_tool · 생성 2026-10-27
+</div>
+
+</body>
+</html>
