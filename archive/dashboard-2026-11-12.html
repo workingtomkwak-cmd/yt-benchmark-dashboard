@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube 벤치마크 대시보드 — 2026-11-12</title>
+<style>
+  :root{--bg:#0e1117;--card:#171c26;--card2:#1d2433;--txt:#e8ecf3;--sub:#8b95a7;--acc:#4f8ff7;--green:#3ddc84;--red:#ff5d5d;--amber:#ffb84d;--border:#262e3f}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Pretendard','Apple SD Gothic Neo','Segoe UI',sans-serif}
+  body{background:var(--bg);color:var(--txt);padding:28px;max-width:1280px;margin:0 auto}
+  h1{font-size:22px;font-weight:700}
+  .sub{color:var(--sub);font-size:13px;margin-top:4px}
+  .badge{display:inline-block;background:#2a3550;color:#9db8ff;font-size:11px;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:middle}
+  .badge.good-b{background:#1f4a2e;color:#7de8a8}
+  .badge.warn-b{background:#4a3a22;color:#ffcf8a}
+  .badge.bad-b{background:#4a2224;color:#ff9d9d}
+  .grid{display:grid;gap:14px;margin-top:20px}
+  .kpis{grid-template-columns:repeat(4,1fr)}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+  .kpi .label{color:var(--sub);font-size:12px;margin-bottom:6px}
+  .kpi .val{font-size:26px;font-weight:800}
+  .kpi .note{font-size:12px;color:var(--sub);margin-top:6px}
+  .row2{grid-template-columns:1.1fr 0.9fr}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+  .card h2{font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--acc);display:inline-block}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{color:var(--sub);text-align:left;font-weight:600;padding:7px 8px;border-bottom:1px solid var(--border);font-size:11.5px}
+  td{padding:8px;border-bottom:1px solid #1f2635}
+  tr:last-child td{border-bottom:none}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .ch{font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--card2);white-space:nowrap}
+  .up{color:var(--green);font-weight:700}
+  .hot{color:var(--amber);font-weight:700}
+  .bad{color:var(--red);font-weight:700}
+  .flat{color:var(--sub)}
+  a{color:inherit;text-decoration:none;border-bottom:1px dotted #4f8ff766}
+  a:hover{color:var(--acc);border-bottom-color:var(--acc)}
+  .tagwrap{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{background:var(--card2);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:13px}
+  .tag b{color:var(--acc)}
+  .idea{background:var(--card2);border-left:3px solid var(--green);border-radius:10px;padding:14px;margin-bottom:10px}
+  .idea .t{font-weight:700;font-size:14px;margin-bottom:4px}
+  .idea .why{font-size:12.5px;color:var(--sub)}
+  .warn{background:#2a2118;border:1px solid #4a3a22;border-radius:10px;padding:12px 16px;font-size:12.5px;color:#d8b98a;margin-top:16px}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+  .bar-label{width:130px;font-size:11.5px;color:var(--sub);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-track{flex:1;background:#10141d;border-radius:6px;height:20px;overflow:hidden;position:relative}
+  .bar-fill{height:100%;border-radius:6px;background:var(--acc)}
+  .bar-fill.g{background:var(--green)}.bar-fill.a{background:var(--amber)}.bar-fill.r{background:var(--red)}
+  .bar-val{width:118px;font-size:11.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .goal60{position:absolute;top:0;bottom:0;width:2px;background:#fff8;left:60%}
+  .status{display:flex;flex-wrap:wrap;gap:10px;background:#12201a;border:1px solid #2b6b3f;border-radius:12px;padding:14px 16px;margin-top:16px;font-size:12.5px}
+  .status.alert{background:#241417;border-color:#7a2f38}
+  .status .s{display:flex;flex-direction:column;gap:2px;min-width:150px}
+  .status .s .k{color:#6f9a7d;font-size:11px}
+  .status.alert .s .k{color:#b07f88}
+  .status .s .v{font-weight:700}
+  .nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .nav a{background:var(--card2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:12px;color:var(--sub);border-bottom:1px solid var(--border)}
+  .nav a:hover{color:var(--acc);border-color:var(--acc)}
+  @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.row2{grid-template-columns:1fr}.bar-label{width:88px}}
+</style>
+</head>
+<body>
+
+<div style="background:#1a2a1e;border:1px solid #2f6b42;border-radius:14px;padding:16px 20px;margin-bottom:18px">
+<div style="font-size:16px;font-weight:800;color:#7de8a8">🔥 2026-11-12 — 수집 12/12 성공 · 103편 · 오류 0 (4일 누적, 직전 스냅샷 11-08) &nbsp;/&nbsp; <b>🔴 5개 채널 영상 동시 D+5~6 전환, 전부 PASS · Vortex "Solar Water Heater" +2,892.0% · 만약에LAB 25일째 무발행</b></div>
+<div style="font-size:13px;color:#cfe8d6;margin-top:8px;line-height:1.7">
+🔥 <b>Vortex_11_YT "How Engineers Built a Solar Water Heater Without Electricity" D+5, 1,535→45,932(+2,892.0%)</b> — 추적 이래 최대 폭. 2026-08-13 규칙상 오늘 판정 전환, <b>PASS</b>.<br>
+🟢 <b>같은 날 infinitedesk·MackExplains7·인류의서재·ScienceDream 영상도 D+5~6 동시 도달, 전부 PASS</b>(+162.4%·+412.8%·+59.7%·+72.9%).<br>
+🟢 <b>인류의서재·Vortex_11_YT·MackExplains7 4일 연속 1일 1편 발행</b> — 고빈도 발행 지속.<br>
+🟡 <b>JUST1MIN 추적 윈도우(8편) 전체 교체</b>(최소 8편 신규, 11-09~11-11) — 직전 8편 후속관측 불가.<br>
+🔴 <b>만약에LAB 25일째 무발행(playlistItems 실측)</b>, 구독자 126 변동 없음. 추적 15편 4일 합산 델타는 +253.
+</div>
+</div>
+
+<h1>🔬 과학 유튜브 벤치마크 대시보드 <span class="badge">2026-11-12</span><span class="badge good-b">✅ 12/12 수집 성공</span><span class="badge bad-b">🔴 자사 25일째 무발행</span><span class="badge warn-b">🔥 5채널 D+5 PASS</span></h1>
+<div class="sub">신규 발행 <b>24편+</b>(자사 0편) · 28일 유효조회율 <b>44.87%</b>(창 Oct15~Nov12) · 구독 <b>±0</b> (126명) · 모든 델타 4일 누적(11-08→11-12)</div>
+<div class="nav"><a href="#one">오늘의 단 하나</a><a href="#own">만약에LAB</a><a href="#new">확산</a><a href="#corr">유효조회율</a><a href="#top">급상승</a><a href="#comp">채널</a><a href="#idea">제안</a><a href="#dq">데이터 주의</a></div>
+
+<div class="card" id="one" style="margin-top:18px">
+<h2 style="font-size:17px;margin-bottom:12px">🎯 오늘의 단 하나 — <b>Vortex_11_YT "Solar Water Heater" 오늘 D+5 확정판정, 거의 30배(+2,892.0%)</b></h2>
+<div style="font-size:13.5px;line-height:1.75">
+Vortex_11_YT의 "How Engineers Built a Solar Water Heater Without Electricity"(2026-11-07 발행)가 오늘로 정확히 D+5를 맞으며 1,535뷰에서 <b>45,932뷰로 거의 30배(+2,892.0%)</b> 폭증했다. 2026-08-13 확정된 판정 규칙(최소 D+5 이후에만 성패 판정)에 따라 오늘부터 정식 판정 대상으로 전환되며, 이 폭의 크기는 추적 시작 이래 가장 큰 D+5 전환 사례다(기존 최대 기록은 같은 채널의 "Dam Without Concrete" +107.6%).<br><br>
+공교롭게도 같은 날 <b>4개 채널의 영상이 함께 D+5~D+6에 도달</b>했고 전부 PASS로 전환됐다 — infinitedesk "Nut Won't Budge"(+162.4%), MackExplains7 "Dragonfly"(+412.8%), 인류의서재 "덜 낳으라던 시절엔"(+59.7%), ScienceDream "등딱지 거북"(D+6, +72.9%). 이는 2026-08-13 확정 규칙("D+5 미만은 판정보류")이 실제로 작동해 다수의 초반 저조 영상이 뒤늦게 큰 폭으로 뒤집힌 전형적 사례다.<br><br>
+반면 <b>Vortex_11_YT의 어제 확정 PASS 영상("Dam Without Concrete", D+5 68,518)은 오늘 추적 윈도우(8편)에서 완전히 이탈</b>했다 — 채널이 4일 연속 1일 1편 페이스를 유지하며 신작으로 윈도우를 채웠기 때문. 고빈도 발행 채널은 향후 videoId 별도 기록이 필요하다.<br><br>
+만약에LAB은 playlistItems 실측상 여전히 2026-10-18이 최신 업로드로, <b>오늘로 25일째 무발행</b>이다. 추적 15편(전부 구작)의 4일 누적 델타 합은 +253뷰(병원좀비 +197이 78%를 견인)에 그쳤다.
+</div>
+</div>
+
+<div class="grid kpis" id="today">
+<div class="kpi"><div class="label">구독자 (공개)</div><div class="val flat">126 <span class="flat" style="font-size:15px">±0</span></div><div class="note">28일 순증(API) <b>+9/-1</b></div></div>
+<div class="kpi"><div class="label">채널 누적 조회수</div><div class="val up">151,475 <span class="up" style="font-size:15px">+427</span></div><div class="note">4일 누적 · 추적 15편 델타합 +253, 괴리 +174</div></div>
+<div class="kpi"><div class="label">28일 유효조회율</div><div class="val hot">44.87%</div><div class="note">목표 60% 대비 <b>−15.13pp</b> · 창 Oct15~Nov12(이전 창 Oct12~Nov8 46.44%, 창 이동으로 직접비교 무의미)</div></div>
+<div class="kpi"><div class="label">avgViewPercentage (28일)</div><div class="val flat">67.34%</div><div class="note">시청시간 1,095분 · 28일 누계</div></div>
+</div>
+
+<div class="grid"><div class="card" id="own">
+<h2><span class="dot" style="background:var(--red)"></span>🧪 <a href="https://www.youtube.com/@whatifLAB_kr1">만약에LAB (우리 채널)</a> — 4일 누적 델타(11-08→11-12)</h2>
+<div class="status alert">
+<div class="s"><div class="k">신규 업로드</div><div class="v" style="color:var(--red)">0편 (25일째 무발행, 실측)</div></div>
+<div class="s"><div class="k">창 이탈</div><div class="v" style="color:var(--sub)">0편(변동 없음)</div></div>
+<div class="s"><div class="k">영상 수 (API)</div><div class="v">139 (변동 없음)</div></div>
+<div class="s"><div class="k">D+5 확정판정</div><div class="v" style="color:var(--sub)">신규 없음 — 추적 15편 전건 기확정(D+25~D+48)</div></div>
+<div class="s"><div class="k">구독자</div><div class="v" style="color:var(--sub)">±0 (126) — 변동 없음</div></div>
+<div class="s"><div class="k">추적 15편 델타 합(4일)</div><div class="v" style="color:var(--green)">+253</div></div>
+<div class="s"><div class="k">채널 총계 델타(4일)</div><div class="v" style="color:var(--amber)">+427</div></div>
+<div class="s"><div class="k">최대 상승</div><div class="v" style="color:#7de8a8">병원좀비 3,636(+197, 최대) · 휴대폰멀미 768(+25)</div></div>
+<div class="s"><div class="k">Analytics 지연</div><div class="v">근사 3일 (창 Oct15~Nov12)</div></div>
+</div>
+
+<div style="margin-top:16px" id="new"><h2 style="margin-bottom:10px"><span class="dot" style="background:var(--amber)"></span>쇼츠 확산 현황 (돌파선 = 흰 선 61%, 스케일 3.64K) — <b>15편, 757~3,636 밴드</b></h2>
+<div class="bar-row"><div class="bar-label">휴대폰멀미(10-18)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:20.8%"></div></div><div class="bar-val">757 · D+25 49.14%</div></div>
+<div class="bar-row"><div class="bar-label">팝콘(10-17)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:30.9%"></div></div><div class="bar-val">1,124 · D+26 45.73%</div></div>
+<div class="bar-row"><div class="bar-label">물방울이(10-14)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:27.0%"></div></div><div class="bar-val">981 · D+29 47.70%</div></div>
+<div class="bar-row"><div class="bar-label">오줌이약(10-12)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:49.0%"></div></div><div class="bar-val">1,783 · D+31 50.42%</div></div>
+<div class="bar-row"><div class="bar-label">여기가지구(10-11)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:44.3%"></div></div><div class="bar-val">1,611 · D+32 33.21%(최하위)</div></div>
+<div class="bar-row"><div class="bar-label">물속인데(10-07)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:45.1%"></div></div><div class="bar-val">1,640 · D+36 46.77%</div></div>
+<div class="bar-row"><div class="bar-label">수소폭탄(10-06)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:45.3%"></div></div><div class="bar-val">1,649 · D+37 46.27%</div></div>
+<div class="bar-row"><div class="bar-label">트럭매연(10-05)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:43.7%"></div></div><div class="bar-val">1,590 · D+38 46.98%</div></div>
+<div class="bar-row"><div class="bar-label">상어부캉이(10-02)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:66.9%"></div></div><div class="bar-val">2,433 · D+41 43.03%</div></div>
+<div class="bar-row"><div class="bar-label">말(09-30)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:43.8%"></div></div><div class="bar-val">1,592 · D+43 45.73%</div></div>
+<div class="bar-row"><div class="bar-label">혹등고래(09-29)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:48.6%"></div></div><div class="bar-val">1,767 · D+44 38.65%</div></div>
+<div class="bar-row"><div class="bar-label">말벌(09-28)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill g" style="width:40.9%"></div></div><div class="bar-val">1,488 · D+45 61.49% 목표달성</div></div>
+<div class="bar-row"><div class="bar-label">강아지기억(09-27)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:31.9%"></div></div><div class="bar-val">1,159 · D+46 39.86%</div></div>
+<div class="bar-row"><div class="bar-label">비행기창문(09-26)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill g" style="width:30.6%"></div></div><div class="bar-val">1,114 · D+47 61.13% 목표달성</div></div>
+<div class="bar-row"><div class="bar-label">병원좀비(09-25)</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:100%"></div></div><div class="bar-val">3,636 · D+48 46.22%(최대상승 +197)</div></div>
+<div class="warn" style="background:#241417;border-color:#7a2f38;color:#e8c9cc">🔴 무발행 25일째 — 신규편 없음, 창 이탈도 없음(직전과 동일 15편). D+5 신규 확정 0건(이미 전부 기확정). 4일 누적 델타 합 +253(병원좀비 +197이 78%를 견인).</div>
+</div>
+</div></div>
+
+<div class="grid row2">
+<div class="card" id="corr">
+<h2><span class="dot" style="background:var(--green)"></span>유효조회율 (목표 60% = 흰 선) — 현재 추적 15편 기준 (Analytics 누적 views, 표본 충분)</h2>
+<div class="bar-row"><div class="bar-label">말벌</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill g" style="width:61.49%"></div></div><div class="bar-val">61.49% D+45(n=1,488)</div></div>
+<div class="bar-row"><div class="bar-label">비행기창문</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill g" style="width:61.13%"></div></div><div class="bar-val">61.13% D+47(n=1,114)</div></div>
+<div class="bar-row"><div class="bar-label">오줌이약</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill a" style="width:50.42%"></div></div><div class="bar-val">50.42% D+31(n=1,783)</div></div>
+<div class="bar-row"><div class="bar-label">휴대폰멀미</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:49.14%"></div></div><div class="bar-val">49.14% D+25(n=757)</div></div>
+<div class="bar-row"><div class="bar-label">물속인데</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:46.77%"></div></div><div class="bar-val">46.77% D+36(n=1,640)</div></div>
+<div class="bar-row"><div class="bar-label">트럭매연</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:46.98%"></div></div><div class="bar-val">46.98% D+38(n=1,590)</div></div>
+<div class="bar-row"><div class="bar-label">수소폭탄</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:46.27%"></div></div><div class="bar-val">46.27% D+37(n=1,649)</div></div>
+<div class="bar-row"><div class="bar-label">병원좀비</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:46.22%"></div></div><div class="bar-val">46.22% D+48(n=3,561) 최대표본</div></div>
+<div class="bar-row"><div class="bar-label">물방울이</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:47.70%"></div></div><div class="bar-val">47.70% D+29(n=981)</div></div>
+<div class="bar-row"><div class="bar-label">말</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:45.73%"></div></div><div class="bar-val">45.73% D+43(n=1,592)</div></div>
+<div class="bar-row"><div class="bar-label">팝콘</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:45.73%"></div></div><div class="bar-val">45.73% D+26(n=1,124)</div></div>
+<div class="bar-row"><div class="bar-label">상어부캉이</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:43.03%"></div></div><div class="bar-val">43.03% D+41(n=2,433)</div></div>
+<div class="bar-row"><div class="bar-label">강아지기억</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:39.86%"></div></div><div class="bar-val">39.86% D+46(n=1,159)</div></div>
+<div class="bar-row"><div class="bar-label">혹등고래</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:38.65%"></div></div><div class="bar-val">38.65% D+44(n=1,767)</div></div>
+<div class="bar-row"><div class="bar-label">여기가지구</div><div class="bar-track"><div class="goal60"></div><div class="bar-fill r" style="width:33.21%"></div></div><div class="bar-val">33.21% D+32(n=1,611) 최하위</div></div>
+<div class="warn" style="background:#12201a;border-color:#2b6b3f;color:#c8e8d2">🎯 전 영상 n≥757(의미있는 표본). <b>목표 60%+ 달성은 "말벌"(61.49%)·"비행기창문"(61.13%) 2편뿐</b> — 둘 다 "즉각 행동+반전 질문" 구조 공통. 채널 전체 유효조회율은 44.9% 수준에서 정체.</div>
+</div>
+
+<div class="card">
+<h2><span class="dot" style="background:var(--green)"></span>본인 채널 요약</h2>
+<table>
+<tr><th>지표</th><th class="num">11-08</th><th class="num">11-12</th><th>비고</th></tr>
+<tr><td>신규 업로드</td><td class="num bad">0편</td><td class="num bad">0편</td><td class="bad">25일째 무발행(실측)</td></tr>
+<tr><td>창 이탈</td><td class="num flat">0편</td><td class="num flat">0편</td><td class="flat">변동 없음</td></tr>
+<tr><td>구독자(공개)</td><td class="num flat">126</td><td class="num flat">126</td><td class="flat">±0, 변동 없음</td></tr>
+<tr><td>추적 영상 델타 합(실측, 4일)</td><td class="num flat">+105(1일)</td><td class="num up">+253</td><td class="flat">병원좀비가 대부분 견인</td></tr>
+<tr><td>채널 총계 델타(4일)</td><td class="num flat">+149(1일)</td><td class="num up">+427</td><td class="flat">추적분 대비 괴리 +174</td></tr>
+<tr><td>28일 유효조회율</td><td class="num hot">46.44%</td><td class="num hot">44.87%</td><td class="flat">창 Oct15~Nov12로 이동, 직접비교 무의미</td></tr>
+</table>
+<div class="warn" style="background:#241417;border-color:#7a2f38;color:#e8c9cc">🔴 오늘 가장 중요한 변화 — 무발행 25일째(실측). 구독자는 126으로 변동 없음. D+5 신규 확정 없음(경쟁은 5개 채널이 오늘 PASS 확정).</div>
+</div>
+</div>
+
+<div class="card" id="top" style="margin-top:14px">
+<h2><span class="dot" style="background:var(--amber)"></span>급상승 Top 10 (4일 누적 델타, 절대 증가분 기준)</h2>
+<table>
+<tr><th>#</th><th>채널</th><th>편</th><th class="num">델타</th><th class="num">증가율</th></tr>
+<tr style="background:#14231a"><td>1</td><td><span class="ch">infinitedesk</span></td><td><b>How to Move a 1-Ton Machine With a Finger</b></td><td class="num up"><b>+355,605</b></td><td class="num up"><b>+21.8% (D+9)</b></td></tr>
+<tr style="background:#14231a"><td>2</td><td><span class="ch">infinitedesk</span></td><td>The Oil Pumps That Power Heavy Equipment</td><td class="num up">+185,525</td><td class="num up"><b>+12.4% (D+23)</b></td></tr>
+<tr style="background:#14231a"><td>3</td><td><span class="ch">infinitedesk</span></td><td>What's the Difference?</td><td class="num up">+145,497</td><td class="num up"><b>+8.1% (D+12)</b></td></tr>
+<tr style="background:#14291a"><td>4</td><td><span class="ch">infinitedesk</span></td><td>🔥 The Clever Way to Loosen a Nut That Won't Budge</td><td class="num up"><b>+143,258</b></td><td class="num up"><b>+162.4% (D+5 확정)</b></td></tr>
+<tr style="background:#14291a"><td>5</td><td><span class="ch">ScienceDream</span></td><td>🔥 등딱지를 버린 장수거북은...</td><td class="num up"><b>+134,179</b></td><td class="num up"><b>+72.9% (D+6 확정)</b></td></tr>
+<tr style="background:#14231a"><td>6</td><td><span class="ch">infinitedesk</span></td><td>Why APFSDS Is the Deadliest Tank Round</td><td class="num up">+47,995</td><td class="num up"><b>+6.7% (D+14)</b></td></tr>
+<tr style="background:#14291a"><td>7</td><td><span class="ch">Vortex_11_YT</span></td><td>🔥🔥 How Engineers Built a Solar Water Heater Without Electricity</td><td class="num up"><b>+44,397</b></td><td class="num up"><b>+2,892.0% (D+5 확정)</b></td></tr>
+<tr><td>8</td><td><span class="ch">ScienceDream</span></td><td>50억 마리였던 비둘기는...</td><td class="num up">+38,322</td><td class="num up"><b>+3.4%</b></td></tr>
+<tr style="background:#14291a"><td>9</td><td><span class="ch">인류의서재</span></td><td>목성이 달 자리에 오면...</td><td class="num up">+31,636</td><td class="num up"><b>+131.1% (D+6)</b></td></tr>
+<tr style="background:#14231a"><td>10</td><td><span class="ch">infinitedesk</span></td><td>How Does a Spirit Level Bubble Find the Center?</td><td class="num up">+29,611</td><td class="num up"><b>+1.8% (D+19)</b></td></tr>
+</table>
+<div class="warn" style="background:#12201a;border-color:#2b6b3f;color:#c8e8d2">🔥 <b>#4·#5·#7·#9</b>는 오늘 D+5~D+6 도달로 2026-08-13 규칙상 판정 대상 전환 — 전부 PASS, #7(Vortex)이 추적 이래 최대 폭(+2,892.0%).<br>
+⚪ Itzquanta 신규 3편(D+2~D+4, 5,743~15,225)·인류의서재·MackExplains7 신규 4편은 D+5 미만 — 판정 보류 유지, 순위 밖.</div>
+</div>
+
+<div class="grid row2">
+<div class="card" id="comp">
+<h2><span class="dot"></span>채널 동향 (4일 누적, 채널 공개 total 기준)</h2>
+<table>
+<tr><th>채널</th><th class="num">구독자</th><th class="num">Δ구독</th><th class="num">조회 델타(4일)</th><th>발행</th></tr>
+<tr style="background:#14231a"><td><span class="ch">infinitedesk</span></td><td class="num">487,000</td><td class="num up"><b>+6,000(반올림)</b></td><td class="num up"><b>+4,570,591</b></td><td class="hot">신규 1편, 구작 전원 동반 상승</td></tr>
+<tr style="background:#231419"><td><span class="ch">JUST1MIN</span></td><td class="num">1,150,000</td><td class="num flat">±0(반올림)</td><td class="num up"><b>+5,157,985</b></td><td class="hot">신규 최소 8편(초고빈도, 윈도우 전체 교체)</td></tr>
+<tr style="background:#14231a"><td><span class="ch">Vortex_11_YT</span></td><td class="num">98,000</td><td class="num up"><b>+600</b></td><td class="num up"><b>+716,962</b></td><td class="hot">신규 4편(1일1편) + 🔥 D+5 대폭발 PASS</td></tr>
+<tr style="background:#14231a"><td><span class="ch">인류의서재</span></td><td class="num">89,800</td><td class="num up"><b>+800</b></td><td class="num up"><b>+659,065</b></td><td class="hot">신규 4편(1일1편) + D+6 PASS</td></tr>
+<tr><td><span class="ch">ScienceDream</span></td><td class="num">1,150,000</td><td class="num flat">±0(반올림)</td><td class="num up">+618,851</td><td class="flat">무발행(6일째, D+6 PASS 지속)</td></tr>
+<tr style="background:#231419"><td><span class="ch">MackExplains7</span></td><td class="num">94,600</td><td class="num up"><b>+500</b></td><td class="num up">+119,991</td><td class="hot">신규 4편(1일1편) + D+5 PASS</td></tr>
+<tr><td><span class="ch">cosmoswag_kr</span></td><td class="num">281,000</td><td class="num up">+1,000(반올림)</td><td class="num up">+117,618</td><td class="flat">무발행(18일째)</td></tr>
+<tr style="background:#231419"><td><span class="ch">Itzquanta</span></td><td class="num">33,600</td><td class="num up">+200</td><td class="num up">+98,384</td><td class="hot">신규 3편(D+2~D+4)</td></tr>
+<tr><td><span class="ch">Zenn0009</span></td><td class="num">200,000</td><td class="num flat">±0</td><td class="num up">+57,188</td><td class="flat">무발행(17일째)</td></tr>
+<tr style="background:#231419"><td><span class="ch">quark5050</span></td><td class="num">20,400</td><td class="num up">+100</td><td class="num up">+43,874</td><td class="hot">신규 1편</td></tr>
+<tr><td><span class="ch">kurzgesagt_kr</span></td><td class="num">729,000</td><td class="num flat">±0</td><td class="num up">+32,230</td><td class="flat">무발행 지속(10개월+)</td></tr>
+<tr style="background:#231419"><td><span class="ch">만약에LAB</span></td><td class="num">126</td><td class="num flat">±0</td><td class="num up">+427</td><td class="bad">🔴 무발행(25일째)</td></tr>
+</table>
+<div class="warn" style="background:#241417;border-color:#7a2f38;color:#e8c9cc">🔴 만약에LAB 25일 연속 무발행(실측), 구독자 변동 없음. 🟢 infinitedesk·JUST1MIN 두 채널이 4일 조회 델타의 대부분을 점유.</div>
+</div>
+
+<div class="card">
+<h2><span class="dot" style="background:var(--amber)"></span>주제 트렌드 · 신규 업로드 최소 24편(자사 0편)</h2>
+<div class="tagwrap" style="margin-bottom:14px">
+<div class="tag">🔥 <b>Vortex "Solar Water Heater" D+5 확정 PASS +2,892.0%</b></div>
+<div class="tag">🟢 <b>5개 채널 D+5~6 동시 전환, 전부 PASS</b></div>
+<div class="tag">🟢 <b>인류의서재·Vortex·MackExplains7 1일1편 4일 연속</b></div>
+<div class="tag">🟡 <b>JUST1MIN 추적 윈도우 전체 교체(8편)</b></div>
+<div class="tag">🔴 <b>만약에LAB 25일째 무발행, 구독 변동 없음</b></div>
+</div>
+<table>
+<tr><th>채널</th><th>편</th><th class="num">조회(현재)</th><th>비고</th></tr>
+<tr><td><span class="ch">JUST1MIN</span></td><td>다래끼 째본 사람? 외 7편</td><td class="num">61,506 외</td><td class="hot">D+1, 8편 신규(윈도우 교체)</td></tr>
+<tr style="background:#231419"><td><span class="ch">인류의서재</span></td><td>10억 년 뒤 지구에서... 외 3편</td><td class="num">15,676 외</td><td class="hot">1일1편, D+1~4</td></tr>
+<tr><td><span class="ch">Vortex_11_YT</span></td><td>Stone Buddha 외 3편</td><td class="num">2,853 외</td><td class="hot">1일1편, D+1~4</td></tr>
+<tr style="background:#231419"><td><span class="ch">MackExplains7</span></td><td>Rained for Days 외 3편</td><td class="num">522 외</td><td class="hot">1일1편, D+1~4(초동 약함)</td></tr>
+<tr><td><span class="ch">Itzquanta</span></td><td>Orcas 외 2편</td><td class="num">5,743 외</td><td class="hot">D+2~4</td></tr>
+<tr style="background:#231419"><td><span class="ch">infinitedesk</span></td><td>Drinking 10M Tons of Water</td><td class="num">64,642</td><td class="hot">D+2, 초동 매우 강함</td></tr>
+<tr><td><span class="ch">quark5050</span></td><td>A 1960 Equation...</td><td class="num">422</td><td class="flat">D+2</td></tr>
+<tr style="background:#231419"><td><span class="ch">만약에LAB</span></td><td>—</td><td class="num">—</td><td class="bad">무발행(25일째)</td></tr>
+</table>
+<div class="warn" style="background:#241417;border-color:#7a2f38;color:#e8c9cc">만약에LAB 무발행 확인(25일째, 실측) — 경쟁 신규 최소 24편 대비 자사 0편.</div>
+</div>
+</div>
+
+<div class="card" id="idea" style="margin-top:14px">
+<h2><span class="dot" style="background:var(--red)"></span>만약에LAB 제작 제안</h2>
+
+<div class="idea"><div class="t">🥇 1순위 — Vortex식 "메커니즘 반전형" 즉시 차용</div>
+<div style="font-size:13px;line-height:1.7;margin:8px 0">
+제목 후보: 「전기 없이 어떻게 물을 끓일까?」 / 「태양 하나로 물을 데운다고?」. 첫 1초 훅: 완성된 장치 클로즈업 → 자막 "이게 전기 없이 가능해?".
+</div>
+<div class="why">📊 근거: Vortex_11_YT "Solar Water Heater" D+5 확정, 1,535→45,932(+2,892.0%), 추적 이래 최대 폭 PASS.</div></div>
+
+<div class="idea"><div class="t">🥈 2순위 — 인류의서재식 "거대 스케일 사고실험" 포맷</div>
+<div style="font-size:13px;line-height:1.7;margin:8px 0">
+제목 후보: 「태양이 사라지면 몇 초 만에 어두워질까?」 / 「달이 지금보다 2배 커지면 바다는 어떻게 될까?」. 첫 1초 훅: 현재 상태 이미지 → 급변 이미지 순간 전환.
+</div>
+<div class="why">📊 근거: 인류의서재 "목성이 달 자리에..." D+6 24,132→55,768(+131.1%), 사고실험형 포맷 재검증.</div></div>
+
+<div class="idea" style="border-left-color:var(--red)"><div class="t">🥉 3순위 — 발행 재개 최우선 과제화(25일째 무발행)</div>
+<div style="font-size:13px;line-height:1.7;margin:8px 0">
+본인 최고 성과작 "즉각 행동+반전 질문" 구조 반복. 제목 후보: 「눈을 감으면 안 아플까? 주사 직전 뇌의 반응」 / 「숨을 참으면 살까? 물에 빠졌을 때 진짜 생존법」. 첫 1초 훅: 구체적 행동 클로즈업 + 반전 질문 자막.
+</div>
+<div class="why">📊 근거: 본인 채널 유일 60%+ 유효조회율 2편 — "말벌"(61.49%)·"비행기창문"(61.13%). 25일째 무발행 동안 추적분 델타(+253)는 카탈로그 잔존 트래픽만으로 사실상 상한에 도달, 오늘 경쟁은 최소 24편 발행.</div></div>
+
+<div class="warn" style="background:#241417;border-color:#7a2f38;color:#e8c9cc">🔴 <b>진단 갱신</b> — 무발행 25일째(실측) · 구독 변동 없음 · D+5 신규 확정 없음(자사 기준, 경쟁 5개 채널은 오늘 PASS 확정)<br>
+「재업로드=실패」 전제 금지 유지 · D+5 판정 규칙 유지 · 브리핑 공백=무발행 추정 금지, playlistItems 실측 원칙 유지</div>
+</div>
+
+<div class="card" id="dq" style="margin-top:14px">
+<h2><span class="dot" style="background:var(--amber)"></span>데이터 주의사항</h2>
+<div style="font-size:12.8px;line-height:1.85;color:#c8d0de">
+⚠️ <b>직전 스냅샷이 11-08(4일 전)라 이 리포트의 모든 델타는 4일 누적</b>입니다.<br>
+🔴 <b>만약에LAB 무발행 25일째</b> — playlistItems 실측으로 직접 확인, 최근 업로드는 2026-10-18.<br>
+⚪ <b>D+5 신규 확정 없음(자사)</b> — 추적 15편 전부 이미 D+25 이상 기확정.<br>
+🔥 <b>오늘 5개 채널 영상이 동시에 D+5~D+6 도달, 전부 PASS</b> — 2026-08-13 규칙에 따라 그 이전까지는 판정보류였음. Vortex "Solar Water Heater"(+2,892.0%)가 특히 이례적.<br>
+⚠️ <b>JUST1MIN 추적 윈도우(8편) 전체 교체</b> — 직전 8편이 윈도우에서 완전히 이탈, 후속 관측 불가. 고빈도 발행 채널은 videoId 별도 기록 검토 필요.<br>
+⚠️ <b>Vortex_11_YT "Dam Without Concrete"(어제 D+5 확정 PASS, 68,518)가 오늘 윈도우에서 이탈</b> — 후속 관측 불가, 같은 사유(1일1편 페이스).<br>
+⚪ <b>경쟁 신규 다수 D+1~D+4</b> — 08-13 규칙상 전부 판정 보류. Itzquanta Coffee Beans·인류의서재 전기도 중장비도·MackExplains7 Goats는 내일 D+5 도달 예정.<br>
+✅ <b>Analytics 28일 창 Oct15~Nov12</b> — endDate를 "오늘"(2026-11-12)로 고정. 이전 창(Oct12~Nov8, 46.44%)과는 창 이동으로 직접비교 무의미.<br>
+🕒 <b>Analytics 지연 근사 3일</b> — 최근 3일(11-10~11-12)은 미반영, 정상.<br>
+⚠️ <b>공개 구독자(126)와 Analytics 28일 subsGained 9/Lost 1 불일치</b> — 공개 구독자는 4일간 126 유지, 단정하지 않고 지속 관찰.<br>
+🔢 <b>구독자 반올림</b> — 1만 이상 채널은 100/500/1,000 단위 반올림(infinitedesk +6,000 등은 반올림 노이즈 포함 가능, 실변동과 다를 수 있음).<br>
+✅ <b>ScienceDream·kurzgesagt_kr·cosmoswag_kr·Zenn0009의 무발행은 playlistItems 실측으로 확인된 사실</b>이며 추정이 아니다.<br>
+🔌 <b>수집 경로</b> — <code>web_fetch</code>/curl 시도하지 않음(차단 이력 유지). Claude 내장 브라우저(Browser pane) <code>javascript_tool</code> 단일 경로로 12/12 채널·103편·Analytics(OAuth 포함) 성공, 오류 0.
+</div>
+</div>
+
+<div class="sub" style="margin-top:20px;text-align:center">
+YouTube Data API v3 + Analytics API v2 · Claude 내장 브라우저(Browser pane) javascript_tool · 생성 2026-11-12
+</div>
+
+</body>
+</html>
